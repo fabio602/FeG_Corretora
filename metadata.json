@@ -1,0 +1,8 @@
+{
+  "name": "F&G Corretora de Seguros - Especialistas em Seguro Garantia",
+  "description": "Uma landing page premium para corretagem de seguro garantia, com design moderno, animações sofisticadas e integração com IA para suporte ao cliente.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
