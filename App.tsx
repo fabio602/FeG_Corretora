@@ -7,7 +7,7 @@ import Services from './components/Services';
 import Stats from './components/Stats';
 import AboutUs from './components/AboutUs';
 import HowItWorks from './components/HowItWorks';
-import GeminiAssistant from './components/GeminiAssistant';
+
 import Footer from './components/Footer';
 import InsurersCarousel from './components/InsurersCarousel';
 import Blog from './components/Blog';
@@ -163,7 +163,7 @@ function App() {
       </Routes>
 
       <Footer />
-      <GeminiAssistant />
+
     </div>
   );
 }

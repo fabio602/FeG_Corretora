@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
- const heroImages = [
+  const heroImages = [
     "/hero/hero-office.jpg",
     "/hero/hero-justice.jpg",
     "/hero/hero-construction.jpg",
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change every 5 seconds
+    }, 4000); // Change every 4 seconds
     return () => clearInterval(interval);
   }, []);
 
