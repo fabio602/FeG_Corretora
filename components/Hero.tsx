@@ -16,12 +16,17 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const heroImages = [
-    "https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?q=80&w=2070&auto=format&fit=crop", // Tribunal - Courthouse/Justice building
-    "https://images.unsplash.com/photo-1590496793907-4d0b8f7e8f3d?q=80&w=2070&auto=format&fit=crop", // Obras - Construction workers and site
-    "/limpeza-banco.png", // Limpeza - Pessoa limpando instituição bancária
-    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop", // Fornecimento ao Governo - Warehouse/logistics
-    "/tributacao.png" // Tributação/Penhora - Documentos fiscais
+ const heroImages = [
+    "/hero/hero-office.jpg",
+    "/hero/hero-justice.jpg",
+    "/hero/hero-construction.jpg",
+    "/hero/hero-cranes.jpg",
+    "/hero/hero-handshake.jpg",
+    "/hero/hero-blueprint.jpg",
+    "/hero/hero-bridge.jpg",
+    "/hero/hero-calc.jpg",
+    "/hero/hero-welder.jpg",
+    "/hero/hero-cleaner.jpg"
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
