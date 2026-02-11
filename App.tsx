@@ -13,7 +13,57 @@ import InsurersCarousel from './components/InsurersCarousel';
 import Blog from './components/Blog';
 
 function App() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    
+    // Apply mask (99) 99999-9999
+    if (value.length > 2) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    }
+    if (value.length > 10) {
+      value = `${value.slice(0, 10)}-${value.slice(10)}`;
+    }
+    
+    setFormData(prev => ({ ...prev, phone: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/fabio@fegsegurogarantia.com.br", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "Nova Solicitação de Proposta (Site F&G)",
+          _template: "table"
+        })
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        setFormData({ name: '', email: '', phone: '' });
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      setFormStatus('error');
+    }
+  };
 
   useEffect(() => {
     const observerOptions = {
@@ -88,27 +138,75 @@ function App() {
                   </div>
                   <div className="flex flex-col sm:flex-row justify-center gap-8 pt-6 reveal-right w-full lg:w-auto">
                     <div className="bg-white rounded-3xl p-8 w-full max-w-md shadow-2xl">
-                      <form action="https://formsubmit.co/fabio@fegsegurogarantia.com.br" method="POST" className="space-y-4 text-left">
-                        <input type="hidden" name="_subject" value="Nova Solicitação de Proposta (Site F&G)" />
-                        <input type="hidden" name="_captcha" value="false" />
-                        <input type="hidden" name="_template" value="table" />
-
-                        <div>
-                          <label htmlFor="form-name" className="block text-sm font-bold text-gray-700 mb-1">Nome</label>
-                          <input id="form-name" name="name" type="text" placeholder="Digite seu nome completo" required className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" />
+                      {formStatus === 'success' ? (
+                        <div className="text-center py-12 space-y-4">
+                          <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                          </div>
+                          <h3 className="text-2xl font-bold text-gray-900">Solicitação Enviada!</h3>
+                          <p className="text-gray-600">Entraremos em contato em breve com sua proposta personalizada.</p>
+                          <button 
+                            onClick={() => setFormStatus('idle')}
+                            className="text-fg-navy font-bold hover:underline mt-4"
+                          >
+                            Enviar outra solicitação
+                          </button>
                         </div>
-                        <div>
-                          <label htmlFor="form-email" className="block text-sm font-bold text-gray-700 mb-1">Email</label>
-                          <input id="form-email" name="email" type="email" placeholder="Ex: raquel@exemplo.com" required className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" />
-                        </div>
-                        <div>
-                          <label htmlFor="form-phone" className="block text-sm font-bold text-gray-700 mb-1">Telefone</label>
-                          <input id="form-phone" name="phone" type="tel" placeholder="Ex: (99) 99999-9999" required className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" />
-                        </div>
-                        <button type="submit" className="w-full bg-fg-navy text-white font-bold py-4 rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg mt-2">
-                          Solicitar proposta agora
-                        </button>
-                      </form>
+                      ) : (
+                        <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                          <div>
+                            <label htmlFor="form-name" className="block text-sm font-bold text-gray-700 mb-1">Nome</label>
+                            <input 
+                              id="form-name" 
+                              name="name" 
+                              type="text" 
+                              placeholder="Digite seu nome completo" 
+                              required 
+                              value={formData.name}
+                              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                              className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" 
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="form-email" className="block text-sm font-bold text-gray-700 mb-1">Email</label>
+                            <input 
+                              id="form-email" 
+                              name="email" 
+                              type="email" 
+                              placeholder="Ex: raquel@exemplo.com" 
+                              required 
+                              value={formData.email}
+                              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                              className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" 
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="form-phone" className="block text-sm font-bold text-gray-700 mb-1">Telefone</label>
+                            <input 
+                              id="form-phone" 
+                              name="phone" 
+                              type="tel" 
+                              placeholder="Ex: (99) 99999-9999" 
+                              required 
+                              value={formData.phone}
+                              onChange={handlePhoneChange}
+                              className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" 
+                            />
+                          </div>
+                          {formStatus === 'error' && (
+                            <p className="text-red-500 text-sm font-medium">Ocorreu um erro ao enviar. Tente novamente.</p>
+                          )}
+                          <button 
+                            type="submit" 
+                            disabled={formStatus === 'submitting'}
+                            className={`w-full bg-fg-navy text-white font-bold py-4 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg mt-2 ${formStatus === 'submitting' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-opacity-90'}`}
+                          >
+                            {formStatus === 'submitting' ? 'Enviando...' : 'Solicitar proposta agora'}
+                          </button>
+                        </form>
+                      )}
                     </div>
                   </div>
                 </div>
