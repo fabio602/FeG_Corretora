@@ -30,15 +30,15 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="/#inicio" className="text-white hover:text-fg-gold transition-colors">Início</a>
-          <a href="/#quem-somos" className="text-white hover:text-fg-gold transition-colors">Quem Somos</a>
-          <a href="/#modalidades" className="text-white hover:text-fg-gold transition-colors">Modalidades Seguro Garantia</a>
-          <a href="/#vantagens" className="text-white hover:text-fg-gold transition-colors">Vantagens</a>
+        <div className="hidden md:flex items-center space-x-4 text-sm font-medium">
+          <a href="/#inicio" className="text-white/90 hover:text-fg-gold transition-colors whitespace-nowrap">Início</a>
+          <a href="/#quem-somos" className="text-white/90 hover:text-fg-gold transition-colors whitespace-nowrap">Quem Somos</a>
+          <a href="/#modalidades" className="text-white/90 hover:text-fg-gold transition-colors whitespace-nowrap">Modalidades</a>
+          <a href="/#vantagens" className="text-white/90 hover:text-fg-gold transition-colors whitespace-nowrap">Vantagens</a>
           {/* Seguro Cyber — destaque de primeira hierarquia */}
           <Link
             to="/seguro-cyber"
-            className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full border font-bold transition-all hover:scale-105 ${isCyberPage
+            className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full border font-bold transition-all hover:scale-105 whitespace-nowrap ${isCyberPage
               ? 'bg-fg-gold text-fg-navy border-fg-gold'
               : 'text-fg-gold border-fg-gold/40 hover:bg-fg-gold/10'
               }`}
@@ -46,11 +46,11 @@ const Navbar: React.FC = () => {
             <Shield className="w-3.5 h-3.5" />
             Seguro Cyber
           </Link>
-          <a href="/blog" target="_blank" rel="noopener noreferrer" className="text-white hover:text-fg-gold transition-colors font-bold">Blog</a>
-          <a href="https://linen-armadillo-993759.hostingersite.com" target="_blank" rel="noopener noreferrer" className="text-white border border-white/20 px-5 py-2 rounded-full font-medium hover:bg-white/10 transition-all">
+          <a href="/blog" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-fg-gold transition-colors whitespace-nowrap">Blog</a>
+          <a href="https://linen-armadillo-993759.hostingersite.com" target="_blank" rel="noopener noreferrer" className="text-white/90 border border-white/20 px-4 py-2 rounded-full font-medium hover:bg-white/10 transition-all whitespace-nowrap">
             Portal do Corretor
           </a>
-          <a href="https://wa.me/5515998618659?text=Ol%C3%A1,%20recebi%20sua%20apresenta%C3%A7%C3%A3o%20e%20gostaria%20de%20conhecer%20melhor%20a%20F%26G." target="_blank" rel="noopener noreferrer" className="bg-fg-gold text-fg-navy px-5 py-2 rounded-full font-bold hover:bg-opacity-90 transition-all transform hover:scale-105 active:scale-95">
+          <a href="https://wa.me/5515998618659?text=Ol%C3%A1,%20recebi%20sua%20apresenta%C3%A7%C3%A3o%20e%20gostaria%20de%20conhecer%20melhor%20a%20F%26G." target="_blank" rel="noopener noreferrer" className="bg-fg-gold text-fg-navy px-4 py-2 rounded-full font-bold hover:bg-opacity-90 transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap">
             Solicitar Cotação
           </a>
         </div>
