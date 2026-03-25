@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
             Seguro Cyber
           </Link>
           <a href="/blog" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-fg-gold transition-colors whitespace-nowrap">Blog</a>
-          <a href="https://linen-armadillo-993759.hostingersite.com" target="_blank" rel="noopener noreferrer" className="text-white/90 border border-white/20 px-4 py-2 rounded-full font-medium hover:bg-white/10 transition-all whitespace-nowrap">
+          <a href="https://hub.fegsegurogarantia.com/" target="_blank" rel="noopener noreferrer" className="text-white/90 border border-white/20 px-4 py-2 rounded-full font-medium hover:bg-white/10 transition-all whitespace-nowrap">
             Portal do Corretor
           </a>
           <a href="https://wa.me/5515998618659?text=Ol%C3%A1,%20recebi%20sua%20apresenta%C3%A7%C3%A3o%20e%20gostaria%20de%20conhecer%20melhor%20a%20F%26G." target="_blank" rel="noopener noreferrer" className="bg-fg-gold text-fg-navy px-4 py-2 rounded-full font-bold hover:bg-opacity-90 transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap">
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
             <Shield className="w-4 h-4" /> Seguro Cyber
           </Link>
           <a href="/blog" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-fg-gold transition-colors py-2 font-bold">Blog</a>
-          <a href="https://linen-armadillo-993759.hostingersite.com" target="_blank" rel="noopener noreferrer" className="block text-white border border-white/20 px-6 py-3 rounded-full font-medium text-center hover:bg-white/10 transition-all">
+          <a href="https://fegsegurogarantia.com.br/" target="_blank" rel="noopener noreferrer" className="block text-white border border-white/20 px-6 py-3 rounded-full font-medium text-center hover:bg-white/10 transition-all">
             Portal do Corretor
           </a>
           <a href="https://wa.me/5515998618659?text=Ol%C3%A1,%20recebi%20sua%20apresenta%C3%A7%C3%A3o%20e%20gostaria%20de%20conhecer%20melhor%20a%20F%26G." target="_blank" rel="noopener noreferrer" className="block bg-fg-gold text-fg-navy px-6 py-3 rounded-full font-bold text-center">
