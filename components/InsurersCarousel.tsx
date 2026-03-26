@@ -3,6 +3,8 @@ import React from 'react';
 const partners = [
     { name: 'Tokio Marine', logo: '/partners/tokio.png' },
     { name: 'Sombrero', logo: '/partners/sombrero.png' },
+    { name: 'Swiss Re', logo: '/partners/swiss.svg' },
+    { name: 'Porto Seguro', logo: '/partners/porto.svg' },
     { name: 'Pottencial', logo: '/partners/pottencial.png' },
     { name: 'AXA', logo: '/partners/axa.jpg' },
     { name: 'Junto Seguros', logo: '/partners/junto.png' },
