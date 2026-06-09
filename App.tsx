@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -7,16 +6,15 @@ import Services from './components/Services';
 import Stats from './components/Stats';
 import AboutUs from './components/AboutUs';
 import HowItWorks from './components/HowItWorks';
-
 import Footer from './components/Footer';
 import InsurersCarousel from './components/InsurersCarousel';
 import Blog from './components/Blog';
 import CyberInsurance from './components/CyberInsurance';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const location = useLocation();
-
 
   useEffect(() => {
     const observerOptions = {
@@ -43,12 +41,10 @@ function App() {
   return (
     <div className="min-h-screen bg-[#0a0f16] overflow-x-hidden">
       <Navbar />
-
       <Routes>
         <Route path="/" element={
           <main>
             <Hero />
-
             {/* Trusted By Section */}
             <section className="py-16 bg-[#0d141d] border-b border-white/5 relative z-10 reveal overflow-hidden">
               <div className="container mx-auto px-6 mb-12">
@@ -58,27 +54,21 @@ function App() {
               </div>
               <InsurersCarousel />
             </section>
-
             <div className="reveal">
               <AboutUs />
             </div>
-
             <div className="reveal">
               <HowItWorks />
             </div>
-
             <div className="reveal">
               <Services />
             </div>
-
             <div className="reveal">
               <Stats />
             </div>
-
             {/* Call to Action Section with Slide-in */}
             <section className="py-32 bg-[#0a0f16] overflow-hidden relative border-y border-white/5">
               <div className="absolute top-0 right-0 w-1/3 h-full bg-fg-gold opacity-5 transform skew-x-12 translate-x-20"></div>
-
               <div className="container mx-auto px-6 relative z-10 reveal">
                 <div className="glass-card rounded-[4rem] p-12 lg:p-24 flex flex-col lg:flex-row items-center justify-between gap-16 shadow-2xl border-white/5">
                   <div className="text-center lg:text-left space-y-8 max-w-2xl reveal-left">
@@ -111,7 +101,6 @@ function App() {
                           <input type="hidden" name="_captcha" value="false" />
                           <input type="hidden" name="_template" value="table" />
                           <input type="hidden" name="_cc" value="joaovictors@gmail.com" />
-
                           <div>
                             <label htmlFor="form-name" className="block text-sm font-bold text-gray-700 mb-1">Nome</label>
                             <input id="form-name" name="name" type="text" placeholder="Digite seu nome completo" required className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-fg-navy focus:border-transparent outline-none transition-all placeholder:text-gray-400" />
@@ -140,7 +129,6 @@ function App() {
                 </div>
               </div>
             </section>
-
             {/* Final Value Section */}
             <section id="vantagens" className="py-32 bg-[#0a0f16]">
               <div className="container mx-auto px-6">
@@ -188,9 +176,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/seguro-cyber" element={<CyberInsurance />} />
       </Routes>
-
       <Footer />
-
+      <WhatsAppButton />
     </div>
   );
 }
