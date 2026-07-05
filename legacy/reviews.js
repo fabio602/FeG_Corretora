@@ -156,6 +156,7 @@
   }
 
   function poll() {
+    if (window.location.pathname !== "/") return;
     var n = 0;
     function try_() {
       if (document.querySelector('footer')) { insert(); }
