@@ -73,3 +73,44 @@
   });
   observer.observe(document.body, { childList: true, subtree: true });
 })();
+
+// ── Texto contextual nos botões "Saiba mais" das cards de modalidade ─────────
+(function () {
+  var MAP = {
+    '/seguro-garantia-licitante':         'Saiba mais sobre Seguro Licitante',
+    '/seguro-garantia-execucao-contrato': 'Saiba mais sobre Seguro de Execução',
+    '/seguro-garantia-judicial':          'Saiba mais sobre Seguro Judicial',
+    '/seguro-garantia-locaticia':         'Saiba mais sobre Garantia Locatícia',
+    '/seguro-garantia-adicional':         'Saiba mais sobre Seguro Adicional',
+    '/seguro-garantia-energia':           'Saiba mais sobre Seguro de Energia'
+  };
+
+  function fixLabels() {
+    var links = document.querySelectorAll('a');
+    var changed = 0;
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var text = a.textContent.trim();
+      if (text === 'Saiba mais →' || text === 'Saiba mais') {
+        var href = a.getAttribute('href') || '';
+        var label = MAP[href];
+        if (label) { a.textContent = label + ' →'; changed++; }
+      }
+    }
+    return changed;
+  }
+
+  function run() {
+    if (fixLabels() > 0) return;
+    var n = 0;
+    var t = setInterval(function () {
+      if (fixLabels() > 0 || ++n > 30) clearInterval(t);
+    }, 200);
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); }
+  else { run(); }
+
+  // re-aplica após navegação SPA
+  window.addEventListener('popstate', function () { setTimeout(run, 150); });
+})();
