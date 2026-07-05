@@ -102,8 +102,8 @@
       + cardHTML
       + '</div></div>'
       /* Arrows */
-      + '<button id="gr-prev" style="position:absolute;top:50%;left:-20px;transform:translateY(-50%);' + arrowBtn + '">' + arrowSVG('left') + '</button>'
-      + '<button id="gr-next" style="position:absolute;top:50%;right:-20px;transform:translateY(-50%);' + arrowBtn + '">' + arrowSVG('right') + '</button>'
+      + '<button id="gr-prev" aria-label="Avaliação anterior" style="position:absolute;top:50%;left:-20px;transform:translateY(-50%);' + arrowBtn + '">' + arrowSVG('left') + '</button>'
+      + '<button id="gr-next" aria-label="Próxima avaliação" style="position:absolute;top:50%;right:-20px;transform:translateY(-50%);' + arrowBtn + '">' + arrowSVG('right') + '</button>'
       + '</div>'
       /* Dots */
       + '<div id="gr-dots" style="display:flex;justify-content:center;align-items:center;gap:6px;margin-top:24px;"></div>'
