@@ -114,3 +114,37 @@
   // re-aplica após navegação SPA
   window.addEventListener('popstate', function () { setTimeout(run, 150); });
 })();
+
+// ── Link "Blog" na navbar ────────────────────────────────────────────────────
+(function () {
+  function addBlogLink() {
+    // Encontra o link "Perguntas frequentes" na navbar como âncora
+    var links = document.querySelectorAll('nav a, header a');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      if (a.textContent.trim() === 'Perguntas frequentes' && !document.getElementById('nav-blog-link')) {
+        var blog = document.createElement('a');
+        blog.id = 'nav-blog-link';
+        blog.href = '/blog';
+        blog.textContent = 'Blog';
+        blog.className = a.className; // copia o mesmo estilo do link vizinho
+        a.parentNode.insertBefore(blog, a.nextSibling);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function run() {
+    if (addBlogLink()) return;
+    var n = 0;
+    var t = setInterval(function () {
+      if (addBlogLink() || ++n > 30) clearInterval(t);
+    }, 200);
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); }
+  else { run(); }
+
+  window.addEventListener('popstate', function () { setTimeout(run, 150); });
+})();
