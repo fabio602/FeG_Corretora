@@ -120,3 +120,11 @@ for (const [, route] of Object.entries(routes)) {
 }
 
 console.log('\n🎉 Build legado concluído com sucesso!')
+
+// ── Blog listing: sobrescreve dist/blog/index.html com página estática ───────
+const blogListing = join(LEGACY, 'blog-index.html')
+if (existsSync(blogListing)) {
+  mkdirSync(join(DIST, 'blog'), { recursive: true })
+  copyFileSync(blogListing, join(DIST, 'blog', 'index.html'))
+  console.log('✅ dist/blog/index.html (listing estático)')
+}
