@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, PARTNERS, WA_URL, FORM_EMAIL } from '../data/content'
@@ -11,13 +11,14 @@ const STATS = [
 ]
 
 const REVIEWS = [
-  { name: 'I.C Licitação', rating: 5, text: 'Tive uma excelente experiência! O Fábio foi extremamente prestativo, educado e disposto a ajudar. Emissão do seguro rápida e eficiente!', color: '#1C3A5E' },
-  { name: 'Monique Barros', rating: 5, text: 'São profissionais que transmitem confiança, atenção e transparência em cada atendimento. Recomendo de coração pelo profissionalismo e dedicação.', color: '#E8572A' },
-  { name: 'Edílson Lobo', rating: 5, text: 'Ótima experiência. Atendimento muito atencioso, consultivo, diversos esclarecimentos, soluções rápidas contemplando os prazos apertados do segmento.', color: '#2563EB' },
-  { name: 'Renata Nadur', rating: 5, text: 'Super atenciosos e na hora do aperto eles tentam fazer tudo pelos clientes. Excelente trabalho.', color: '#7C3AED' },
-  { name: 'Adilson Hanauer', rating: 5, text: 'Empresa ágil e comprometida. Recomendo.', color: '#059669' },
+  { name: 'I.C Licitação',   initials: 'IC', rating: 5, time: 'há 2 semanas', text: 'Tive uma excelente experiência! O Fábio foi extremamente prestativo, educado e disposto a ajudar. Emissão do seguro rápida e eficiente!', color: '#1C3A5E' },
+  { name: 'Monique Barros',  initials: 'MB', rating: 5, time: 'há 2 semanas', text: 'São profissionais que transmitem confiança, atenção e transparência em cada atendimento. Recomendo de coração pelo profissionalismo e dedicação.', color: '#E8572A' },
+  { name: 'Edílson Lobo',    initials: 'EL', rating: 5, time: 'há 2 semanas', text: 'Ótima experiência. Atendimento muito atencioso, consultivo, diversos esclarecimentos, soluções rápidas contemplando os prazos apertados do segmento.', color: '#2563EB' },
+  { name: 'Renata Nadur',    initials: 'RN', rating: 5, time: 'há 2 semanas', text: 'Super atenciosos e na hora do aperto eles tentam fazer tudo pelos clientes. Excelente trabalho.', color: '#7C3AED' },
+  { name: 'Adilson Hanauer', initials: 'AH', rating: 5, time: 'há 2 semanas', text: 'Empresa ágil e comprometida. Recomendo.', color: '#059669' },
 ]
 
+const MAPS_URL = 'https://share.google/AtTRA9nk7u7cOrOaa'
 
 function ContactForm() {
   const [status, setStatus] = useState<'idle'|'sending'|'ok'|'err'>('idle')
@@ -77,9 +78,124 @@ function ContactForm() {
   )
 }
 
-export default function Home() {
-  const [reviewIdx, setReviewIdx] = useState(0)
+function ReviewCarousel() {
+  const [current, setCurrent] = useState(0)
+  const [visible, setVisible] = useState(3)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const total = REVIEWS.length
 
+  useEffect(() => {
+    function update() {
+      setVisible(window.innerWidth >= 900 ? 3 : window.innerWidth >= 600 ? 2 : 1)
+    }
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
+
+  const maxIdx = Math.max(0, total - visible)
+
+  const goTo = useCallback((idx: number) => {
+    setCurrent(Math.max(0, Math.min(idx, maxIdx)))
+  }, [maxIdx])
+
+  const next = useCallback(() => goTo(current >= maxIdx ? 0 : current + 1), [current, maxIdx, goTo])
+  const prev = () => goTo(current <= 0 ? maxIdx : current - 1)
+
+  const startAuto = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(next, 4500)
+  }, [next])
+
+  const stopAuto = () => { if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null } }
+
+  useEffect(() => { startAuto(); return stopAuto }, [startAuto])
+
+  const pct = visible > 0 ? current * (100 / visible) : 0
+
+  return (
+    <section id="google-reviews" className="py-16" style={{background:'#F8F9FA'}}>
+      <div className="container">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <div className="flex justify-center mb-3">
+            <svg height="22" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+              <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+              <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+              <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
+              <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
+              <path fill="#EA4335" d="M255.27 54.04l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
+              <path fill="#4285F4" d="M35.29 41.41V32h31.4c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C15.96 69.35.5 54.4.5 35.28.5 16.16 15.96 1.21 34.99 1.21c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.18.27z"/>
+            </svg>
+          </div>
+          <div className="text-5xl font-extrabold text-fg-navy">5.0</div>
+          <div className="flex justify-center gap-1 my-2">
+            {[...Array(5)].map((_, i) => <span key={i} className="text-yellow-400 text-xl">★</span>)}
+          </div>
+          <p className="text-sm text-gray-500">Baseado em {total} avaliações no Google</p>
+          <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
+            className="inline-block mt-4 px-5 py-2.5 bg-fg-orange text-white text-sm font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+            Ver no Google Maps
+          </a>
+        </div>
+
+        {/* Carousel */}
+        <div className="relative"
+          onMouseEnter={stopAuto}
+          onMouseLeave={startAuto}>
+          <div className="overflow-hidden rounded">
+            <div className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${pct}%)` }}>
+              {REVIEWS.map(r => (
+                <div key={r.name} className="flex-shrink-0 px-2.5 box-border"
+                  style={{ width: `${100 / visible}%` }}>
+                  <div className="bg-white rounded-xl p-5 shadow-sm h-full flex flex-col gap-2.5">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                        style={{ background: r.color }}>{r.initials}</div>
+                      <div>
+                        <div className="font-semibold text-fg-navy text-sm">{r.name}</div>
+                        <div className="text-xs text-gray-400">{r.time}</div>
+                      </div>
+                    </div>
+                    <div className="flex gap-0.5">
+                      {[...Array(r.rating)].map((_, i) => <span key={i} className="text-yellow-400 text-sm">★</span>)}
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed flex-1">"{r.text}"</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrows */}
+          <button onClick={() => { stopAuto(); prev(); startAuto() }}
+            aria-label="Avaliação anterior"
+            className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-fg-navy hover:bg-fg-navy hover:text-white transition-colors text-lg">
+            ‹
+          </button>
+          <button onClick={() => { stopAuto(); next(); startAuto() }}
+            aria-label="Próxima avaliação"
+            className="absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-fg-navy hover:bg-fg-navy hover:text-white transition-colors text-lg">
+            ›
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center items-center gap-1.5 mt-6">
+          {REVIEWS.map((_, i) => (
+            <button key={i} onClick={() => { stopAuto(); goTo(i); startAuto() }}
+              aria-label={`Avaliação ${i + 1}`}
+              className="h-2 rounded-full transition-all duration-300"
+              style={{ width: i === current ? 24 : 8, background: i === current ? '#E8572A' : '#D1D5DB' }} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default function Home() {
   return (
     <>
       <Helmet>
@@ -110,12 +226,12 @@ export default function Home() {
               </p>
               <div className="flex gap-3 flex-wrap mb-4">
                 <a href={WA_URL} target="_blank" rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-fg-orange text-white font-bold rounded-lg hover:bg-orange-700 transition-all hover:-translate-y-0.5 hover:shadow-lg">
+                  className="inline-block px-6 py-3 bg-fg-orange text-white font-bold rounded-lg hover:bg-orange-700 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
                   Solicitar análise gratuita
                 </a>
                 <a href="#como-funciona"
                   onClick={e => { e.preventDefault(); document.getElementById('como-funciona')?.scrollIntoView({behavior:'smooth'}) }}
-                  className="inline-block px-6 py-3 border-2 border-fg-navy text-fg-navy font-bold rounded-lg hover:bg-fg-navy hover:text-white transition-all">
+                  className="inline-block px-6 py-3 border-2 border-fg-navy text-fg-navy font-bold rounded-lg hover:bg-fg-navy hover:text-white transition-all duration-200 cursor-pointer">
                   Como funciona
                 </a>
               </div>
@@ -170,8 +286,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {MODALIDADES.map(m => (
               <Link key={m.slug} to={m.slug}
-                className="group bg-fg-bg border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div className="text-3xl mb-3" aria-hidden="true">{m.icon}</div>
+                className="group bg-fg-bg border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                <div className="text-3xl mb-2" aria-hidden="true">{m.icon}</div>
+                <span className="inline-block text-xs font-semibold text-fg-orange bg-orange-50 rounded-full px-2 py-0.5 mb-2">{m.badge}</span>
                 <h3 className="text-base font-bold text-fg-navy mb-2">{m.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.desc}</p>
                 <span className="text-sm font-semibold text-fg-orange group-hover:underline">Saiba mais →</span>
@@ -187,33 +304,42 @@ export default function Home() {
           <div className="text-center mb-12">
             <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Processo</span>
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Como funciona</h2>
+            <p className="text-gray-500 mt-2 text-sm">Da solicitação à apólice em mãos — tudo digital</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { n: '1', title: 'Analisamos a exigência', desc: 'Identificamos o tipo de Seguro Garantia necessário, o valor e o prazo da apólice conforme a lei.' },
-              { n: '2', title: 'Cotamos com 25+ seguradoras', desc: 'Buscamos a melhor taxa entre nossas seguradoras parceiras para o seu perfil e contrato.' },
-              { n: '3', title: 'Apólice em até 2 horas', desc: 'Emissão expressa para você não perder prazo. Enviamos por e-mail e WhatsApp.' },
+              { icon: '📋', n: '1', title: 'Analisamos a exigência', desc: 'Identificamos o tipo de Seguro Garantia necessário, o valor e o prazo da apólice conforme a lei.' },
+              { icon: '🔍', n: '2', title: 'Cotamos com 25+ seguradoras', desc: 'Buscamos a melhor taxa entre nossas seguradoras parceiras para o seu perfil e contrato.' },
+              { icon: '⚡', n: '3', title: 'Apólice em até 2 horas', desc: 'Emissão expressa para você não perder prazo. Enviamos por e-mail e WhatsApp.' },
             ].map(s => (
-              <div key={s.n} className="bg-white rounded-2xl p-8 text-center shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-fg-navy text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">{s.n}</div>
+              <div key={s.n} className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-4xl mb-3">{s.icon}</div>
+                <div className="w-8 h-8 rounded-full bg-fg-orange text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4">{s.n}</div>
                 <h3 className="font-bold text-fg-navy mb-2">{s.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-fg-orange text-white font-bold rounded-lg hover:bg-orange-700 hover:shadow-lg transition-all duration-200">
+              Solicitar análise gratuita →
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* STATS NAVY */}
-      <section className="py-16 bg-fg-navy">
+      {/* VANTAGENS */}
+      <section id="vantagens" className="py-16 bg-fg-navy">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
             {[
-              { value: '2h', label: 'Tempo médio de emissão' },
-              { value: '25+', label: 'Seguradoras parceiras para melhor taxa' },
-              { value: '100%', label: 'Atendimento digital em todo o Brasil' },
+              { value: '2h', label: 'Tempo médio de emissão', icon: '⚡' },
+              { value: '25+', label: 'Seguradoras parceiras para melhor taxa', icon: '🤝' },
+              { value: '100%', label: 'Atendimento digital em todo o Brasil', icon: '🇧🇷' },
             ].map(s => (
-              <div key={s.value}>
+              <div key={s.value} className="p-4">
+                <div className="text-3xl mb-2">{s.icon}</div>
                 <div className="text-5xl font-bold mb-2">{s.value}</div>
                 <div className="text-blue-200 text-sm">{s.label}</div>
               </div>
@@ -223,54 +349,38 @@ export default function Home() {
       </section>
 
       {/* REVIEWS */}
-      <section className="py-20 bg-white">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-10">
-            <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Avaliações</span>
-            <h2 className="text-3xl font-extrabold text-fg-navy mt-2">O que nossos clientes dizem</h2>
-            <div className="flex justify-center items-center gap-2 mt-2">
-              <span className="text-yellow-400 text-lg">★★★★★</span>
-              <span className="text-sm text-gray-500">5.0 no Google</span>
-            </div>
-          </div>
-          <div className="relative overflow-hidden">
-            <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${reviewIdx * 100}%)` }}>
-              {REVIEWS.map(r => (
-                <div key={r.name} className="min-w-full px-4">
-                  <div className="bg-fg-bg rounded-2xl p-8 text-center">
-                    <div className="w-12 h-12 rounded-full text-white font-bold text-lg flex items-center justify-center mx-auto mb-4"
-                      style={{ background: r.color }}>{r.name[0]}</div>
-                    <p className="font-bold text-fg-navy mb-1">{r.name}</p>
-                    <p className="text-yellow-400 text-sm mb-3">★★★★★</p>
-                    <p className="text-gray-600 text-sm leading-relaxed max-w-md mx-auto">"{r.text}"</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="flex justify-center gap-2 mt-6">
-            {REVIEWS.map((_, i) => (
-              <button key={i} onClick={() => setReviewIdx(i)} aria-label={`Ver avaliação ${i+1}`}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${i === reviewIdx ? 'bg-fg-orange' : 'bg-gray-300'}`} />
-            ))}
-          </div>
-          <div className="text-center mt-6">
-            <a href="https://share.google/AtTRA9nk7u7cOrOaa" target="_blank" rel="noopener noreferrer"
-              className="text-sm text-fg-orange font-semibold hover:underline">Ver no Google Maps →</a>
-          </div>
-        </div>
-      </section>
+      <ReviewCarousel />
 
-      {/* EQUIPE */}
-      <section className="py-20 bg-fg-bg">
-        <div className="container max-w-3xl text-center">
-          <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Quem somos</span>
-          <h2 className="text-3xl font-extrabold text-fg-navy mt-2 mb-6">Fábio & Geisa Lima</h2>
-          <img src="/couple-new.webp" alt="Fábio e Geisa Lima, fundadores da F&G Corretora de Seguro Garantia"
-            className="rounded-2xl mx-auto mb-6 max-w-md w-full" width="640" height="480" loading="lazy" />
-          <p className="text-gray-600 leading-relaxed">
-            Fundadores da F&G Corretora, especializados exclusivamente em Seguro Garantia. Mais de 10 anos atendendo empresas em licitações, contratos públicos e processos judiciais em todo o Brasil.
-          </p>
+      {/* QUEM SOMOS */}
+      <section id="quem-somos" className="py-20 bg-fg-bg">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Nossa equipe</span>
+              <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Fábio &amp; Geisa Lima</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <img src="/couple-new.webp" alt="Fábio e Geisa Lima, fundadores da F&G Corretora de Seguro Garantia"
+                className="rounded-2xl w-full shadow-md" width="640" height="480" loading="lazy" />
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-5">
+                  Fundadores da F&G Corretora, especializados exclusivamente em Seguro Garantia. Mais de 10 anos atendendo empresas em licitações, contratos públicos e processos judiciais em todo o Brasil.
+                </p>
+                <ul className="space-y-3">
+                  {['Especialistas em Seguro Garantia','Atendimento 100% dedicado','Parceiros Tokio, AXA, Pottencial e mais','Emissão em até 2 horas'].map(item => (
+                    <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
+                      <span className="w-5 h-5 rounded-full bg-fg-orange text-white text-xs flex items-center justify-center font-bold flex-shrink-0">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                  className="inline-block mt-6 px-6 py-3 bg-fg-orange text-white font-bold rounded-lg hover:bg-orange-700 transition-colors">
+                  Falar com a equipe
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
