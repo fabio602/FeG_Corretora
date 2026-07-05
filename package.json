@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/build-legacy.mjs",
     "lint": "oxlint",
-    "preview": "vite preview",
-    "postbuild": "node scripts/postbuild-seo.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.7",
