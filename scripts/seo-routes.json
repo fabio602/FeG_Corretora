@@ -1,0 +1,92 @@
+{
+  "home": {
+    "slug": "",
+    "title": "Seguro Garantia | Emissão em até 2h | F&G Corretora — Boituva SP",
+    "description": "F&G Corretora emite Seguro Garantia em até 2 horas. Licitante, Execução, Judicial, Locatícia, Adicional e Energia. Parceiros: Tokio, AXA, Pottencial. Boituva SP.",
+    "canonical": "https://fegsegurogarantia.com.br/",
+    "og_title": "Seguro Garantia | Emissão em até 2h | F&G Corretora",
+    "og_description": "Emitimos Seguro Garantia em até 2 horas. 6 modalidades. Parceiros: Tokio, AXA, Pottencial. F&G Corretora — Boituva SP.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-garantia-licitante": {
+    "slug": "seguro-garantia-licitante",
+    "title": "Seguro Garantia Licitante (Proposta) | Lei 14.133 | F&G",
+    "description": "Emitimos Seguro Garantia Licitante em até 2 horas. Para licitações públicas sob a Lei 14.133/2021. F&G Corretora — Boituva SP.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-garantia-licitante",
+    "og_title": "Seguro Garantia Licitante | Lei 14.133/2021 | F&G",
+    "og_description": "Emitimos Seguro Garantia Licitante em até 2 horas. Para licitações públicas sob a Lei 14.133/2021.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-garantia-execucao-contrato": {
+    "slug": "seguro-garantia-execucao-contrato",
+    "title": "Seguro Garantia de Execução de Contrato (Performance) | F&G",
+    "description": "Seguro Garantia de Execução de Contrato para obras, fornecimento e serviços. Emissão em até 2 horas. F&G Corretora.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-garantia-execucao-contrato",
+    "og_title": "Seguro Garantia Execução de Contrato | Performance Bond | F&G",
+    "og_description": "Garantia de Execução de Contrato para obras e serviços. Emissão em até 2 horas. F&G Corretora.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-garantia-judicial": {
+    "slug": "seguro-garantia-judicial",
+    "title": "Seguro Garantia Judicial | Depósito Recursal e Ações | F&G",
+    "description": "Substitua o depósito recursal por Seguro Garantia Judicial. Aceito em execuções fiscais e trabalhistas. F&G Corretora.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-garantia-judicial",
+    "og_title": "Seguro Garantia Judicial | Depósito Recursal | F&G",
+    "og_description": "Substitua o depósito recursal por Seguro Garantia Judicial. Aceito em execuções fiscais e trabalhistas.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-garantia-locaticia": {
+    "slug": "seguro-garantia-locaticia",
+    "title": "Garantia Locatícia | Seguro Garantia de Aluguel | F&G",
+    "description": "Substitua fiador e caução pelo Seguro Garantia Locatício. Aprovação rápida para locação comercial. F&G Corretora.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-garantia-locaticia",
+    "og_title": "Garantia Locatícia | Sem Fiador, Sem Caução | F&G",
+    "og_description": "Substitua fiador e caução pelo Seguro Garantia Locatício. Aprovação rápida. F&G Corretora.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-garantia-adicional": {
+    "slug": "seguro-garantia-adicional",
+    "title": "Seguro Garantia Adicional | Obras Públicas e TCU | F&G",
+    "description": "Seguro Garantia Adicional para propostas abaixo de 85% do valor de referência. Lei 14.133/21 art. 59, § 5º. F&G Corretora.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-garantia-adicional",
+    "og_title": "Seguro Garantia Adicional | Art. 59 § 5º Lei 14.133 | F&G",
+    "og_description": "Garantia Adicional para propostas abaixo de 85% do valor de referência. Emissão expressa. F&G Corretora.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-garantia-energia": {
+    "slug": "seguro-garantia-energia",
+    "title": "Seguro Garantia Compra e Venda de Energia | CCEE | F&G",
+    "description": "Seguro Garantia de Compra e Venda de Energia para agentes da CCEE. Substitui aportes financeiros. F&G Corretora.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-garantia-energia",
+    "og_title": "Seguro Garantia de Energia | CCEE Mercado Livre | F&G",
+    "og_description": "Garantia para operações de compra e venda de energia no mercado livre. Substitui depósito de margem.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "perguntas-frequentes": {
+    "slug": "perguntas-frequentes",
+    "title": "Perguntas Frequentes sobre Seguro Garantia | F&G Corretora",
+    "description": "Tire todas as suas dúvidas sobre Seguro Garantia: o que é, como funciona, custo, prazo de emissão e modalidades. F&G Corretora.",
+    "canonical": "https://fegsegurogarantia.com.br/perguntas-frequentes",
+    "og_title": "FAQ Seguro Garantia | Perguntas e Respostas | F&G",
+    "og_description": "Dúvidas sobre Seguro Garantia respondidas. Custo, prazo, modalidades e como contratar. F&G Corretora.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "blog": {
+    "slug": "blog",
+    "title": "Blog | Seguro Garantia e Mercado de Seguros | F&G Corretora",
+    "description": "Artigos e guias sobre Seguro Garantia, licitações, Lei 14.133/21 e mercado de seguros. F&G Corretora — Boituva SP.",
+    "canonical": "https://fegsegurogarantia.com.br/blog",
+    "og_title": "Blog F&G Corretora | Seguro Garantia",
+    "og_description": "Artigos sobre Seguro Garantia, licitações e Lei 14.133/21. F&G Corretora.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  },
+  "seguro-cyber": {
+    "slug": "seguro-cyber",
+    "title": "Seguro Cyber | Proteção contra Ataques Digitais | F&G Corretora",
+    "description": "Seguro Cyber para empresas. Proteção contra ataques hackers, ransomware e vazamento de dados. F&G Corretora — Boituva SP.",
+    "canonical": "https://fegsegurogarantia.com.br/seguro-cyber",
+    "og_title": "Seguro Cyber | Proteção Digital para Empresas | F&G",
+    "og_description": "Proteja sua empresa contra ataques digitais. Seguro Cyber com cobertura completa. F&G Corretora.",
+    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
+  }
+}
