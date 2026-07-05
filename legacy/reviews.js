@@ -119,6 +119,7 @@
     /* Build dots */
     for (var i = 0; i < TOTAL; i++) {
       var d = document.createElement('button');
+      d.setAttribute("aria-label", "Avaliação " + (i + 1));
       d.style.cssText = 'border:none;border-radius:99px;height:8px;cursor:pointer;padding:0;transition:all .3s;background:#D1D5DB;width:8px;';
       (function(idx){ d.addEventListener('click', function(){ stopAuto(); goTo(idx); startAuto(); }); })(i);
       dots.appendChild(d);
