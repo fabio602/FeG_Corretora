@@ -1,0 +1,11 @@
+<svg viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Teal circle -->
+  <circle cx="40" cy="40" r="36" fill="#3d7a6e"/>
+  <!-- White pillar icon: top bar + 3 columns -->
+  <rect x="18" y="22" width="44" height="6" rx="2" fill="white"/>
+  <rect x="20" y="30" width="9" height="24" rx="2" fill="white"/>
+  <rect x="35" y="30" width="9" height="24" rx="2" fill="white"/>
+  <rect x="50" y="30" width="9" height="24" rx="2" fill="white"/>
+  <!-- "Swiss Re" text -->
+  <text x="90" y="50" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="36" fill="#3d7a6e">Swiss Re</text>
+</svg>

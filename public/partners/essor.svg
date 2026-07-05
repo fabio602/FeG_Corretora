@@ -1,0 +1,17 @@
+<svg viewBox="0 0 260 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- "essor" dark charcoal text -->
+  <text x="8" y="58" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="300" font-size="52" fill="#3a3a4a" letter-spacing="-1">essor</text>
+  <!-- "seguros" teal below -->
+  <text x="8" y="82" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="20" fill="#1d8a9a" letter-spacing="4">seguros</text>
+  <!-- Tangram S icon — teal geometric pieces -->
+  <g transform="translate(178,8)">
+    <!-- Dark teal pieces -->
+    <polygon points="0,0 36,0 36,18 18,18" fill="#0d6e7e"/>
+    <polygon points="36,0 72,0 72,36 36,36" fill="#1d9aae"/>
+    <polygon points="36,18 72,36 54,36" fill="#0d6e7e"/>
+    <polygon points="0,36 36,36 36,72 0,72" fill="#5ec8db"/>
+    <polygon points="36,36 54,36 72,72 36,72" fill="#1d9aae"/>
+    <polygon points="0,72 36,72 18,90 0,90" fill="#0d6e7e"/>
+    <polygon points="18,90 72,72 72,90" fill="#5ec8db"/>
+  </g>
+</svg>

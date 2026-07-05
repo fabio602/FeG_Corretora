@@ -1,0 +1,14 @@
+<svg viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue rounded square -->
+  <rect x="10" y="8" width="140" height="120" rx="14" fill="#009EE3"/>
+  <!-- White sail/wave stripes -->
+  <clipPath id="box"><rect x="10" y="8" width="140" height="120" rx="14"/></clipPath>
+  <g clip-path="url(#box)" fill="white">
+    <path d="M30,110 Q60,30 135,18 Q118,28 110,42 Q68,52 50,112 Z"/>
+    <path d="M52,118 Q82,36 150,22 Q134,32 126,48 Q84,58 68,118 Z"/>
+    <path d="M74,124 Q104,42 162,28 Q148,38 140,54 Q100,64 86,124 Z"/>
+  </g>
+  <!-- Text -->
+  <text x="80" y="158" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="28" fill="#1a1a1a">PORTO</text>
+  <text x="80" y="192" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="28" fill="#1a1a1a">SEGURO</text>
+</svg>

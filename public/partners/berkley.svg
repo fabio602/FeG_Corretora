@@ -1,0 +1,17 @@
+<svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark green circle -->
+  <circle cx="50" cy="50" r="46" fill="#2d6a4f"/>
+  <!-- "b" letterform inside -->
+  <text x="30" y="68" font-family="Georgia,serif" font-weight="700" font-size="52" fill="white">b</text>
+  <!-- Small owl eyes inside the b bowl -->
+  <circle cx="51" cy="58" r="5" fill="#2d6a4f"/>
+  <circle cx="62" cy="58" r="5" fill="#2d6a4f"/>
+  <circle cx="51" cy="58" r="2.5" fill="white"/>
+  <circle cx="62" cy="58" r="2.5" fill="white"/>
+  <!-- Vertical divider -->
+  <line x1="108" y1="20" x2="108" y2="80" stroke="#2d6a4f" stroke-width="1"/>
+  <!-- Stacked text -->
+  <text x="118" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" fill="#2d6a4f">Berkley</text>
+  <text x="118" y="60" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" fill="#2d6a4f">Brasil</text>
+  <text x="118" y="78" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="13" fill="#2d6a4f">Seguros</text>
+</svg>

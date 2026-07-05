@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fg-navy: #1C3A5E;
+  --color-fg-orange: #E8572A;
+  --color-fg-bg: #FAFAF8;
+}
+
+:root {
+  --fg-navy: #1C3A5E;
+  --fg-orange: #E8572A;
+  --fg-bg: #FAFAF8;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--fg-bg); color: #1C3A5E; font-family: system-ui, -apple-system, sans-serif; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }

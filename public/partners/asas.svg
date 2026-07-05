@@ -1,0 +1,13 @@
+<svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red circle -->
+  <circle cx="50" cy="50" r="46" fill="#c0122a"/>
+  <!-- White curved wing stripes inside circle -->
+  <clipPath id="circ"><circle cx="50" cy="50" r="44"/></clipPath>
+  <g clip-path="url(#circ)" fill="white">
+    <path d="M18,72 Q38,30 80,18 Q72,24 68,30 Q38,40 24,76 Z"/>
+    <path d="M26,80 Q46,38 88,26 Q80,32 76,38 Q46,48 32,84 Z"/>
+    <path d="M35,88 Q55,46 96,34 Q88,40 84,46 Q54,56 41,92 Z"/>
+  </g>
+  <!-- "ASAS" dark navy, spaced -->
+  <text x="112" y="62" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="46" fill="#1a2540" letter-spacing="6">ASAS</text>
+</svg>
