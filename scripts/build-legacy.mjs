@@ -4,13 +4,7 @@
  * Monta dist/ a partir do bundle compilado "perfeito" (sem recompilar via Vite).
  * Usado como script "build" no package.json.
  *
- * O que faz:
- *  1. Limpa e recria dist/
- *  2. Copia o bundle antigo: assets/index-NhH1a0sw.js + assets/index-WV0uOuMe.css
- *  3. Copia os scripts de injeção: hero-v4.js, reviews.js, ui-fixes.js, scroll-top.js
- *  4. Copia todos os arquivos de public/ (imagens, .htaccess, robots.txt, etc.)
- *  5. Escreve dist/index.html usando o index.html "perfeito" salvo em legacy/
- *  6. Gera dist/<rota>/index.html para cada rota em seo-routes.json (SEO completo)
+ * Para trocar o ID do GA4: altere GA_ID abaixo e reimplante.
  */
 
 import {
@@ -25,6 +19,41 @@ const ROOT    = join(__dirname, '..')
 const DIST    = join(ROOT, 'dist')
 const PUBLIC  = join(ROOT, 'public')
 const LEGACY  = join(ROOT, 'legacy')
+
+// ── Google Analytics 4 ───────────────────────────────────────────────────────
+// Troque G-XXXXXXXXXX pelo seu Measurement ID real e reimplante.
+const GA_ID = 'G-XXXXXXXXXX'
+
+const GA4_SNIPPET = `
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_ID}', {send_page_view: false});
+  </script>
+  <script src="/ga4-spa.js" defer></script>`
+
+/** Injeta o snippet GA4 antes de </head> em qualquer HTML que ainda não o tenha. */
+function injectGA4(html) {
+  if (html.includes('gtag(') || html.includes('googletagmanager')) return html
+  return html.replace('</head>', GA4_SNIPPET + '\n</head>')
+}
+
+/** Percorre um diretório e injeta GA4 em todos os .html encontrados. */
+function injectGA4InDir(dir) {
+  for (const entry of readdirSync(dir)) {
+    const p = join(dir, entry)
+    if (statSync(p).isDirectory()) {
+      injectGA4InDir(p)
+    } else if (entry.endsWith('.html')) {
+      const original = readFileSync(p, 'utf-8')
+      const updated  = injectGA4(original)
+      if (updated !== original) writeFileSync(p, updated)
+    }
+  }
+}
 
 // ── 1. Limpa e recria dist/ ─────────────────────────────────────────────────
 console.log('🗑️  Limpando dist/…')
@@ -54,15 +83,14 @@ function copyDir(src, dest) {
 copyDir(PUBLIC, DIST)
 console.log('✅ public/ copiado para dist/')
 
-// ── 5. Escreve dist/index.html exato (home) ─────────────────────────────────
+// ── 5. Escreve dist/index.html (home) ───────────────────────────────────────
 const homeHtml = readFileSync(join(LEGACY, 'index.html'), 'utf-8')
-writeFileSync(join(DIST, 'index.html'), homeHtml)
+writeFileSync(join(DIST, 'index.html'), injectGA4(homeHtml))
 console.log('✅ dist/index.html (home)')
 
-// ── 6. Gera dist/<rota>/index.html com SEO completo ─────────────────────────
+// ── 6. Gera dist/<rota>/index.html com SEO + GA4 ───────────────────────────
 const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-8'))
 
-// Bloco de assets fixo (idêntico ao index.html perfeito)
 const ASSET_BLOCK = `  <script src="/scroll-top.js" defer></script>
   <script type="module" crossorigin src="/assets/index-NhH1a0sw.js"></script>
   <link rel="preload" as="style" href="/assets/index-WV0uOuMe.css">
@@ -101,6 +129,7 @@ function buildRouteHtml({ title, description, canonical, og_title, og_descriptio
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="64x64" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+${GA4_SNIPPET}
 
 ${ASSET_BLOCK}
 </head>
@@ -119,12 +148,17 @@ for (const [, route] of Object.entries(routes)) {
   console.log(`✅ dist/${route.slug}/index.html`)
 }
 
-console.log('\n🎉 Build legado concluído com sucesso!')
-
-// ── Blog listing: sobrescreve dist/blog/index.html com página estática ───────
+// ── Blog listing ─────────────────────────────────────────────────────────────
 const blogListing = join(LEGACY, 'blog-index.html')
 if (existsSync(blogListing)) {
   mkdirSync(join(DIST, 'blog'), { recursive: true })
-  copyFileSync(blogListing, join(DIST, 'blog', 'index.html'))
-  console.log('✅ dist/blog/index.html (listing estático)')
+  const listing = readFileSync(blogListing, 'utf-8')
+  writeFileSync(join(DIST, 'blog', 'index.html'), injectGA4(listing))
+  console.log('✅ dist/blog/index.html (listing)')
 }
+
+// ── 7. Injeta GA4 em todos os HTMLs estáticos (artigos do blog, etc.) ────────
+injectGA4InDir(DIST)
+console.log('✅ GA4 injetado em todos os HTMLs')
+
+console.log('\n🎉 Build legado concluído com sucesso!')
