@@ -14,30 +14,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="article:author" content="fabio-lima" />
   <meta name="theme-color" content="#1C3A5E" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="64x64" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "O que é Seguro Garantia? Entenda de forma simples como funciona",
-    "description": "Guia simples e direto: o que é Seguro Garantia, para que serve, quem são as partes, quanto custa e quando sua empresa precisa de um.",
-    "datePublished": "2026-07-08",
-    "dateModified": "2026-07-08",
-    "author": {"@type": "Organization", "name": "F&G Corretora de Seguros"},
-    "publisher": {
-      "@type": "Organization",
-      "name": "F&G Corretora de Seguros",
-      "logo": {"@type": "ImageObject", "url": "https://fegsegurogarantia.com.br/logo-shield.png"}
-    },
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fegsegurogarantia.com.br/blog/o-que-e-seguro-garantia"}
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400&family=Inter:wght@400;500;600;700;800" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy: #1C3A5E; --orange: #E8572A; --bg: #FAFAF8; --text: #1F2937; --muted: #6B7280; --border: #E5E7EB; }
@@ -155,6 +139,31 @@
     blockquote p { margin-bottom: 0; font-size: 17px; }
     /* Table overflow on mobile */
     .comparison { overflow-x: auto; }
+  
+    /* ── Editorial redesign ─────────────────────────────────── */
+    h1 { font-family: 'Lora', serif !important; font-size: clamp(24px, 4vw, 38px) !important; font-weight: 700 !important; line-height: 1.2 !important; margin-bottom: 0 !important; }
+    .article-cat { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .13em; margin-bottom: 14px; }
+    .article-byline { font-size: 13px; color: var(--muted); margin: 10px 0 36px; line-height: 1.5; }
+    .article-meta { display: none; }
+    .author-box { border-top: 1px solid var(--border); padding-top: 28px; margin: 48px 0 0; display: flex; gap: 18px; align-items: flex-start; }
+    .author-photo-slot { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: #F9FAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .author-photo-slot span { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .04em; }
+    .author-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .author-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    /* ── Minimal timeline ────────────────────────────────────── */
+    .timeline { display: none !important; }
+    .timeline-v2 { position: relative; margin: 32px 0; }
+    .timeline-v2::before { content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
+    .tl2-item { display: flex; gap: 24px; padding-bottom: 28px; position: relative; }
+    .tl2-item:last-child { padding-bottom: 0; }
+    .tl2-num { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--muted); position: relative; z-index: 1; }
+    .tl2-highlight .tl2-num { border-color: var(--orange); background: var(--orange); color: #fff; }
+    .tl2-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--orange); margin-bottom: 5px; }
+    .tl2-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .tl2-highlight .tl2-title { color: var(--navy); }
+    .tl2-desc { font-size: 14px; color: #374151; line-height: 1.65; }
+    .tl2-list { margin: 10px 0; padding-left: 20px; }
+    .tl2-list li { font-size: 14px; margin-bottom: 4px; color: #374151; }
   </style>
 </head>
 <body>
@@ -187,7 +196,12 @@
     <span class="article-date">· 7 min de leitura</span>
   </div>
 
+  <p class="article-cat">Guia · Seguro Garantia</p>
+
+
   <h1>O que é Seguro Garantia? Entenda de forma simples como funciona</h1>
+  <p class="article-byline">Por Fábio Lima · 8 de julho de 2026 · 7 min de leitura</p>
+
 
   <p class="article-lead">Seguro Garantia é um seguro que <strong>substitui dinheiro parado</strong>. Em vez de a sua empresa depositar uma caução, imobilizar capital ou comprometer o limite bancário para provar que vai cumprir um contrato, uma seguradora emite uma apólice garantindo esse compromisso. Se a empresa não cumprir, a seguradora indeniza o beneficiário. Simples assim.</p>
 
@@ -326,6 +340,17 @@
     <summary>O Seguro Garantia devolve o dinheiro se nada acontecer?</summary>
     <div class="faq-body"><p>Não há dinheiro a devolver, porque nada foi imobilizado. A empresa paga só o prêmio (o custo do seguro), e é exatamente essa a vantagem sobre a caução em dinheiro.</p></div>
   </details>
+
+
+  <div class="author-box">
+    <div class="author-photo-slot" aria-label="Foto do autor">
+      <span aria-hidden="true">FL</span>
+    </div>
+    <div>
+      <p class="author-name">Fábio Lima</p>
+      <p class="author-desc">Corretor especializado em Seguro Garantia, fundador da F&amp;G Seguro Garantia.</p>
+    </div>
+  </div>
 
   <div class="cta-banner">
     <h2>Serve para o seu caso?</h2>

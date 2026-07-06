@@ -14,30 +14,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="article:author" content="fabio-lima" />
   <meta name="theme-color" content="#1C3A5E" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="64x64" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Seguro Garantia para depósito recursal: como funciona e a linha do tempo do processo",
-    "description": "Como substituir o depósito recursal trabalhista por Seguro Garantia Judicial, o que exige o Ato Conjunto TST 1/2019 e a linha do tempo completa do processo.",
-    "datePublished": "2026-07-07",
-    "dateModified": "2026-07-07",
-    "author": {"@type": "Organization", "name": "F&G Corretora de Seguros"},
-    "publisher": {
-      "@type": "Organization",
-      "name": "F&G Corretora de Seguros",
-      "logo": {"@type": "ImageObject", "url": "https://fegsegurogarantia.com.br/logo-shield.png"}
-    },
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fegsegurogarantia.com.br/blog/seguro-garantia-deposito-recursal"}
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400&family=Inter:wght@400;500;600;700;800" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -204,6 +188,31 @@
     blockquote p { margin-bottom: 0; font-size: 17px; }
     /* Table overflow on mobile */
     .comparison { overflow-x: auto; }
+  
+    /* ── Editorial redesign ─────────────────────────────────── */
+    h1 { font-family: 'Lora', serif !important; font-size: clamp(24px, 4vw, 38px) !important; font-weight: 700 !important; line-height: 1.2 !important; margin-bottom: 0 !important; }
+    .article-cat { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .13em; margin-bottom: 14px; }
+    .article-byline { font-size: 13px; color: var(--muted); margin: 10px 0 36px; line-height: 1.5; }
+    .article-meta { display: none; }
+    .author-box { border-top: 1px solid var(--border); padding-top: 28px; margin: 48px 0 0; display: flex; gap: 18px; align-items: flex-start; }
+    .author-photo-slot { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: #F9FAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .author-photo-slot span { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .04em; }
+    .author-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .author-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    /* ── Minimal timeline ────────────────────────────────────── */
+    .timeline { display: none !important; }
+    .timeline-v2 { position: relative; margin: 32px 0; }
+    .timeline-v2::before { content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
+    .tl2-item { display: flex; gap: 24px; padding-bottom: 28px; position: relative; }
+    .tl2-item:last-child { padding-bottom: 0; }
+    .tl2-num { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--muted); position: relative; z-index: 1; }
+    .tl2-highlight .tl2-num { border-color: var(--orange); background: var(--orange); color: #fff; }
+    .tl2-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--orange); margin-bottom: 5px; }
+    .tl2-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .tl2-highlight .tl2-title { color: var(--navy); }
+    .tl2-desc { font-size: 14px; color: #374151; line-height: 1.65; }
+    .tl2-list { margin: 10px 0; padding-left: 20px; }
+    .tl2-list li { font-size: 14px; margin-bottom: 4px; color: #374151; }
   </style>
 </head>
 <body>
@@ -236,7 +245,12 @@
     <span class="article-date">· 5 min de leitura</span>
   </div>
 
+  <p class="article-cat">Seguro Judicial · Trabalhista</p>
+
+
   <h1>Seguro Garantia para depósito recursal: como funciona e a linha do tempo do processo</h1>
+  <p class="article-byline">Por Fábio Lima · 7 de julho de 2026 · 5 min de leitura</p>
+
 
   <p class="article-lead">Sua empresa foi condenada em uma ação trabalhista e precisa recorrer? Antes de fazer o depósito recursal em dinheiro, saiba que a lei permite substituí-lo por uma apólice de Seguro Garantia Judicial, liberando o caixa da empresa durante todo o processo.</p>
 
@@ -329,6 +343,60 @@
     </li>
   </ul>
 
+  <div class="timeline-v2">
+    <div class="tl2-item">
+      <div class="tl2-num">1</div>
+      <div>
+        <p class="tl2-title">Condenação em 1ª instância</p>
+        <p class="tl2-desc">A empresa decide recorrer ao TRT. Para o recurso ordinário ser admitido, precisa garantir o juízo no valor tabelado pelo TST.</p>
+      </div>
+    </div>
+    <div class="tl2-item tl2-highlight">
+      <div class="tl2-num">2</div>
+      <div>
+        <p class="tl2-cat">F&amp;G atua aqui</p>
+        <p class="tl2-title">Contratação da apólice</p>
+        <p class="tl2-desc">Em vez de depositar em dinheiro, a empresa envia os dados do processo para a corretora. Na F&amp;G, o fluxo é:
+          <ol class="tl2-list">
+            <li>Recebemos o número do processo e os dados da empresa</li>
+            <li>Consultamos as seguradoras parceiras</li>
+            <li>Estruturamos a apólice conforme o Ato Conjunto 1/2019</li>
+            <li>Emitimos em até 2 horas</li>
+          </ol>
+          O advogado anexa a apólice ao recurso dentro do prazo recursal.
+        </p>
+      </div>
+    </div>
+    <div class="tl2-item">
+      <div class="tl2-num">3</div>
+      <div>
+        <p class="tl2-title">Recurso ao TRT em andamento</p>
+        <p class="tl2-desc">O caixa da empresa permanece livre. A apólice garante o juízo com renovação compulsória prevista nas condições até o fim do processo.</p>
+      </div>
+    </div>
+    <div class="tl2-item">
+      <div class="tl2-num">4</div>
+      <div>
+        <p class="tl2-title">Novo recurso (TST)</p>
+        <p class="tl2-desc">Se houver recurso de revista, um novo depósito é exigido. O processo se repete: nova apólice ou endosso, sem imobilizar dinheiro.</p>
+      </div>
+    </div>
+    <div class="tl2-item">
+      <div class="tl2-num">5</div>
+      <div>
+        <p class="tl2-title">Fase de execução</p>
+        <p class="tl2-desc">A garantia passa a ser o valor da condenação com acréscimo de 30% (Ato Conjunto 1/2019). A apólice substitui penhora de bens e bloqueio de contas.</p>
+      </div>
+    </div>
+    <div class="tl2-item">
+      <div class="tl2-num">6</div>
+      <div>
+        <p class="tl2-title">Desfecho</p>
+        <p class="tl2-desc"><strong>Decisão favorável:</strong> apólice extinta, empresa não desembolsou nada além do prêmio. <strong>Decisão desfavorável:</strong> empresa paga a condenação; somente se não pagar a seguradora deposita em juízo e cobra reembolso.</p>
+      </div>
+    </div>
+  </div>
+
   <h2>Quanto custa em comparação ao depósito</h2>
   <div class="comparison">
     <table>
@@ -397,6 +465,17 @@
     <summary>E se a empresa perder o processo?</summary>
     <div class="faq-body"><p>A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida — é uma garantia de liquidez para o processo.</p></div>
   </details>
+
+
+  <div class="author-box">
+    <div class="author-photo-slot" aria-label="Foto do autor">
+      <span aria-hidden="true">FL</span>
+    </div>
+    <div>
+      <p class="author-name">Fábio Lima</p>
+      <p class="author-desc">Corretor especializado em Seguro Garantia, fundador da F&amp;G Seguro Garantia.</p>
+    </div>
+  </div>
 
   <div class="cta-banner">
     <h2>Prazo correndo ou depósitos parados em juízo?</h2>

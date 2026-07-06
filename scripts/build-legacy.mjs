@@ -250,3 +250,67 @@ function updateSitemapWithBlog() {
   }
 }
 updateSitemapWithBlog()
+
+// ── 10. Article schema (JSON-LD) para artigos do blog ────────────────────────
+// Para adicionar outro autor: inclua entrada em scripts/blog-authors.json
+// e adicione <meta name="article:author" content="chave-do-autor"> no artigo.
+const authors = JSON.parse(readFileSync(join(__dirname, 'blog-authors.json'), 'utf-8'))
+
+function injectArticleSchema(html) {
+  // Skip if already has Article schema
+  if (html.includes('"@type": "Article"') || html.includes('"@type":"Article"')) return html
+
+  // Extract metadata from HTML
+  const titleM = html.match(/<title>([^<]+)<\/title>/)
+  const dateM  = html.match(/<time[^>]+datetime="([^"]+)"/)
+  const authM  = html.match(/<meta name="article:author" content="([^"]+)"/)
+  const canonM = html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/)
+  const descM  = html.match(/<meta name="description" content="([^"]+)"/)
+
+  if (!titleM || !dateM) return html
+
+  const authorKey = authM ? authM[1] : 'fabio-lima'
+  const author    = authors[authorKey] || authors['fabio-lima']
+
+  const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': titleM[1].replace(/ \| F&G$/, '').replace(/ \| F&amp;G$/, ''),
+    'description': descM ? descM[1] : '',
+    'datePublished': dateM[1],
+    'dateModified':  dateM[1],
+    'url': canonM ? canonM[1] : '',
+    'author': {
+      '@type': 'Person',
+      'name': author.name,
+      'jobTitle': author.jobTitle,
+      'url': author.url
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'F&G Seguro Garantia',
+      'url': 'https://fegsegurogarantia.com.br',
+      'logo': { '@type': 'ImageObject', 'url': 'https://fegsegurogarantia.com.br/logo-shield.png' }
+    },
+    'mainEntityOfPage': { '@type': 'WebPage', '@id': canonM ? canonM[1] : '' }
+  }, null, 2)
+
+  const tag = `  <script type="application/ld+json">\n${schema}\n  </script>`
+  return html.replace('</head>', tag + '\n</head>')
+}
+
+function injectArticleSchemaInBlogDir() {
+  const blogDir = join(DIST, 'blog')
+  if (!existsSync(blogDir)) return
+  for (const slug of readdirSync(blogDir)) {
+    const p = join(blogDir, slug, 'index.html')
+    if (!existsSync(p)) continue
+    const original = readFileSync(p, 'utf-8')
+    const updated = injectArticleSchema(original)
+    if (updated !== original) {
+      writeFileSync(p, updated)
+      console.log(`✅ Article schema → /blog/${slug}/`)
+    }
+  }
+}
+injectArticleSchemaInBlogDir()
