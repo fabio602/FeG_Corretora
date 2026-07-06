@@ -63,16 +63,16 @@
     .breadcrumb a { color: var(--navy); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
-    article { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+    article { max-width: 720px; margin: 0 auto; padding: 32px 24px 80px; }
     .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
     .tag { display: inline-block; background: #EFF6FF; color: #1D4ED8; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
     .article-date { font-size: 13px; color: var(--muted); }
     h1 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 16px; }
     .article-lead { font-size: 18px; color: #374151; line-height: 1.6; border-left: 4px solid var(--orange); padding-left: 16px; margin-bottom: 40px; }
     h2 { font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; color: var(--navy); margin: 40px 0 14px; padding-top: 8px; border-top: 2px solid var(--border); }
-    p { margin-bottom: 16px; }
+    p { margin-bottom: 18px; font-size: 17px; line-height: 1.75; }
     ul, ol { margin: 12px 0 16px 0; padding-left: 24px; }
-    li { margin-bottom: 8px; }
+    li { margin-bottom: 8px; font-size: 17px; }
     strong { font-weight: 600; }
     a { color: var(--navy); }
 
@@ -188,9 +188,26 @@
       .tl-num { width: 38px; height: 38px; font-size: 15px; }
       .timeline::before { left: 19px; }
     }
+  
+    /* Reading progress bar */
+    #reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--orange); width: 0%; z-index: 9999;
+      transition: width .08s linear; pointer-events: none;
+    }
+    /* Blockquote */
+    blockquote {
+      border-left: 4px solid var(--orange); margin: 24px 0;
+      padding: 12px 20px; background: #FFF7ED; border-radius: 0 8px 8px 0;
+      font-style: italic; color: #374151;
+    }
+    blockquote p { margin-bottom: 0; font-size: 17px; }
+    /* Table overflow on mobile */
+    .comparison { overflow-x: auto; }
   </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 
 <nav>
   <div class="nav-inner">
@@ -216,6 +233,7 @@
     <span class="tag">Seguro Judicial</span>
     <span class="tag">Trabalhista</span>
     <time class="article-date" datetime="2026-07-07">7 de julho de 2026</time>
+    <span class="article-date">· 5 min de leitura</span>
   </div>
 
   <h1>Seguro Garantia para depósito recursal: como funciona e a linha do tempo do processo</h1>
@@ -401,5 +419,17 @@
   </div>
 </footer>
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+
+<script>
+(function(){
+  var bar = document.getElementById('reading-progress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = Math.min(isNaN(pct) ? 0 : pct, 100) + '%';
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>

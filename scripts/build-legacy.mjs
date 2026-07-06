@@ -22,7 +22,7 @@ const LEGACY  = join(ROOT, 'legacy')
 
 // ── Google Analytics 4 ───────────────────────────────────────────────────────
 // Troque G-XXXXXXXXXX pelo seu Measurement ID real e reimplante.
-const GA_ID = 'G-XXXXXXXXXX'
+const GA_ID = 'G-ZER0B8WKQY'
 
 const GA4_SNIPPET = `
   <!-- Google Analytics 4 -->
@@ -162,3 +162,91 @@ injectGA4InDir(DIST)
 console.log('✅ GA4 injetado em todos os HTMLs')
 
 console.log('\n🎉 Build legado concluído com sucesso!')
+
+// ── 8. FAQPage schema JSON-LD para artigos do blog ───────────────────────────
+function stripHtmlTags(s) {
+  return s
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"')
+    .replace(/\s+/g, ' ').trim()
+}
+
+function injectFAQSchema(html) {
+  if (html.includes('"FAQPage"')) return html
+
+  const faqs = []
+  const detailsRe = /<details[\s\S]*?<\/details>/gi
+  let m
+  while ((m = detailsRe.exec(html)) !== null) {
+    const block = m[0]
+    const qm = /<summary[^>]*>([\s\S]*?)<\/summary>/i.exec(block)
+    const am = /<div class="faq-body"[^>]*>([\s\S]*?)<\/div>/i.exec(block)
+    if (qm && am) {
+      const q = stripHtmlTags(qm[1])
+      const a = stripHtmlTags(am[1])
+      if (q && a) faqs.push({ q, a })
+    }
+  }
+  if (faqs.length === 0) return html
+
+  const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(f => ({
+      '@type': 'Question',
+      'name': f.q,
+      'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+    }))
+  }, null, 2)
+
+  const tag = `  <script type="application/ld+json">\n${schema}\n  </script>`
+  return html.replace('</head>', tag + '\n</head>')
+}
+
+function injectFAQInBlogDir() {
+  const blogDir = join(DIST, 'blog')
+  if (!existsSync(blogDir)) return
+  for (const slug of readdirSync(blogDir)) {
+    const p = join(blogDir, slug, 'index.html')
+    if (!existsSync(p)) continue
+    const original = readFileSync(p, 'utf-8')
+    const updated = injectFAQSchema(original)
+    if (updated !== original) {
+      writeFileSync(p, updated)
+      console.log(`✅ FAQPage schema → /blog/${slug}/`)
+    }
+  }
+}
+injectFAQInBlogDir()
+
+// ── 9. Sitemap: auto-incluir artigos do blog ──────────────────────────────────
+function updateSitemapWithBlog() {
+  const sitemapPath = join(DIST, 'sitemap.xml')
+  if (!existsSync(sitemapPath)) { console.warn('⚠️  sitemap.xml não encontrado'); return }
+
+  const blogDir = join(DIST, 'blog')
+  if (!existsSync(blogDir)) return
+
+  let sitemap = readFileSync(sitemapPath, 'utf-8')
+  const newEntries = []
+
+  for (const slug of readdirSync(blogDir)) {
+    const articleHtml = join(blogDir, slug, 'index.html')
+    if (!existsSync(articleHtml)) continue
+    const html = readFileSync(articleHtml, 'utf-8')
+    const cm = html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/)
+    if (!cm) continue
+    const url = cm[1]
+    if (sitemap.includes(`<loc>${url}</loc>`)) continue
+    newEntries.push(`  <url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`)
+  }
+
+  if (newEntries.length > 0) {
+    sitemap = sitemap.replace('</urlset>', newEntries.join('\n') + '\n</urlset>')
+    writeFileSync(sitemapPath, sitemap)
+    console.log(`✅ sitemap.xml +${newEntries.length} artigo(s) do blog`)
+  } else {
+    console.log('✅ sitemap.xml já está atualizado')
+  }
+}
+updateSitemapWithBlog()

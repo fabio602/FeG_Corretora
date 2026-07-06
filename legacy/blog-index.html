@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Blog | Seguro Garantia e Mercado de Seguros | F&amp;G Corretora</title>
-  <meta name="description" content="Artigos e guias sobre Seguro Garantia, licitações, Lei 14.133/21 e mercado de seguros. F&G Corretora — Boituva SP." />
+  <title>Blog | Seguro Garantia, Licitações e Lei 14.133 | F&amp;G Corretora</title>
+  <meta name="description" content="Conteúdo técnico sobre Seguro Garantia, licitações e Lei 14.133/21. Artigos escritos por especialistas da F&G Corretora — Boituva SP." />
   <link rel="canonical" href="https://fegsegurogarantia.com.br/blog" />
-  <meta property="og:title" content="Blog F&amp;G Corretora | Seguro Garantia" />
-  <meta property="og:description" content="Artigos sobre Seguro Garantia, licitações e Lei 14.133/21." />
+  <meta property="og:title" content="Blog F&amp;G | Seguro Garantia" />
+  <meta property="og:description" content="Conteúdo técnico sobre Seguro Garantia, licitações e Lei 14.133/21." />
   <meta property="og:url" content="https://fegsegurogarantia.com.br/blog" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://fegsegurogarantia.com.br/logo-shield.png" />
@@ -20,39 +20,162 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy: #1C3A5E; --orange: #E8572A; --bg: #FAFAF8; --text: #1F2937; --muted: #6B7280; --border: #E5E7EB; }
+    :root {
+      --navy: #1C3A5E; --navy-dark: #142B46; --navy-light: #243F6B;
+      --orange: #E8572A; --bg: #FAFAF8; --text: #1F2937;
+      --muted: #6B7280; --border: #E5E7EB;
+    }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
     nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
     .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-box { width: 40px; height: 40px; background: var(--navy); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-box { width: 40px; height: 40px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .nav-logo-box img { width: 32px; height: 32px; object-fit: contain; }
     .nav-brand-name { font-weight: 700; color: var(--navy); font-size: 15px; line-height: 1; }
     .nav-brand-sub { font-size: 11px; color: var(--muted); font-weight: 500; }
-    .nav-cta { background: var(--orange); color: #fff; font-weight: 600; font-size: 14px; padding: 9px 18px; border-radius: 8px; text-decoration: none; }
+    .nav-cta { background: var(--orange); color: #fff; font-weight: 600; font-size: 14px; padding: 9px 18px; border-radius: 8px; text-decoration: none; transition: opacity .15s; }
     .nav-cta:hover { opacity: .85; }
 
-    .hero { background: var(--navy); color: #fff; padding: 56px 24px 48px; text-align: center; }
-    .hero h1 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 12px; }
-    .hero p { color: #CBD5E1; font-size: 16px; }
+    .page-header { background: var(--navy); padding: 56px 24px 52px; position: relative; overflow: hidden; }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(232,87,42,.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 30%, rgba(255,255,255,.04) 0%, transparent 60%);
+    }
+    .page-header-inner { max-width: 960px; margin: 0 auto; position: relative; }
+    .page-header-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,87,42,.2); color: #FDA987;
+      font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .page-header h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px; }
+    .page-header p { color: #94A3B8; font-size: 16px; line-height: 1.65; max-width: 540px; }
 
-    main { max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-    .card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+    main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .featured-label {
+      font-size: 11px; font-weight: 700; color: var(--orange);
+      text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .featured-label::before { content: ''; width: 20px; height: 2px; background: var(--orange); }
+
+    .featured-card {
+      display: grid; grid-template-columns: 280px 1fr; gap: 0;
+      background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: box-shadow .2s, transform .2s; margin-bottom: 40px;
+    }
+    .featured-card:hover { box-shadow: 0 12px 40px rgba(28,58,94,.13); transform: translateY(-2px); }
+
+    .featured-visual {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 240px;
+    }
+    .featured-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 70%, rgba(232,87,42,.25) 0%, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.07) 0%, transparent 45%);
+    }
+    .featured-visual .vis-icon { font-size: 64px; position: relative; z-index: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+    .featured-visual .vis-geo {
+      position: absolute; inset: 0; opacity: .07;
+      background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 28px);
+    }
+
+    .featured-body { padding: 32px 32px 28px; display: flex; flex-direction: column; }
+    .featured-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .featured-body h2 { font-size: 22px; font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 14px; }
+    .featured-body p { font-size: 15px; color: #4B5563; line-height: 1.65; flex: 1; margin-bottom: 20px; }
+    .featured-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .featured-meta { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+    .featured-meta time { font-weight: 500; }
+    .featured-read-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--orange); transition: gap .15s; }
+    .featured-card:hover .featured-read-more { gap: 10px; }
+
+    .tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: .03em; }
+    .tag-guide     { background: #F0FDF4; color: #166534; }
+    .tag-sg        { background: #EFF6FF; color: #1D4ED8; }
+    .tag-judicial  { background: #FFF7ED; color: #B45309; }
+    .tag-licitacao { background: #F5F3FF; color: #6D28D9; }
+
+    .grid-label {
+      font-size: 11px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .card {
+      background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+      text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
     .card:hover { box-shadow: 0 8px 32px rgba(28,58,94,.12); transform: translateY(-2px); }
-    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-    .card-tags { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
-    .tag { display: inline-block; background: #EFF6FF; color: #1D4ED8; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
-    .card h2 { font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 10px; }
-    .card p { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
-    .card-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .card-date { font-size: 12px; color: var(--muted); }
-    .card-link { font-size: 13px; font-weight: 600; color: var(--orange); }
 
-    footer { background: var(--navy); color: #94A3B8; padding: 32px 24px; }
+    .card-visual { height: 140px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .card-visual .vis-icon { font-size: 40px; position: relative; z-index: 1; }
+    .card-visual .vis-geo {
+      position: absolute; inset: 0; opacity: .08;
+      background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 20px);
+    }
+
+    .vis-judicial  { background: linear-gradient(135deg, #92400E, #B45309); }
+    .vis-licitacao { background: linear-gradient(135deg, #3730A3, #4F46E5); }
+    .vis-guide     { background: linear-gradient(135deg, #065F46, #059669); }
+    .vis-navy      { background: linear-gradient(135deg, #1C3A5E, #243F6B); }
+
+    .card-body { padding: 24px 24px 16px; flex: 1; display: flex; flex-direction: column; }
+    .card-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .card-body h2 { font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 10px; }
+    .card-body p { font-size: 13.5px; color: var(--muted); line-height: 1.6; flex: 1; }
+    .card-footer { padding: 14px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .card-meta { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+    .card-link { font-size: 13px; font-weight: 700; color: var(--orange); }
+    .meta-dot { width: 3px; height: 3px; background: var(--muted); border-radius: 50%; }
+
+    .cta-strip {
+      background: var(--navy); border-radius: 16px; padding: 40px;
+      margin-top: 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 100% at 90% 50%, rgba(232,87,42,.2) 0%, transparent 60%);
+    }
+    .cta-strip-text { position: relative; }
+    .cta-strip-text strong { display: block; font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .cta-strip-text p { font-size: 14px; color: #94A3B8; margin: 0; }
+    .cta-btn {
+      position: relative; flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange); color: #fff; font-weight: 700; font-size: 15px;
+      padding: 14px 26px; border-radius: 10px; text-decoration: none;
+      transition: opacity .15s, transform .15s; white-space: nowrap;
+    }
+    .cta-btn:hover { opacity: .9; transform: translateY(-1px); }
+
+    footer { background: var(--navy); color: #94A3B8; padding: 32px 24px; margin-top: 64px; }
     .footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; font-size: 13px; }
     .footer-inner a { color: #94A3B8; text-decoration: none; }
     .footer-inner a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-visual { min-height: 160px; }
+      .featured-body { padding: 24px; }
+      .featured-body h2 { font-size: 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .cta-strip { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .nav-cta { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -72,58 +195,105 @@
   </div>
 </nav>
 
-<div class="hero">
-  <h1>Blog F&amp;G</h1>
-  <p>Artigos sobre Seguro Garantia, licitações e Lei 14.133/21</p>
-</div>
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-eyebrow">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="5" height="5" rx="1"/><rect x="7" y="0" width="5" height="5" rx="1"/><rect x="0" y="7" width="5" height="5" rx="1"/><rect x="7" y="7" width="5" height="5" rx="1"/></svg>
+      Blog F&amp;G
+    </div>
+    <h1>Conteúdo técnico sobre<br>Seguro Garantia</h1>
+    <p>Licitações, Lei 14.133/21, garantias judiciais e instrumentos financeiros — direto da prática de quem emite apólices todo dia.</p>
+  </div>
+</header>
 
 <main>
-  <div class="grid">
-    <a class="card" href="/blog/o-que-e-seguro-garantia">
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag tag-guide">Guia</span>
-          <span class="tag">Seguro Garantia</span>
-        </div>
-        <h2>O que é Seguro Garantia? Entenda de forma simples como funciona</h2>
-        <p>Para que serve, quem são as partes, quanto custa e quando sua empresa precisa. O guia mais direto sobre o assunto.</p>
-      </div>
-      <div class="card-footer">
-        <time class="card-date" datetime="2026-07-08">8 jul. 2026</time>
-        <span class="card-link">Ler artigo →</span>
-      </div>
-    </a>
 
+  <div class="featured-label">Artigo em destaque</div>
+
+  <a class="featured-card" href="/blog/o-que-e-seguro-garantia">
+    <div class="featured-visual vis-navy">
+      <span class="vis-icon" aria-hidden="true">🛡️</span>
+      <div class="vis-geo"></div>
+    </div>
+    <div class="featured-body">
+      <div class="featured-tags">
+        <span class="tag tag-guide">Guia</span>
+        <span class="tag tag-sg">Seguro Garantia</span>
+      </div>
+      <h2>O que é Seguro Garantia? Entenda de forma simples como funciona</h2>
+      <p>Para que serve, quem são as três partes, quanto custa e quando sua empresa precisa. Guia direto com exemplos reais e comparação com fiança bancária e caução — sem jargão.</p>
+      <div class="featured-footer">
+        <div class="featured-meta">
+          <time datetime="2026-07-08">8 jul. 2026</time>
+          <span class="meta-dot"></span>
+          <span>7 min de leitura</span>
+        </div>
+        <span class="featured-read-more">Ler artigo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+  </a>
+
+  <p class="grid-label">Mais artigos</p>
+
+  <div class="grid">
     <a class="card" href="/blog/seguro-garantia-deposito-recursal">
+      <div class="card-visual vis-judicial">
+        <span class="vis-icon" aria-hidden="true">⚖️</span>
+        <div class="vis-geo"></div>
+      </div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag">Seguro Judicial</span>
-          <span class="tag">Trabalhista</span>
+          <span class="tag tag-judicial">Seguro Judicial</span>
+          <span class="tag tag-judicial">Trabalhista</span>
         </div>
         <h2>Seguro Garantia para depósito recursal: como funciona e a linha do tempo do processo</h2>
-        <p>Como substituir o depósito recursal por apólice judicial, liberar caixa durante o processo e o que exige o Ato Conjunto TST 1/2019.</p>
+        <p>Como substituir o depósito recursal por apólice judicial, liberar caixa durante o processo e os requisitos do Ato Conjunto TST 1/2019.</p>
       </div>
       <div class="card-footer">
-        <time class="card-date" datetime="2026-07-07">7 jul. 2026</time>
-        <span class="card-link">Ler artigo →</span>
+        <div class="card-meta">
+          <time datetime="2026-07-07">7 jul. 2026</time>
+          <span class="meta-dot"></span>
+          <span>5 min</span>
+        </div>
+        <span class="card-link">Ler →</span>
       </div>
     </a>
 
     <a class="card" href="/blog/garantia-adicional-lei-14133">
+      <div class="card-visual vis-licitacao">
+        <span class="vis-icon" aria-hidden="true">📋</span>
+        <div class="vis-geo"></div>
+      </div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag">Seguro Garantia</span>
-          <span class="tag">Lei 14.133</span>
+          <span class="tag tag-licitacao">Licitações</span>
+          <span class="tag tag-sg">Lei 14.133</span>
         </div>
         <h2>Garantia adicional na Lei 14.133: quando o órgão pode exigir e como calcular</h2>
-        <p>A divergência real de cálculo entre TCU e TCE-SP, um caso concreto de obra pública e como atender a exigência sem perder o contrato.</p>
+        <p>A divergência de cálculo entre TCU e TCE-SP, um caso concreto de obra pública e como atender a exigência sem travar o caixa.</p>
       </div>
       <div class="card-footer">
-        <time class="card-date" datetime="2026-07-06">6 jul. 2026</time>
-        <span class="card-link">Ler artigo →</span>
+        <div class="card-meta">
+          <time datetime="2026-07-06">6 jul. 2026</time>
+          <span class="meta-dot"></span>
+          <span>6 min</span>
+        </div>
+        <span class="card-link">Ler →</span>
       </div>
     </a>
   </div>
+
+  <div class="cta-strip">
+    <div class="cta-strip-text">
+      <strong>Precisa de uma apólice? Análise gratuita em minutos.</strong>
+      <p>Envie o edital, contrato ou número do processo — a F&amp;G emite em até 2 horas com mais de 12 seguradoras parceiras.</p>
+    </div>
+    <a class="cta-btn" href="https://wa.me/5515998618659?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20gratuita%20de%20Seguro%20Garantia." target="_blank" rel="noopener noreferrer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L0 24l6.341-1.501A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.007-1.368l-.36-.213-3.728.882.936-3.618-.234-.372A9.774 9.774 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      WhatsApp — (15) 99861-8659
+    </a>
+  </div>
+
 </main>
 
 <footer>
