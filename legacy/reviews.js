@@ -11,6 +11,7 @@
 
   var RATING = 5.0;
   var TOTAL = REVIEWS.length;
+  var TOTAL_COUNT = 24; // total real de avaliações no Google
   var current = 0;
   var timer = null;
   var track, dots;
@@ -92,7 +93,7 @@
       + '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px;">' + googleLogo() + '</div>'
       + '<div style="font-size:48px;font-weight:800;color:#1C3A5E;line-height:1;">5.0</div>'
       + '<div style="display:flex;justify-content:center;gap:3px;margin:8px 0 4px;">' + bigStars + '</div>'
-      + '<div style="font-size:14px;color:#6B7280;">Baseado em ' + TOTAL + ' avaliações no Google</div>'
+      + '<div style="font-size:14px;color:#6B7280;">Baseado em ' + TOTAL_COUNT + ' avaliações no Google</div>'
       + '<a href="' + MAPS_URL + '" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:14px;padding:10px 22px;background:#E8572A;color:#fff;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">Ver no Google Maps</a>'
       + '</div>'
       /* Carousel */
