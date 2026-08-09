@@ -4,12 +4,25 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+# ── #7: www → non-www (301 permanente) ───────────────────────────────────────
+RewriteCond %{HTTP_HOST} ^www\.fegsegurogarantia\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://fegsegurogarantia.com.br/$1 [R=301,L]
 
-ErrorDocument 404 /index.html
+# ── HTTPS obrigatório ─────────────────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ── SPA: arquivos físicos servidos diretamente ────────────────────────────────
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ── SPA: rotas conhecidas → index.html (200) ─────────────────────────────────
+RewriteRule ^(seguro-garantia-licitante|seguro-garantia-execucao-contrato|seguro-garantia-judicial|seguro-garantia-locaticia|seguro-garantia-adicional|seguro-garantia-energia|perguntas-frequentes|seguro-cyber|blog)(\/.*)?$ /index.html [L]
+
+# ── #8: qualquer outro caminho inexistente → 404 real ────────────────────────
+ErrorDocument 404 /404.html
 
 # ── Gzip ─────────────────────────────────────────────────────────────────────
 <IfModule mod_deflate.c>
@@ -18,24 +31,17 @@ ErrorDocument 404 /index.html
 
 # ── Cache ─────────────────────────────────────────────────────────────────────
 <IfModule mod_headers.c>
-  # HTML: sem cache (SPA — index.html muda a cada deploy)
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
   </FilesMatch>
-
-  # Assets com hash no nome (Vite: index-NhH1a0sw.js) → 1 ano imutável
   <FilesMatch "\-[a-zA-Z0-9]{8}\.(js|css)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-
-  # Nossos scripts customizados (sem hash) → 1 semana
-  <FilesMatch "^(hero-v4|reviews|ui-fixes|scroll-top|article-renderer)\.js$">
+  <FilesMatch "^(hero-v4|reviews|ui-fixes|scroll-top|ga4-spa)\.js$">
     Header set Cache-Control "public, max-age=604800, must-revalidate"
   </FilesMatch>
-
-  # Imagens e fontes → 1 ano
   <FilesMatch "\.(webp|png|jpg|jpeg|svg|ico|gif|woff2|woff)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>

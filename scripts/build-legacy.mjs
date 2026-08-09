@@ -99,7 +99,61 @@ const ASSET_BLOCK = `  <script src="/scroll-top.js" defer></script>
   <script src="/reviews.js" defer></script>
   <script src="/ui-fixes.js" defer></script>`
 
-function buildRouteHtml({ title, description, canonical, og_title, og_description, og_image }) {
+
+// ── Conteúdo das modalidades para pré-renderização (SEO) ─────────────────────
+const MODALIDADES_CONTENT = {
+  '/seguro-garantia-licitante': {
+    heading: 'Seguro Garantia',
+    headingHighlight: 'Licitante (Proposta)',
+    fullDesc: 'O Seguro Garantia Licitante garante que a empresa vencedora da licitação assina o contrato e cumpre as condições da proposta. Substitui a caução em dinheiro exigida pelos órgãos públicos.',
+    benefits: ['Libera capital de giro', 'Aceito em todos os órgãos públicos', 'Emissão em até 2 horas', 'Custo a partir de R$ 150'],
+  },
+  '/seguro-garantia-execucao-contrato': {
+    heading: 'Seguro Garantia de',
+    headingHighlight: 'Execução de Contrato',
+    fullDesc: 'Exigido após a assinatura do contrato público ou privado. Garante ao contratante que o contratado vai cumprir todas as obrigações previstas.',
+    benefits: ['Exigido pela Lei 14.133/21', 'Valor: até 5% do contrato', 'Sem bloqueio de capital', 'Parceiros em todo o Brasil'],
+  },
+  '/seguro-garantia-judicial': {
+    heading: 'Seguro Garantia',
+    headingHighlight: 'Judicial',
+    fullDesc: 'O Seguro Garantia Judicial substitui o depósito em dinheiro exigido em recursos e execuções fiscais. O art. 835, III do CPC garante o direito de usar o Seguro Garantia.',
+    benefits: ['Libera o depósito recursal', 'Aceito na Receita Federal e SEFAZ', 'Capital disponível durante o processo', 'Emissão em horas'],
+  },
+  '/seguro-garantia-locaticia': {
+    heading: 'Garantia',
+    headingHighlight: 'Locatícia',
+    fullDesc: 'A Garantia Locatícia substitui fiador e depósito caução em contratos de aluguel comercial. A Lei do Inquilinato (8.245/91) prevê o Seguro Garantia como modalidade aceita.',
+    benefits: ['Sem imobilizar capital em caução', 'Sem precisar de fiador', 'Aprovação em horas', 'Aceito pelos principais imobiliários'],
+  },
+  '/seguro-garantia-adicional': {
+    heading: 'Seguro Garantia',
+    headingHighlight: 'Adicional',
+    fullDesc: 'Quando a proposta vencedora fica abaixo de 85% do valor de referência do edital, a Lei 14.133/21 art. 59, § 5º exige Seguro Garantia Adicional. A F&G emite em até 2 horas.',
+    benefits: ['Cumpre exigência do art. 59, § 5º', 'Emitido junto com o Licitante', 'Sem perder o contrato', 'Análise expressa'],
+  },
+  '/seguro-garantia-energia': {
+    heading: 'Seguro Garantia de',
+    headingHighlight: 'Compra e Venda de Energia (CCEE)',
+    fullDesc: 'Para agentes habilitados na CCEE (mercado livre de energia). Garante operações de compra e venda de energia no mercado livre. Substitui o aporte de garantias financeiras exigido dos agentes.',
+    benefits: ['Para agentes CCEE', 'Substitui depósito de margem', 'Libera capital operacional', 'Análise especializada'],
+  },
+}
+
+function buildPrerender(slug) {
+  const m = MODALIDADES_CONTENT['/' + slug] || MODALIDADES_CONTENT[slug]
+  if (!m) return '<div id="root"></div>'
+  const liItems = m.benefits.map(b => `<li style="padding:6px 0;color:#374151;font-size:15px;">✔ ${b}</li>`).join('\n        ')
+  return `<div id="root"><div style="font-family:system-ui,sans-serif;max-width:960px;margin:0 auto;padding:48px 24px;">
+  <h1 style="font-size:clamp(26px,3vw,40px);font-weight:800;color:#1C3A5E;line-height:1.2;margin:0 0 16px;">${m.heading} <span style="color:#E8572A;">${m.headingHighlight}</span></h1>
+  <p style="font-size:16px;color:#4B5563;line-height:1.65;max-width:600px;margin:0 0 24px;">${m.fullDesc}</p>
+  <ul style="margin:0;padding:0;list-style:none;">
+        ${liItems}
+  </ul>
+</div></div>`
+}
+
+function buildRouteHtml({ title, description, canonical, og_title, og_description, og_image, slug }) {
   return `<!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -134,7 +188,7 @@ ${GA4_SNIPPET}
 ${ASSET_BLOCK}
 </head>
 <body>
-  <div id="root"></div>
+  ${buildPrerender(slug)}
 </body>
 </html>
 `
@@ -144,7 +198,7 @@ for (const [, route] of Object.entries(routes)) {
   if (!route.slug) continue
   const dir = join(DIST, route.slug)
   mkdirSync(dir, { recursive: true })
-  writeFileSync(join(dir, 'index.html'), buildRouteHtml(route))
+  writeFileSync(join(dir, 'index.html'), buildRouteHtml({ ...route, slug: route.slug }))
   console.log(`✅ dist/${route.slug}/index.html`)
 }
 
