@@ -34,8 +34,8 @@
     var stats = [
       ['2h','Para emitir a apólice'],
       ['25+','Seguradoras parceiras'],
-      ['R$150','A partir, Seg. Licitante'],
-      ['100%','Atendimento digital']
+      ['R$100M+','Volume já garantido'],
+      ['5,0 ★','24 avaliações Google']
     ].map(function(s){
       return '<div style="background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:20px;text-align:center;">'
         +'<div style="font-size:28px;font-weight:800;color:'+NAVY+';">'+s[0]+'</div>'

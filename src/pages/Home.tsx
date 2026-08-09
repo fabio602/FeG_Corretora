@@ -6,8 +6,8 @@ import { MODALIDADES, PARTNERS, WA_URL, FORM_EMAIL } from '../data/content'
 const STATS = [
   { value: '2h', label: 'Para emitir a apólice' },
   { value: '25+', label: 'Seguradoras parceiras' },
-  { value: 'R$150', label: 'A partir, Seg. Licitante' },
-  { value: '100%', label: 'Atendimento digital' },
+  { value: 'R$100M+', label: 'Volume já garantido' },
+  { value: '5,0 ★', label: '24 avaliações Google' },
 ]
 
 const REVIEWS = [
