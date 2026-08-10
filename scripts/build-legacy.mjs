@@ -368,3 +368,67 @@ function injectArticleSchemaInBlogDir() {
   }
 }
 injectArticleSchemaInBlogDir()
+
+// ── 11. FAQPage schema para páginas de modalidade ────────────────────────────
+const MODALITY_FAQS = {
+  'seguro-garantia-licitante': [
+    { q: 'O que é o Seguro Garantia Licitante e quando minha empresa precisa dele?', a: 'O Seguro Garantia Licitante é uma apólice exigida em licitações públicas e privadas para garantir que a empresa vencedora assina o contrato e cumpre as condições da proposta. É obrigatório sempre que o edital exigir garantia de proposta, substituindo o depósito em dinheiro.' },
+    { q: 'Qual o valor do Seguro Garantia Licitante exigido em licitações?', a: 'A Lei 14.133/21 permite que o edital exija até 1% do valor estimado do contrato como garantia de proposta. O prêmio pago à seguradora é uma fração desse valor, geralmente entre 0,5% e 2% do valor garantido.' },
+    { q: 'Em quanto tempo o Seguro Garantia Licitante é emitido?', a: 'A F&G Corretora emite o Seguro Garantia Licitante em até 2 horas após o recebimento do edital e das informações da empresa. Urgências são atendidas com prioridade via WhatsApp.' },
+    { q: 'O Seguro Garantia Licitante substitui a caução em dinheiro?', a: 'Sim. A Lei 14.133/21 prevê expressamente o Seguro Garantia como modalidade de garantia aceita em substituição ao depósito em dinheiro em licitações públicas federais, estaduais e municipais.' },
+  ],
+  'seguro-garantia-execucao-contrato': [
+    { q: 'O que é o Seguro Garantia de Execução de Contrato?', a: 'É uma apólice exigida após a assinatura do contrato público ou privado. Garante ao contratante que o contratado vai cumprir todas as obrigações previstas, incluindo prazo, qualidade e especificações técnicas.' },
+    { q: 'Qual o percentual exigido para o Seguro Garantia de Execução de Contrato?', a: 'Pela Lei 14.133/21, a garantia de execução pode ser de até 5% do valor do contrato. Em obras de grande vulto ou com alta complexidade técnica, pode chegar a 10%. O percentual é definido no edital.' },
+    { q: 'O Seguro Garantia de Execução é obrigatório em todos os contratos públicos?', a: 'A exigência é facultativa para o órgão contratante, mas é prática comum em contratos de obras, serviços e fornecimento de médio e grande porte. Empresas que participam de licitações devem estar preparadas para apresentar a garantia.' },
+    { q: 'Quanto tempo demora para emitir o Seguro Garantia de Execução de Contrato?', a: 'Para contratos padrão, a F&G Corretora aprova e emite no mesmo dia. Contratos de valores elevados ou com cláusulas específicas podem demandar até 24 horas para análise de risco pela seguradora.' },
+  ],
+  'seguro-garantia-judicial': [
+    { q: 'O Seguro Garantia Judicial substitui o depósito recursal em processos trabalhistas?', a: 'Sim. O art. 835, III do CPC e a Súmula 417 do TST reconhecem o Seguro Garantia como substituto do depósito recursal em ações trabalhistas. A apólice é apresentada nos autos e o valor em dinheiro fica disponível para a empresa.' },
+    { q: 'O Seguro Garantia Judicial é aceito em execução fiscal pela Receita Federal e SEFAZ?', a: 'Sim. O art. 9º, II da Lei de Execução Fiscal (Lei 6.830/80) e o art. 835 do CPC permitem o uso do Seguro Garantia em execuções fiscais. A Receita Federal e as Secretarias Estaduais de Fazenda são obrigadas a aceitar, desde que o valor cubra o débito atualizado.' },
+    { q: 'Qual a base legal para usar Seguro Garantia no lugar de depósito em juízo?', a: 'O art. 835, III do Código de Processo Civil (CPC) estabelece o Seguro Garantia como modalidade de garantia em processos de execução. A lei prevê que o Seguro Garantia tem preferência sobre outros meios de garantia, exceto dinheiro.' },
+    { q: 'Em quanto tempo o Seguro Garantia Judicial é emitido?', a: 'A F&G Corretora emite o Seguro Garantia Judicial em horas, ideal para não perder prazos processuais. Basta enviar a decisão judicial ou o cálculo do valor da garantia exigido pelo juízo.' },
+  ],
+  'seguro-garantia-locaticia': [
+    { q: 'A Garantia Locatícia substitui o fiador em contratos de aluguel comercial?', a: 'Sim. A Lei do Inquilinato (Lei 8.245/91) prevê o Seguro Garantia como modalidade de garantia em contratos de locação, substituindo fiador, depósito caução e título de capitalização. É amplamente aceito pelas principais imobiliárias e proprietários.' },
+    { q: 'Qual o custo da Garantia Locatícia comparado ao depósito caução?', a: 'Com depósito caução, a empresa imobiliza 3 meses de aluguel que ficam bloqueados durante todo o contrato. Com a Garantia Locatícia, paga-se um prêmio anual (geralmente entre 8% e 12% do valor garantido) e o capital fica disponível para o negócio.' },
+    { q: 'Em quanto tempo a Garantia Locatícia é aprovada?', a: 'A análise e aprovação da Garantia Locatícia são feitas em horas, ideal para fechar contratos rapidamente. A F&G Corretora gerencia todo o processo junto às seguradoras parceiras.' },
+    { q: 'A Garantia Locatícia é aceita em contratos de locação de galpões e espaços industriais?', a: 'Sim. A Garantia Locatícia é aceita em locações comerciais de qualquer tipo, incluindo galpões, escritórios, salas comerciais e espaços industriais, desde que o locador aceite o Seguro Garantia como modalidade de garantia.' },
+  ],
+  'seguro-garantia-adicional': [
+    { q: 'Quando a Lei 14.133/21 exige o Seguro Garantia Adicional?', a: 'O art. 59, § 5º da Lei 14.133/21 exige o Seguro Garantia Adicional quando a proposta vencedora fica abaixo de 85% do valor de referência do edital. Nesse caso, a diferença entre o valor da proposta e 85% do orçamento deve ser coberta por garantia adicional.' },
+    { q: 'O que acontece se minha proposta ficou abaixo de 85% e eu não contratar o Seguro Garantia Adicional?', a: 'Sem o Seguro Garantia Adicional, a empresa não pode assinar o contrato e perde a licitação, mesmo tendo vencido com o menor preço. A exigência é imperativa e o prazo para apresentação é definido no edital.' },
+    { q: 'O Seguro Garantia Adicional pode ser emitido junto com o Licitante?', a: 'Sim. A F&G Corretora emite o Seguro Garantia Adicional junto com o Licitante, no mesmo processo e prazo de até 2 horas, para que a empresa não perca o prazo de assinatura do contrato.' },
+    { q: 'Qual o valor do Seguro Garantia Adicional?', a: 'O valor do Seguro Garantia Adicional corresponde à diferença entre 80% do orçamento estimado do edital e o valor da proposta vencedora, conforme art. 59, § 5º da Lei 14.133/21. O prêmio pago à seguradora é uma fração desse valor.' },
+  ],
+  'seguro-garantia-energia': [
+    { q: 'O Seguro Garantia de Energia substitui o depósito de margem exigido pela CCEE?', a: 'Sim. Agentes habilitados na CCEE (Câmara de Comercialização de Energia Elétrica) podem usar o Seguro Garantia de Compra e Venda de Energia no lugar do aporte financeiro de garantia exigido pela câmara, liberando capital operacional para o negócio.' },
+    { q: 'Quais agentes da CCEE precisam de Seguro Garantia de Energia?', a: 'Todos os agentes que realizam operações de compra e venda de energia no mercado livre (ACL) e no ambiente de contratação regulada (ACR) que estejam sujeitos à exigência de garantias financeiras pela CCEE podem usar o Seguro Garantia.' },
+    { q: 'Quanto tempo demora para emitir o Seguro Garantia de Energia Elétrica?', a: 'O prazo depende da análise dos contratos CCEE e dos parâmetros de garantia exigidos pela câmara. A F&G Corretora trabalha com seguradoras especializadas nesse segmento e agiliza o processo junto às resseguradoras.' },
+    { q: 'O Seguro Garantia de Energia libera capital operacional das empresas?', a: 'Sim. Em vez de imobilizar recursos financeiros como garantia na CCEE, a empresa paga um prêmio ao Seguro Garantia e mantém o capital disponível para investimentos operacionais, melhorando o fluxo de caixa.' },
+  ],
+}
+
+function injectModalityFAQSchemas() {
+  for (const [slug, faqs] of Object.entries(MODALITY_FAQS)) {
+    const dir = join(DIST, slug)
+    const p = join(dir, 'index.html')
+    if (!existsSync(p)) continue
+    let html = readFileSync(p, 'utf-8')
+    if (html.includes('"FAQPage"')) continue
+    const schema = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': faqs.map(f => ({
+        '@type': 'Question',
+        'name': f.q,
+        'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+      }))
+    }, null, 2)
+    const tag = `  <script type="application/ld+json">\n${schema}\n  </script>`
+    html = html.replace('</head>', tag + '\n</head>')
+    writeFileSync(p, html)
+    console.log(`✅ FAQPage schema → /${slug}/`)
+  }
+}
+injectModalityFAQSchemas()
