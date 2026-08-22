@@ -82,7 +82,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0"
             aria-label="F&G Seguro Garantia, ir para a home">
-            <LogoHorizontal className="h-10 w-auto text-fg-navy" />
+            <LogoHorizontal className="h-11 w-auto text-fg-navy" />
           </Link>
 
           {/* Desktop nav — unchanged per spec */}
@@ -177,7 +177,7 @@ export default function Navbar() {
         {/* Top bar */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-white/10 shrink-0">
           <div className="flex items-center gap-2.5">
-            <LogoHorizontal className="h-8 w-auto text-[#EAC8AC]" />
+            <LogoHorizontal className="h-11 w-auto text-[#EAC8AC]" />
           </div>
           <button
             ref={closeBtnRef}

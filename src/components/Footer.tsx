@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <LogoHorizontal className="h-10 w-auto text-[#EAC8AC]" />
+              <LogoHorizontal className="h-11 w-auto text-[#EAC8AC]" />
             </div>
             <p className="text-sm text-blue-200 leading-relaxed">
               Corretora especializada em Seguro Garantia. Autorizada SUSEP. Emissão em até 2 horas. Atendemos todo o Brasil.
