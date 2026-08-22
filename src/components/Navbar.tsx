@@ -6,7 +6,7 @@ const PORTAL_URL = 'https://hub.fegsegurogarantia.com/'
 
 // Source of truth: primeiras 4 modalidades (licitante, execução, judicial, locatícia)
 // derivadas diretamente de src/data/content.ts
-const DRAWER_MODALITIES = MODALIDADES.slice(0, 4).map(m => ({
+const DRAWER_MODALITIES = MODALIDADES.filter(m => m.destaqueMenu).map(m => ({
   label: m.title.replace('Seguro Garantia ', '').replace('Garantia ', ''),
   href: m.slug,
 }))
@@ -81,8 +81,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0"
             aria-label="F&G Seguro Garantia — página inicial">
-            <img src="/logo-nav.webp" alt="" aria-hidden="true"
-              className="h-9 w-9 object-contain" width="36" height="36" loading="eager" />
+            <img src="/logo-shield.webp" alt="F&G Corretora de Seguros"
+              className="h-10 w-auto object-contain" width="240" height="40" loading="eager" />
             <div className="leading-tight">
               <span className="block font-bold text-fg-navy text-sm">F&amp;G</span>
               <span className="block text-[10px] font-medium text-gray-400 uppercase tracking-widest">
@@ -112,7 +112,7 @@ export default function Navbar() {
               <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-xl shadow-lg
                               opacity-0 invisible group-hover:opacity-100 group-hover:visible
                               translate-y-1 group-hover:translate-y-0 transition-all duration-150 z-50">
-                {MODALIDADES.slice(0, 4).map(m => (
+                {MODALIDADES.filter(m => m.destaqueMenu).map(m => (
                   <a key={m.slug} href={m.slug}
                     onClick={e => { e.preventDefault(); navigate(m.slug) }}
                     className="block px-4 py-2.5 text-sm text-gray-700 hover:text-fg-navy hover:bg-gray-50
@@ -183,8 +183,8 @@ export default function Navbar() {
         {/* Top bar */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-white/10 shrink-0">
           <div className="flex items-center gap-2.5">
-            <img src="/logo-nav.webp" alt="" aria-hidden="true"
-              className="h-8 w-8 object-contain" width="32" height="32" />
+            <img src="/logo-shield.webp" alt="" aria-hidden="true"
+              className="h-8 w-auto object-contain" width="200" height="32" />
             <span className="font-semibold text-sm">F&amp;G Seguro Garantia</span>
           </div>
           <button

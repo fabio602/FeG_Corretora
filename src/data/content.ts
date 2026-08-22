@@ -6,6 +6,7 @@ export const MODALIDADES = [
   {
     title: 'Seguro Garantia Licitante',
     slug: '/seguro-garantia-licitante',
+    destaqueMenu: true,
     badge: 'Lei 14.133/2021',
     icon: '🏛️',
     desc: 'Para empresas que participam de licitações públicas ou privadas (Lei 14.133/21). Substitui a caução em dinheiro e libera seu capital.',
@@ -24,6 +25,7 @@ export const MODALIDADES = [
   {
     title: 'Seguro Garantia de Execução de Contrato',
     slug: '/seguro-garantia-execucao-contrato',
+    destaqueMenu: true,
     badge: 'Performance Bond',
     icon: '🏗️',
     desc: 'Garante o cumprimento das obrigações contratuais de obras, fornecimento ou prestação de serviços. Exigido em contratos públicos.',
@@ -42,6 +44,7 @@ export const MODALIDADES = [
   {
     title: 'Seguro Garantia Judicial',
     slug: '/seguro-garantia-judicial',
+    destaqueMenu: true,
     badge: 'Depósito Recursal',
     icon: '⚖️',
     desc: 'Substitui depósito em dinheiro em ações judiciais e execuções fiscais (art. 835 CPC). Seu caixa fica livre durante o processo.',
@@ -60,6 +63,7 @@ export const MODALIDADES = [
   {
     title: 'Garantia Locatícia',
     slug: '/seguro-garantia-locaticia',
+    destaqueMenu: true,
     badge: 'Locação Comercial',
     icon: '🏢',
     desc: 'Substitui fiador e caução em contratos de locação comercial (Lei 8.245/91). Aprovação rápida, sem imobilizar capital.',
