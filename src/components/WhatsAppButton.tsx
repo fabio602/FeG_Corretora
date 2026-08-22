@@ -1,6 +1,19 @@
+import { useState, useEffect } from 'react'
 import { WA_URL } from '../data/content'
 
 export default function WhatsAppButton() {
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    const onNav = (e: Event) => {
+      setHidden((e as CustomEvent).detail?.open ?? false)
+    }
+    window.addEventListener('navmenu', onNav)
+    return () => window.removeEventListener('navmenu', onNav)
+  }, [])
+
+  if (hidden) return null
+
   return (
     <a href={WA_URL} target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"
       className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-transform hover:scale-110">
