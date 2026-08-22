@@ -15,4 +15,23 @@
 html { scroll-behavior: smooth; }
 body { background: var(--fg-bg); color: #1C3A5E; font-family: system-ui, -apple-system, sans-serif; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+/* Container — CSS puro, sem utilitário Tailwind.
+   Faixas de fundo continuam 100vw (não usam .container). */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1560px;
+  }
+}
+
+/* Limita blocos de texto corrido a ~52ch.
+   Aplica ao parágrafo do hero e a parágrafos de seção.
+   NÃO aplica a títulos, cards ou grids (seletor descendente, não global). */
+.prose-limit {
+  max-width: 52ch;
+}

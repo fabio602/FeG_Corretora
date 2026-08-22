@@ -221,7 +221,7 @@ export default function Home() {
                 Seguro Garantia para quem não pode perder prazo nem{' '}
                 <span className="text-fg-orange italic" style={{fontFamily:'Georgia,serif'}}>travar caixa</span>
               </h1>
-              <p className="text-base text-gray-600 leading-relaxed mb-7 max-w-lg">
+              <p className="text-base text-gray-600 leading-relaxed mb-7 prose-limit">
                 Analisamos o edital ou contrato, estruturamos o Seguro Garantia e emitimos a apólice em até 2 horas. Licitações, execução de contratos, processos judiciais e locações em todo o Brasil.
               </p>
               <div className="flex gap-3 flex-wrap mb-4">
@@ -363,7 +363,7 @@ export default function Home() {
               <img src="/couple-new.webp" alt="Fábio e Geisa Lima, fundadores da F&G Corretora de Seguro Garantia"
                 className="rounded-2xl w-full shadow-md" width="640" height="480" loading="lazy" />
               <div>
-                <p className="text-gray-600 leading-relaxed mb-5">
+                <p className="text-gray-600 leading-relaxed mb-5 prose-limit">
                   Fundadores da F&G Corretora, especializados exclusivamente em Seguro Garantia. Mais de 10 anos atendendo empresas em licitações, contratos públicos e processos judiciais em todo o Brasil.
                 </p>
                 <ul className="space-y-3">
