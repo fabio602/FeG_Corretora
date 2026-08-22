@@ -20,11 +20,14 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-widest mb-4 text-fg-orange">Modalidades</h3>
             <ul className="space-y-2 text-sm text-blue-200">
-              {MODALIDADES.map(m => (
+              {MODALIDADES.filter(m => m.destaqueMenu).map(m => (
                 <li key={m.slug}>
                   <Link to={m.slug} className="hover:text-white transition-colors">{m.title}</Link>
                 </li>
               ))}
+              <li className="pt-1">
+                <Link to="/#modalidades" className="hover:text-white transition-colors text-blue-300">Ver todas as modalidades →</Link>
+              </li>
             </ul>
           </div>
 

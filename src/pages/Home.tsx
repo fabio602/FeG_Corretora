@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, PARTNERS, WA_URL, FORM_EMAIL } from '../data/content'
+import { ModalityIcon, IconDoc, IconCompare, IconClockCheck, IconClock, IconNetwork, IconGlobe, IconCheck } from '../components/icons/SiteIcons'
 
 const STATS = [
   { value: '2h', label: 'Para emitir a apólice' },
@@ -39,7 +40,7 @@ function ContactForm() {
 
   if (status === 'ok') return (
     <div className="text-center py-12">
-      <div className="text-4xl mb-4">✅</div>
+      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4"><IconCheck className="w-6 h-6 text-green-600" /></div>
       <h3 className="text-xl font-bold text-fg-navy mb-2">Mensagem enviada!</h3>
       <p className="text-gray-600">Retornamos em até 2 horas pelo WhatsApp ou e-mail.</p>
     </div>
@@ -222,7 +223,7 @@ export default function Home() {
                 <span className="text-fg-orange italic" style={{fontFamily:'Georgia,serif'}}>travar caixa</span>
               </h1>
               <p className="text-base text-gray-600 leading-relaxed mb-7 prose-limit">
-                Analisamos o edital ou contrato, estruturamos o Seguro Garantia e emitimos a apólice em até 2 horas. Licitações, execução de contratos, processos judiciais e locações em todo o Brasil.
+                Analisamos o edital ou termo de contrato, estruturamos a garantia contratual exigida pelo órgão público e emitimos a apólice em até 2 horas. Atendemos construtoras, fornecedores e prestadores de serviço em contratações públicas em todo o Brasil.
               </p>
               <div className="flex gap-3 flex-wrap mb-4">
                 <a href={WA_URL} target="_blank" rel="noopener noreferrer"
@@ -244,7 +245,6 @@ export default function Home() {
 
             {/* Card apólice */}
             <div className="relative">
-              <div className="absolute inset-0 -m-8 bg-gradient-to-br from-orange-50 to-blue-50 rounded-full blur-2xl opacity-60 pointer-events-none" aria-hidden="true" />
               <div className="relative bg-white rounded-2xl shadow-2xl p-8">
                 <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-6">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -264,17 +264,20 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {STATS.map(s => (
-              <div key={s.value} className="bg-white border border-gray-100 rounded-xl p-5 text-center">
-                <div className="text-3xl font-extrabold text-fg-navy">{s.value}</div>
-                <div className="text-xs text-gray-500 mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
+
+      {/* STATS — faixa full-width em fg-navy */}
+      <div className="w-full bg-fg-navy">
+        <div className="flex divide-x divide-white/10">
+          {STATS.map(s => (
+            <div key={s.value} className="flex-1 py-5 px-4 text-center">
+              <div className="text-xl font-bold leading-none" style={{color:'#EAC8AC'}}>{s.value}</div>
+              <div className="text-xs text-blue-200 mt-1 leading-tight">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* MODALIDADES */}
       <section id="modalidades" className="py-20 bg-white">
@@ -286,8 +289,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {MODALIDADES.map(m => (
               <Link key={m.slug} to={m.slug}
-                className="group bg-fg-bg border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-                <div className="text-3xl mb-2" aria-hidden="true">{m.icon}</div>
+                className="group bg-white border-b border-gray-100 rounded-2xl p-6 hover:bg-fg-bg transition-colors duration-150">
+                <div className="mb-3"><ModalityIcon slug={m.slug} className="w-8 h-8 text-fg-navy" /></div>
                 <span className="inline-block text-xs font-semibold text-fg-orange bg-orange-50 rounded-full px-2 py-0.5 mb-2">{m.badge}</span>
                 <h3 className="text-base font-bold text-fg-navy mb-2">{m.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.desc}</p>
@@ -308,12 +311,12 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: '📋', n: '1', title: 'Analisamos a exigência', desc: 'Identificamos o tipo de Seguro Garantia necessário, o valor e o prazo da apólice conforme a lei.' },
-              { icon: '🔍', n: '2', title: 'Cotamos com 25+ seguradoras', desc: 'Buscamos a melhor taxa entre nossas seguradoras parceiras para o seu perfil e contrato.' },
-              { icon: '⚡', n: '3', title: 'Apólice em até 2 horas', desc: 'Emissão expressa para você não perder prazo. Enviamos por e-mail e WhatsApp.' },
+              { Icon: IconDoc,        n: '1', title: 'Analisamos a exigência', desc: 'Identificamos o tipo de Seguro Garantia necessário, o valor e o prazo da apólice conforme a lei.' },
+              { Icon: IconCompare,    n: '2', title: 'Cotamos com 25+ seguradoras', desc: 'Buscamos a melhor taxa entre nossas seguradoras parceiras para o seu perfil e contrato.' },
+              { Icon: IconClockCheck, n: '3', title: 'Apólice em até 2 horas', desc: 'Emissão expressa para você não perder prazo. Enviamos por e-mail e WhatsApp.' },
             ].map(s => (
-              <div key={s.n} className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-3">{s.icon}</div>
+              <div key={s.n} className="bg-white rounded-2xl p-8 text-center border border-gray-100">
+                <div className="flex justify-center mb-3"><s.Icon className="w-8 h-8 text-fg-navy" /></div>
                 <div className="w-8 h-8 rounded-full bg-fg-orange text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4">{s.n}</div>
                 <h3 className="font-bold text-fg-navy mb-2">{s.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
@@ -334,12 +337,12 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
             {[
-              { value: '2h', label: 'Tempo médio de emissão', icon: '⚡' },
-              { value: '25+', label: 'Seguradoras parceiras para melhor taxa', icon: '🤝' },
-              { value: '100%', label: 'Atendimento digital em todo o Brasil', icon: '🇧🇷' },
+              { Icon: IconClock,   value: '2h',   label: 'Tempo médio de emissão' },
+              { Icon: IconNetwork, value: '25+',   label: 'Seguradoras parceiras para melhor taxa' },
+              { Icon: IconGlobe,   value: '100%',  label: 'Atendimento digital em todo o Brasil' },
             ].map(s => (
               <div key={s.value} className="p-4">
-                <div className="text-3xl mb-2">{s.icon}</div>
+                <div className="flex justify-center mb-3"><s.Icon className="w-7 h-7 text-blue-200" /></div>
                 <div className="text-5xl font-bold mb-2">{s.value}</div>
                 <div className="text-blue-200 text-sm">{s.label}</div>
               </div>

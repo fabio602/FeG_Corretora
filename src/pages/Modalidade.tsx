@@ -1,3 +1,4 @@
+import { StepIcon } from '../components/icons/SiteIcons'
 import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
@@ -66,7 +67,7 @@ export default function Modalidade() {
           <div className="grid sm:grid-cols-3 gap-6">
             {mod.steps.map((s, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 text-center shadow-sm">
-                <div className="text-3xl mb-3" aria-hidden="true">{s.icon}</div>
+                <div className="flex justify-center mb-3"><StepIcon emoji={s.icon} className="w-7 h-7 text-fg-navy" /></div>
                 <h3 className="font-bold text-fg-navy text-sm mb-2">{s.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{s.desc}</p>
               </div>
