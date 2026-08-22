@@ -1,3 +1,4 @@
+import LogoHorizontal from './icons/LogoHorizontal'
 import { Link } from 'react-router-dom'
 import { WA_URL } from '../data/content'
 import { MODALIDADES } from '../data/content'
@@ -9,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo-transparent.webp" alt="F&G Seguro Garantia" className="h-14 w-auto object-contain" width="160" height="56" />
+              <LogoHorizontal className="h-10 w-auto text-[#EAC8AC]" />
             </div>
             <p className="text-sm text-blue-200 leading-relaxed">
               Corretora especializada em Seguro Garantia. Autorizada SUSEP. Emissão em até 2 horas. Atendemos todo o Brasil.

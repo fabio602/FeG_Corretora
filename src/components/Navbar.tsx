@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import LogoHorizontal from './icons/LogoHorizontal'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { WA_URL, MODALIDADES } from '../data/content'
 
@@ -80,15 +81,8 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0"
-            aria-label="F&G Seguro Garantia — página inicial">
-            <img src="/logo-shield.webp" alt="F&G Corretora de Seguros"
-              className="h-10 w-auto object-contain" width="240" height="40" loading="eager" />
-            <div className="leading-tight">
-              <span className="block font-bold text-fg-navy text-sm">F&amp;G</span>
-              <span className="block text-[10px] font-medium text-gray-400 uppercase tracking-widest">
-                Seguro Garantia
-              </span>
-            </div>
+            aria-label="F&G Seguro Garantia, ir para a home">
+            <LogoHorizontal className="h-10 w-auto text-fg-navy" />
           </Link>
 
           {/* Desktop nav — unchanged per spec */}
@@ -183,9 +177,7 @@ export default function Navbar() {
         {/* Top bar */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-white/10 shrink-0">
           <div className="flex items-center gap-2.5">
-            <img src="/logo-shield.webp" alt="" aria-hidden="true"
-              className="h-8 w-auto object-contain" width="200" height="32" />
-            <span className="font-semibold text-sm">F&amp;G Seguro Garantia</span>
+            <LogoHorizontal className="h-8 w-auto text-[#EAC8AC]" />
           </div>
           <button
             ref={closeBtnRef}
