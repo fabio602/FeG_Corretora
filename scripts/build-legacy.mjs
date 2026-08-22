@@ -66,9 +66,9 @@ copyFileSync(join(LEGACY, 'assets', 'index-zU92bEOf.js'),  join(DIST, 'assets', 
 copyFileSync(join(LEGACY, 'assets', 'index-g-_5q558.css'), join(DIST, 'assets', 'index-g-_5q558.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
-for (const f of ['hero-v4.js', 'reviews.js', 'ui-fixes.js', 'scroll-top.js']) {
-  copyFileSync(join(LEGACY, f), join(DIST, f))
-}
+// Scripts de injeção JS eliminados — substituídos pelo React (scroll, reviews, ui-fixes).
+// hero-v4.js removido: conflitava com React via MutationObserver.
+// ga4-spa.js permanece em public/ e é copiado via copyDir(PUBLIC, DIST).
 console.log('✅ Scripts de injeção copiados')
 
 // ── 4. Copia public/ recursivamente ─────────────────────────────────────────
