@@ -1,3 +1,4 @@
+import { routePath } from '../data/routes'
 import LogoHorizontal from './icons/LogoHorizontal'
 import { Link } from 'react-router-dom'
 import { WA_URL } from '../data/content'
@@ -22,7 +23,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-blue-200">
               {MODALIDADES.filter(m => m.destaqueMenu).map(m => (
                 <li key={m.slug}>
-                  <Link to={m.slug} className="hover:text-white transition-colors">{m.title}</Link>
+                  <Link to={routePath(m.slug)} className="hover:text-white transition-colors">{m.title}</Link>
                 </li>
               ))}
               <li className="pt-1">
@@ -35,9 +36,9 @@ export default function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-widest mb-4 text-fg-orange">Links</h3>
             <ul className="space-y-2 text-sm text-blue-200">
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/perguntas-frequentes" className="hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to="/seguro-cyber" className="hover:text-white transition-colors">Seguro Cyber</Link></li>
+              <li><Link to={routePath('/perguntas-frequentes')} className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link to={routePath('/blog')} className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to={routePath('/seguro-cyber')} className="hover:text-white transition-colors">Seguro Cyber</Link></li>
             </ul>
           </div>
 

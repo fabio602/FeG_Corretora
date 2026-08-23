@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, PARTNERS, WA_URL, FORM_EMAIL } from '../data/content'
+import { routePath } from '../data/routes'
 import { ModalityIcon, IconDoc, IconCompare, IconClockCheck, IconClock, IconNetwork, IconGlobe, IconCheck } from '../components/icons/SiteIcons'
 
 const STATS = [
@@ -288,7 +289,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {MODALIDADES.map(m => (
-              <Link key={m.slug} to={m.slug.startsWith("/") ? m.slug : "/" + m.slug}
+              <Link key={m.slug} to={routePath(m.slug)}
                 className="group bg-white border-b border-gray-100 rounded-2xl p-6 hover:bg-fg-bg transition-colors duration-150">
                 <div className="mb-3"><ModalityIcon slug={m.slug} className="w-8 h-8 text-fg-navy" /></div>
                 <span className="inline-block text-xs font-semibold text-fg-orange bg-orange-50 rounded-full px-2 py-0.5 mb-2">{m.badge}</span>

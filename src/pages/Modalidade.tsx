@@ -96,7 +96,7 @@ export default function Modalidade() {
             ))}
           </div>
           <div className="mt-6 text-center">
-            <Link to="/perguntas-frequentes" className="text-fg-orange font-semibold text-sm hover:underline">
+            <Link to="/perguntas-frequentes/" className="text-fg-orange font-semibold text-sm hover:underline">
               Ver todas as perguntas →
             </Link>
           </div>

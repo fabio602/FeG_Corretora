@@ -1,3 +1,4 @@
+import { routePath } from '../data/routes'
 import { useState, useEffect, useRef } from 'react'
 import LogoHorizontal from './icons/LogoHorizontal'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
@@ -65,7 +66,7 @@ export default function Navbar() {
         setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 300)
       }
     } else {
-      navigate(href)
+      navigate(routePath(href))
     }
   }
 
@@ -107,8 +108,8 @@ export default function Navbar() {
                               opacity-0 invisible group-hover:opacity-100 group-hover:visible
                               translate-y-1 group-hover:translate-y-0 transition-all duration-150 z-50">
                 {MODALIDADES.filter(m => m.destaqueMenu).map(m => (
-                  <a key={m.slug} href={m.slug}
-                    onClick={e => { e.preventDefault(); navigate(m.slug) }}
+                  <a key={m.slug} href={routePath(m.slug)}
+                    onClick={e => { e.preventDefault(); navigate(routePath(m.slug)) }}
                     className="block px-4 py-2.5 text-sm text-gray-700 hover:text-fg-navy hover:bg-gray-50
                                first:rounded-t-xl last:rounded-b-xl transition-colors">
                     {m.title}
@@ -120,11 +121,11 @@ export default function Navbar() {
               className="text-sm font-medium text-gray-600 hover:text-fg-navy transition-colors">
               Vantagens
             </a>
-            <a href="/blog" onClick={e => handleAnchor(e, '/blog')}
+            <a href={routePath('/blog')} onClick={e => handleAnchor(e, '/blog')}
               className="text-sm font-medium text-gray-600 hover:text-fg-navy transition-colors">
               Blog
             </a>
-            <a href="/seguro-cyber" onClick={e => { e.preventDefault(); navigate('/seguro-cyber') }}
+            <a href="/seguro-cyber" onClick={e => { e.preventDefault(); navigate(routePath('/seguro-cyber')) }}
               className="text-sm font-medium text-fg-orange hover:underline flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-fg-orange" aria-hidden="true" />
               Seguro Cyber
@@ -231,8 +232,8 @@ export default function Navbar() {
               {DRAWER_MODALITIES.map(m => (
                 <a
                   key={m.href}
-                  href={m.href}
-                  onClick={e => { e.preventDefault(); navigate(m.href); setOpen(false) }}
+                  href={routePath(m.href)}
+                  onClick={e => { e.preventDefault(); navigate(routePath(m.href)); setOpen(false) }}
                   className="flex items-center gap-3 min-h-[48px] pl-4 text-[15px]
                              font-medium text-white/70 hover:text-white border-b border-white/5
                              last:border-0 active:opacity-70 transition-colors"
@@ -248,10 +249,10 @@ export default function Navbar() {
             Vantagens
           </a>
 
-          <a href="/blog" onClick={e => handleAnchor(e, '/blog')} className={drawerLink}>Blog</a>
+          <a href={routePath('/blog')} onClick={e => handleAnchor(e, '/blog')} className={drawerLink}>Blog</a>
 
           <a href="/seguro-cyber"
-            onClick={e => { e.preventDefault(); navigate('/seguro-cyber'); setOpen(false) }}
+            onClick={e => { e.preventDefault(); navigate(routePath('/seguro-cyber')); setOpen(false) }}
             className="flex items-center gap-2 min-h-[48px] py-1 text-[17px] font-medium
                        border-b border-white/10 text-fg-orange active:opacity-70 transition-colors">
             <span className="w-1.5 h-1.5 rounded-full bg-fg-orange shrink-0" aria-hidden="true" />
