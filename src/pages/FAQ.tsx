@@ -9,7 +9,7 @@ export default function FAQPage() {
       <Helmet>
         <title>Perguntas Frequentes sobre Seguro Garantia | F&G Corretora</title>
         <meta name="description" content="Tire suas dúvidas sobre Seguro Garantia, prazos, documentos, custos e como funciona a emissão. F&G Corretora — Boituva SP." />
-        <link rel="canonical" href="https://fegsegurogarantia.com.br/perguntas-frequentes" />
+        <link rel="canonical" href="https://fegsegurogarantia.com.br/perguntas-frequentes/" />
       </Helmet>
       <section className="pt-32 pb-20 bg-fg-bg min-h-screen">
         <div className="container max-w-3xl">

@@ -6,7 +6,7 @@ export default function SeguroCyber() {
       <Helmet>
         <title>Seguro Cyber | Proteção contra Ataques Digitais | F&G Corretora</title>
         <meta name="description" content="Seguro Cyber para empresas. Proteção contra ataques ransomware, vazamento de dados e interrupção de sistemas. F&G Corretora." />
-        <link rel="canonical" href="https://fegsegurogarantia.com.br/seguro-cyber" />
+        <link rel="canonical" href="https://fegsegurogarantia.com.br/seguro-cyber/" />
       </Helmet>
       <section className="pt-32 pb-20 bg-fg-bg min-h-screen">
         <div className="container max-w-3xl">
