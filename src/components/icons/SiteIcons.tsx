@@ -67,12 +67,12 @@ export function IconEnergia({ className = '' }: { className?: string }) {
 
 // Mapa slug → ícone
 const MODALITY_ICON_MAP: Record<string, (p: { className?: string }) => JSX.Element> = {
-  '/seguro-garantia-licitante':          IconLicitante,
-  '/seguro-garantia-execucao-contrato':  IconExecucao,
-  '/seguro-garantia-judicial':           IconJudicial,
-  '/seguro-garantia-locaticia':          IconLocaticia,
-  '/seguro-garantia-adicional':          IconAdicional,
-  '/seguro-garantia-energia':            IconEnergia,
+  '/seguro-garantia-licitante/':          IconLicitante,
+  '/seguro-garantia-execucao-contrato/':  IconExecucao,
+  '/seguro-garantia-judicial/':           IconJudicial,
+  '/seguro-garantia-locaticia/':          IconLocaticia,
+  '/seguro-garantia-adicional/':          IconAdicional,
+  '/seguro-garantia-energia/':            IconEnergia,
 }
 
 export function ModalityIcon({ slug, className = '' }: { slug: string; className?: string }) {

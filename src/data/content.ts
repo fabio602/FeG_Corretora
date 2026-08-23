@@ -5,7 +5,7 @@ export const FORM_EMAIL = 'fabio@fegsegurogarantia.com.br'
 export const MODALIDADES = [
   {
     title: 'Seguro Garantia de Execução de Contrato',
-    slug: '/seguro-garantia-execucao-contrato',
+    slug: '/seguro-garantia-execucao-contrato/',
     destaqueMenu: true,
     badge: 'Performance Bond',
     icon: '🏗️',
@@ -24,7 +24,7 @@ export const MODALIDADES = [
   },
   {
     title: 'Seguro Garantia Licitante',
-    slug: '/seguro-garantia-licitante',
+    slug: '/seguro-garantia-licitante/',
     destaqueMenu: true,
     badge: 'Lei 14.133/2021',
     icon: '🏛️',
@@ -43,7 +43,7 @@ export const MODALIDADES = [
   },
   {
     title: 'Garantia Locatícia',
-    slug: '/seguro-garantia-locaticia',
+    slug: '/seguro-garantia-locaticia/',
     destaqueMenu: true,
     badge: 'Locação Comercial',
     icon: '🏢',
@@ -62,7 +62,7 @@ export const MODALIDADES = [
   },
   {
     title: 'Seguro Garantia Judicial',
-    slug: '/seguro-garantia-judicial',
+    slug: '/seguro-garantia-judicial/',
     destaqueMenu: false,
     badge: 'Depósito Recursal',
     icon: '⚖️',
@@ -81,7 +81,7 @@ export const MODALIDADES = [
   },
   {
     title: 'Seguro Garantia Adicional',
-    slug: '/seguro-garantia-adicional',
+    slug: '/seguro-garantia-adicional/',
     badge: 'Lei 14.133 art. 59, § 5º',
     icon: '📊',
     desc: 'Exigido quando a proposta vencedora fica abaixo de 85% do valor de referência do edital (Lei 14.133/21, art. 59, § 5º). Garante a execução do contrato sem comprometer o caixa da empresa.',
@@ -99,7 +99,7 @@ export const MODALIDADES = [
   },
   {
     title: 'Compra e Venda de Energia',
-    slug: '/seguro-garantia-energia',
+    slug: '/seguro-garantia-energia/',
     badge: 'Mercado Livre CCEE',
     icon: '⚡',
     desc: 'Para agentes habilitados na CCEE. Garante operações de compra e venda de energia no mercado livre. Substitui o depósito de margem exigido.',

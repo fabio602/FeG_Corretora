@@ -6,7 +6,7 @@ import { MODALIDADES, WA_URL, FAQ } from '../data/content'
 
 export default function Modalidade() {
   const { slug } = useParams<{ slug: string }>()
-  const mod = MODALIDADES.find(m => m.slug === `/seguro-garantia-${slug}`)
+  const mod = MODALIDADES.find(m => m.slug === `/seguro-garantia-${slug}/`)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   if (!mod) return (
@@ -21,10 +21,10 @@ export default function Modalidade() {
       <Helmet>
         <title>{mod.seoTitle}</title>
         <meta name="description" content={mod.seoDesc} />
-        <link rel="canonical" href={`https://fegsegurogarantia.com.br${mod.slug}/`} />
+        <link rel="canonical" href={`https://fegsegurogarantia.com.br${mod.slug}`} />
         <meta property="og:title" content={mod.seoTitle} />
         <meta property="og:description" content={mod.seoDesc} />
-        <meta property="og:url" content={`https://fegsegurogarantia.com.br${mod.slug}/`} />
+        <meta property="og:url" content={`https://fegsegurogarantia.com.br${mod.slug}`} />
       </Helmet>
 
       {/* HERO */}

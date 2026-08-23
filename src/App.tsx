@@ -24,6 +24,12 @@ function Spinner() {
 // Normaliza trailing slash: garante que qualquer navegação client-side
 // chegue ao React Router com barra final (espelhando o comportamento do servidor).
 // Usa replace para não poluir o histórico.
+// Compatibilidade: Google/links externos sem trailing slash → com trailing slash
+function ModalidadeRedirect() {
+  const { slug } = useParams<{ slug: string }>()
+  return <Navigate to={`/seguro-garantia-${slug}/`} replace />
+}
+
 function TrailingSlashNormalizer() {
   const { pathname, search, hash } = useLocation()
   const navigate = useNavigate()
@@ -50,6 +56,8 @@ function AppInner() {
 
             {/* Modalidades — rota dinâmica captura o sufixo do slug.
                 /seguro-garantia-:slug/ → slug='licitante', 'execucao-contrato', etc. */}
+            {/* Rota de compatibilidade (links externos/Google sem barra final) */}
+            <Route path="/seguro-garantia-:slug" element={<ModalidadeRedirect />} />
             <Route path="/seguro-garantia-:slug/" element={<Modalidade />} />
 
             <Route path="/perguntas-frequentes/" element={<FAQPage />} />
