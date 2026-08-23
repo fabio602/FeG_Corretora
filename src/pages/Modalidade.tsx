@@ -6,7 +6,7 @@ import { MODALIDADES, WA_URL, FAQ } from '../data/content'
 
 export default function Modalidade() {
   const { slug } = useParams<{ slug: string }>()
-  const mod = MODALIDADES.find(m => m.slug === `/${slug}`)
+  const mod = MODALIDADES.find(m => m.slug === `/seguro-garantia-${slug}`)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   if (!mod) return (

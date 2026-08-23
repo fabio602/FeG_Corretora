@@ -62,7 +62,7 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-CixCQ7I7.js'),  join(DIST, 'assets', 'index-CixCQ7I7.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-BxcItwNW.js'),  join(DIST, 'assets', 'index-BxcItwNW.js'))
 copyFileSync(join(LEGACY, 'assets', 'index-rjEQS6a5.css'), join(DIST, 'assets', 'index-rjEQS6a5.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
@@ -92,7 +92,7 @@ console.log('✅ dist/index.html (home)')
 const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-8'))
 
 const ASSET_BLOCK = `  <script src="/scroll-top.js" defer></script>
-  <script type="module" crossorigin src="/assets/index-CixCQ7I7.js"></script>
+  <script type="module" crossorigin src="/assets/index-BxcItwNW.js"></script>
   <link rel="preload" as="style" href="/assets/index-rjEQS6a5.css">
   <link rel="stylesheet" crossorigin href="/assets/index-rjEQS6a5.css">
   <script src="/hero-v4.js" defer></script>
