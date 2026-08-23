@@ -1,3 +1,4 @@
+import { buildBlogFromMarkdown } from './build-blog.mjs'
 /**
  * build-legacy.mjs
  *
@@ -432,3 +433,6 @@ function injectModalityFAQSchemas() {
   }
 }
 injectModalityFAQSchemas()
+
+// ── Blog from Markdown ──────────────────────────────────────────────────────
+buildBlogFromMarkdown()

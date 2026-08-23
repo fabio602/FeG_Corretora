@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>{{TITLE}} | F&amp;G</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <meta name="keywords" content="{{KEYWORDS}}" />
+  <link rel="canonical" href="{{CANONICAL}}" />
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="{{DESCRIPTION}}" />
+  <meta property="og:url" content="{{CANONICAL}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="F&amp;G Seguro Garantia" />
+  <meta property="og:image" content="https://fegsegurogarantia.com.br/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="article:author" content="{{AUTHOR_KEY}}" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1C3A5E" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/source-serif-4-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+@font-face { font-family: 'Source Serif 4'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/source-serif-4-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'); }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #1C3A5E; --orange: #E8572A; --bg: #FAFAF8; --text: #1F2937; --muted: #6B7280; --border: #E5E7EB; }
+    body { font-family: 'IBM Plex Sans', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-box { width: 40px; height: 40px; background: var(--navy); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-logo-box img { width: 32px; height: 32px; object-fit: contain; }
+    .nav-brand-name { font-weight: 700; color: var(--navy); font-size: 15px; line-height: 1; }
+    .nav-brand-sub { font-size: 11px; color: var(--muted); font-weight: 500; }
+    .nav-cta { background: var(--orange); color: #fff; font-weight: 600; font-size: 14px; padding: 9px 18px; border-radius: 8px; text-decoration: none; transition: opacity .15s; }
+    .nav-cta:hover { opacity: .85; }
+    .breadcrumb { max-width: 900px; margin: 0 auto; padding: 16px 24px 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--navy); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    article { max-width: 720px; margin: 0 auto; padding: 32px 24px 80px; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tag { display: inline-block; background: #EFF6FF; color: #1D4ED8; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+    .tag-guide { background: #F0FDF4; color: #166534; }
+    .article-date { font-size: 13px; color: var(--muted); }
+    h1 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 16px; }
+    .article-lead { font-size: 18px; color: #374151; line-height: 1.6; border-left: 4px solid var(--orange); padding-left: 16px; margin-bottom: 40px; }
+    h2 { font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; color: var(--navy); margin: 40px 0 14px; padding-top: 8px; border-top: 2px solid var(--border); }
+    p { margin-bottom: 18px; font-size: 17px; line-height: 1.75; }
+    ul, ol { margin: 12px 0 16px 0; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 17px; }
+    strong { font-weight: 600; }
+
+    /* ANALOGY CARD */
+    .analogy { background: var(--navy); color: #fff; border-radius: 16px; padding: 28px 32px; margin: 28px 0; }
+    .analogy-icon { font-size: 32px; margin-bottom: 12px; }
+    .analogy h3 { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .analogy p { color: #CBD5E1; margin-bottom: 0; font-size: 15px; }
+    .analogy strong { color: #fff; }
+
+    /* PARTIES CARDS */
+    .parties { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+    .party-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+    .party-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 22px; }
+    .party-icon.tomador { background: #EFF6FF; }
+    .party-icon.segurado { background: #F0FDF4; }
+    .party-icon.seguradora { background: #FFF7ED; }
+    .party-role { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 6px; }
+    .party-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .party-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* USE CASES */
+    .use-cases { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .use-case { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .use-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--orange); color: #fff; font-weight: 800; font-size: 13px; border-radius: 50%; margin-bottom: 10px; }
+    .use-title { font-weight: 700; color: var(--navy); font-size: 15px; margin-bottom: 6px; }
+    .use-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* COMPARISON */
+    .comparison { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+    .comparison table { width: 100%; border-collapse: collapse; }
+    .comparison th { background: var(--navy); color: #fff; padding: 12px 16px; font-size: 13px; font-weight: 600; text-align: left; }
+    .comparison td { padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+    .comparison tr:last-child td { border-bottom: none; }
+    .comparison tr:nth-child(even) td { background: #F9FAFB; }
+    .check { color: #16A34A; font-weight: 700; }
+    .cross { color: #DC2626; font-weight: 700; }
+
+    /* STEPS */
+    .steps { margin: 16px 0; }
+    .step { display: flex; gap: 16px; margin-bottom: 20px; }
+    .step-num { flex-shrink: 0; width: 32px; height: 32px; background: var(--navy); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-top: 2px; }
+    .step-body strong { display: block; margin-bottom: 4px; color: var(--navy); }
+    .step-body p { margin-bottom: 0; font-size: 15px; }
+
+    .callout { background: #F0FDF4; border-left: 4px solid #16A34A; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; }
+    .callout-title { font-weight: 700; color: #166534; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+
+    /* FAQ */
+    details { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; background: #fff; }
+    summary { padding: 16px 20px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--navy); font-size: 15px; }
+    summary::after { content: '+'; font-size: 20px; color: var(--orange); flex-shrink: 0; }
+    details[open] summary::after { content: '−'; }
+    details[open] .faq-body { padding: 0 20px 16px; font-size: 15px; }
+
+    /* CTA */
+    .cta-banner { background: var(--navy); color: #fff; border-radius: 16px; padding: 36px 32px; margin: 48px 0 0; text-align: center; }
+    .cta-banner h2 { color: #fff; border: none; margin: 0 0 12px; padding: 0; font-size: 22px; }
+    .cta-banner p { color: #CBD5E1; margin-bottom: 24px; font-size: 15px; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: #fff; font-weight: 700; font-size: 16px; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: opacity .15s; }
+    .cta-btn:hover { opacity: .9; }
+
+    footer { background: var(--navy); color: #94A3B8; padding: 32px 24px; margin-top: 64px; }
+    .footer-inner { max-width: 900px; margin: 0 auto; text-align: center; font-size: 13px; }
+    .footer-inner a { color: #94A3B8; text-decoration: none; }
+    .footer-inner a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .nav-cta { display: none; }
+      .article-lead { font-size: 16px; }
+      .parties { grid-template-columns: 1fr; }
+      .use-cases { grid-template-columns: 1fr; }
+    }
+  
+    /* Reading progress bar */
+    #reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--orange); width: 0%; z-index: 9999;
+      transition: width .08s linear; pointer-events: none;
+    }
+    /* Blockquote */
+    blockquote {
+      border-left: 4px solid var(--orange); margin: 24px 0;
+      padding: 12px 20px; background: #FFF7ED; border-radius: 0 8px 8px 0;
+      font-style: italic; color: #374151;
+    }
+    blockquote p { margin-bottom: 0; font-size: 17px; }
+    /* Table overflow on mobile */
+    .comparison { overflow-x: auto; }
+  
+    /* ── Editorial redesign ─────────────────────────────────── */
+    h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(24px, 4vw, 38px) !important; font-weight: 700 !important; line-height: 1.2 !important; margin-bottom: 0 !important; }
+    .article-cat { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .13em; margin-bottom: 14px; }
+    .article-byline { font-size: 13px; color: var(--muted); margin: 10px 0 36px; line-height: 1.5; }
+    .article-meta { display: none; }
+    .author-box { border-top: 1px solid var(--border); padding-top: 28px; margin: 48px 0 0; display: flex; gap: 18px; align-items: flex-start; }
+    .author-photo-slot { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: #F9FAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .author-photo-slot span { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .04em; }
+    .author-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .author-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    /* ── Minimal timeline ────────────────────────────────────── */
+    .timeline { display: none !important; }
+    .timeline-v2 { position: relative; margin: 32px 0; }
+    .timeline-v2::before { content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
+    .tl2-item { display: flex; gap: 24px; padding-bottom: 28px; position: relative; }
+    .tl2-item:last-child { padding-bottom: 0; }
+    .tl2-num { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--muted); position: relative; z-index: 1; }
+    .tl2-highlight .tl2-num { border-color: var(--orange); background: var(--orange); color: #fff; }
+    .tl2-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--orange); margin-bottom: 5px; }
+    .tl2-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .tl2-highlight .tl2-title { color: var(--navy); }
+    .tl2-desc { font-size: 14px; color: #374151; line-height: 1.65; }
+    .tl2-list { margin: 10px 0; padding-left: 20px; }
+    .tl2-list li { font-size: 14px; margin-bottom: 4px; color: #374151; }
+  
+  </style>
+{{SCHEMA_JSON_LD}}
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="F&G Seguro Garantia — Home">
+      <div class="nav-logo-box">
+        <img src="/logo-nav.webp" alt="" width="32" height="32" aria-hidden="true" />
+      </div>
+      <div>
+        <div class="nav-brand-name">F&amp;G</div>
+        <div class="nav-brand-sub">Seguro Garantia</div>
+      </div>
+    </a>
+    <a href="https://wa.me/5515998618659?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20gratuita%20de%20Seguro%20Garantia." class="nav-cta" target="_blank" rel="noopener noreferrer">Análise gratuita</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">Início</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; {{BREADCRUMB_TITLE}}
+</div>
+
+<article>
+  <div class="article-meta">
+    <span class="tag">{{CATEGORY}}</span>
+    <span class="article-date">{{DATE_DISPLAY}} &middot; {{READING_TIME}} min de leitura</span>
+  </div>
+
+{{BODY}}
+
+  <div class="cta-banner">
+    <h2>Precisa de Seguro Garantia?</h2>
+    <p>Análise gratuita e emissão em até 2 horas. Fale agora com um especialista.</p>
+    <a href="https://wa.me/5515998618659?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20gratuita%20de%20Seguro%20Garantia." class="cta-btn" target="_blank" rel="noopener">
+      Falar pelo WhatsApp
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">FL</div>
+    <div>
+      <div class="author-name">Fábio Lima</div>
+      <div class="author-role">Especialista em Seguro Garantia · F&amp;G Corretora</div>
+    </div>
+  </div>
+
+  <a href="/blog/" class="back-link">← Voltar para o Blog</a>
+</article>
+
+<footer>
+  <div class="footer-inner">
+    <p>© <span id="yr"></span> F&amp;G Corretora de Seguros · CNPJ 56.123.874/0001-90 · Autorizado SUSEP</p>
+    <p style="margin-top:6px;">Corretora de Seguro Garantia · Boituva, SP · <a href="/">fegsegurogarantia.com.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
