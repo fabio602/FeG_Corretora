@@ -24,12 +24,6 @@ function Spinner() {
 // Normaliza trailing slash: garante que qualquer navegação client-side
 // chegue ao React Router com barra final (espelhando o comportamento do servidor).
 // Usa replace para não poluir o histórico.
-// Compatibilidade: Google/links externos sem trailing slash → com trailing slash
-function ModalidadeRedirect() {
-  const { slug } = useParams<{ slug: string }>()
-  return <Navigate to={`/seguro-garantia-${slug}/`} replace />
-}
-
 function TrailingSlashNormalizer() {
   const { pathname, search, hash } = useLocation()
   const navigate = useNavigate()
@@ -56,14 +50,26 @@ function AppInner() {
 
             {/* Modalidades — rota dinâmica captura o sufixo do slug.
                 /seguro-garantia-:slug/ → slug='licitante', 'execucao-contrato', etc. */}
-            {/* Rota de compatibilidade (links externos/Google sem barra final) */}
-            <Route path="/seguro-garantia-:slug" element={<ModalidadeRedirect />} />
-            <Route path="/seguro-garantia-:slug/" element={<Modalidade />} />
 
             <Route path="/perguntas-frequentes/" element={<FAQPage />} />
             <Route path="/blog/" element={<Blog />} />
             <Route path="/blog/:slug/" element={<BlogArticle />} />
             <Route path="/seguro-cyber/" element={<Cyber />} />
+
+            {/* Modalidades — 6 rotas literais com barra final */}
+            <Route path="/seguro-garantia-licitante/" element={<Modalidade />} />
+            <Route path="/seguro-garantia-execucao-contrato/" element={<Modalidade />} />
+            <Route path="/seguro-garantia-judicial/" element={<Modalidade />} />
+            <Route path="/seguro-garantia-locaticia/" element={<Modalidade />} />
+            <Route path="/seguro-garantia-adicional/" element={<Modalidade />} />
+            <Route path="/seguro-garantia-energia/" element={<Modalidade />} />
+            {/* Compatibilidade: URLs sem barra (links antigos/Google) */}
+            <Route path="/seguro-garantia-licitante" element={<Navigate to="/seguro-garantia-licitante/" replace />} />
+            <Route path="/seguro-garantia-execucao-contrato" element={<Navigate to="/seguro-garantia-execucao-contrato/" replace />} />
+            <Route path="/seguro-garantia-judicial" element={<Navigate to="/seguro-garantia-judicial/" replace />} />
+            <Route path="/seguro-garantia-locaticia" element={<Navigate to="/seguro-garantia-locaticia/" replace />} />
+            <Route path="/seguro-garantia-adicional" element={<Navigate to="/seguro-garantia-adicional/" replace />} />
+            <Route path="/seguro-garantia-energia" element={<Navigate to="/seguro-garantia-energia/" replace />} />
 
             {/* Catch-all: rotas inexistentes → home */}
             <Route path="*" element={<Home />} />

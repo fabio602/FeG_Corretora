@@ -1,12 +1,14 @@
 import { StepIcon } from '../components/icons/SiteIcons'
 import { useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, WA_URL, FAQ } from '../data/content'
 
 export default function Modalidade() {
-  const { slug } = useParams<{ slug: string }>()
-  const mod = MODALIDADES.find(m => m.slug === `/seguro-garantia-${slug}/`)
+  const { pathname } = useLocation()
+  // m.slug termina com '/' (ex: '/seguro-garantia-licitante/')
+  // pathname também termina com '/' porque o servidor + normalizer garantem
+  const mod = MODALIDADES.find(m => m.slug === pathname)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   if (!mod) return (
