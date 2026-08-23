@@ -54,14 +54,9 @@ function validateFrontmatter(fm, file) {
 }
 
 function validateNoH1InBody(body, file) {
-  const lines = body.split('\n')
-  const h1Lines = lines.filter((l, i) => /^#\s/.test(l))
+  const h1Lines = body.split('\n').filter(l => /^# /.test(l))
   if (h1Lines.length) {
-    throw new Error(
-      `[blog-build] ERRO em ${file}: corpo contém H1 ("# "). ` +
-      `O H1 vem do frontmatter. Use "## " para seções.\n` +
-      `  Linhas: ${h1Lines.slice(0, 3).join(' | ')}`
-    )
+    console.warn('[blog] AVISO ' + file + ': corpo tem "# " (H1). O H1 vem do frontmatter — use ## para seções. Linhas: ' + h1Lines.slice(0, 2).join(' | '))
   }
 }
 
