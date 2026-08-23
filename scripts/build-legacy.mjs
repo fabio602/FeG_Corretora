@@ -471,3 +471,44 @@ function injectFAQPrerender() {
   console.log('✅ /perguntas-frequentes/: H1 + FAQPage schema (10 Q&As)')
 }
 injectFAQPrerender()
+
+// ── 14. Home: H1 pré-renderizado ─────────────────────────────────────────────
+function injectHomeH1() {
+  const p = join(DIST, 'index.html')
+  if (!existsSync(p)) return
+  let html = readFileSync(p, 'utf-8')
+  if (html.includes('<h1')) { console.log('✅ Home H1 já presente'); return }
+  const pre = [
+    '<div style="font-family:system-ui,sans-serif;padding:4rem 1.5rem 1rem;max-width:900px;margin:0 auto;">',
+    '<h1 style="font-size:clamp(26px,3vw,42px);font-weight:800;color:#1C3A5E;line-height:1.2;margin:0 0 10px;">',
+    'Seguro Garantia para Licitações e Contratos com Órgãos Públicos',
+    '</h1>',
+    '<p style="font-size:18px;color:#E8572A;font-style:italic;margin:0;">',
+    'para quem não pode perder prazo nem travar caixa',
+    '</p>',
+    '</div>',
+  ].join('')
+  html = html.replace('<div id="root"></div>', `<div id="root">${pre}</div>`)
+  writeFileSync(p, html)
+  console.log('✅ Home H1: "Seguro Garantia para Licitações e Contratos com Órgãos Públicos"')
+}
+injectHomeH1()
+
+// ── 15. /seguro-cyber/: H1 + Service schema ──────────────────────────────────
+function injectCyberPrerender() {
+  const p = join(DIST, 'seguro-cyber', 'index.html')
+  if (!existsSync(p)) return
+  let html = readFileSync(p, 'utf-8')
+  if (!html.includes('"Service"')) {
+    const schema = JSON.parse("{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Seguro Cyber\", \"provider\": {\"@type\": \"InsuranceAgency\", \"name\": \"F&G Seguro Garantia\", \"url\": \"https://fegsegurogarantia.com.br\"}, \"description\": \"Prote\u00e7\u00e3o para empresas contra ataques ransomware, vazamento de dados, fraudes digitais e interrup\u00e7\u00e3o de opera\u00e7\u00f5es por incidentes cibern\u00e9ticos.\", \"url\": \"https://fegsegurogarantia.com.br/seguro-cyber/\", \"areaServed\": {\"@type\": \"Country\", \"name\": \"Brasil\"}}")
+    const tag = `  <script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n  </script>`
+    html = html.replace('</head>', tag + '\n</head>')
+  }
+  if (!html.includes('<h1')) {
+    const pre = '<div style="font-family:system-ui,sans-serif;padding:4rem 1.5rem 1rem;max-width:900px;margin:0 auto;"><h1 style="font-size:clamp(26px,3vw,42px);font-weight:800;color:#1C3A5E;line-height:1.2;margin:0 0 12px;">Seguro Cyber <span style="color:#E8572A;">para Empresas</span></h1><p style="font-size:16px;color:#4B5563;line-height:1.65;">Proteção contra ransomware, vazamento de dados, fraudes digitais e interrupção de operações cibernéticas.</p></div>'
+    html = html.replace('<div id="root"></div>', `<div id="root">${pre}</div>`)
+  }
+  writeFileSync(p, html)
+  console.log('✅ /seguro-cyber/: H1 + Service schema')
+}
+injectCyberPrerender()
