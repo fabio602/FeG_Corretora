@@ -62,8 +62,8 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-f1X_Z-w6.js'),  join(DIST, 'assets', 'index-f1X_Z-w6.js'))
-copyFileSync(join(LEGACY, 'assets', 'index-BErxR9uy.css'), join(DIST, 'assets', 'index-BErxR9uy.css'))
+copyFileSync(join(LEGACY, 'assets', 'index-CixCQ7I7.js'),  join(DIST, 'assets', 'index-CixCQ7I7.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-rjEQS6a5.css'), join(DIST, 'assets', 'index-rjEQS6a5.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
 // Scripts de injeção JS eliminados — substituídos pelo React (scroll, reviews, ui-fixes).
@@ -92,9 +92,9 @@ console.log('✅ dist/index.html (home)')
 const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-8'))
 
 const ASSET_BLOCK = `  <script src="/scroll-top.js" defer></script>
-  <script type="module" crossorigin src="/assets/index-f1X_Z-w6.js"></script>
-  <link rel="preload" as="style" href="/assets/index-BErxR9uy.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-BErxR9uy.css">
+  <script type="module" crossorigin src="/assets/index-CixCQ7I7.js"></script>
+  <link rel="preload" as="style" href="/assets/index-rjEQS6a5.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-rjEQS6a5.css">
   <script src="/hero-v4.js" defer></script>
   <script src="/reviews.js" defer></script>
   <script src="/ui-fixes.js" defer></script>`

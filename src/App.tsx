@@ -11,6 +11,7 @@ const Modalidade = lazy(() => import('./pages/Modalidade'))
 const FAQPage   = lazy(() => import('./pages/FAQ'))
 const Blog      = lazy(() => import('./pages/Blog'))
 const Cyber     = lazy(() => import('./pages/SeguroCyber'))
+const BlogArticle = lazy(() => import('./pages/BlogArticle'))
 
 function Spinner() {
   return <div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-fg-orange border-t-transparent rounded-full animate-spin" aria-label="Carregando" /></div>
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/seguro-garantia-energia" element={<Modalidade />} />
               <Route path="/perguntas-frequentes" element={<FAQPage />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogArticle />} />
               <Route path="/seguro-cyber" element={<Cyber />} />
               <Route path="*" element={<Home />} />
             </Routes>
