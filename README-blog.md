@@ -29,6 +29,8 @@ O nome do arquivo vira o slug da URL:
 | `author` | Sim | Nome do autor |
 | `keywords` | Não | Palavras-chave separadas por vírgula |
 | `lead` | Não | Parágrafo de abertura destacado (aparece em itálico no topo) |
+| `cta_titulo` | Não | Título do banner de CTA no final do artigo (padrão genérico se ausente) |
+| `cta_texto` | Não | Texto do CTA — use texto específico do tema para melhor conversão |
 | `faq` | Não | Lista de perguntas/respostas para o schema FAQPage do Google |
 
 ---

@@ -18,6 +18,8 @@ faq:
     a: "O Seguro Garantia costuma ser mais barato. A Fiança Bancária geralmente exige contratação de linha de crédito no banco, com taxas e exigência de garantias reais. O Seguro Garantia é emitido por seguradora especializada, com prêmio mensal ou anual e sem imobilização de bens ou consumo de limite de crédito bancário."
   - q: "Em quanto tempo o Seguro Garantia é emitido?"
     a: "A F&amp;G emite o Seguro Garantia em até 2 horas úteis para contratos de até R$ 5 milhões. Casos mais complexos podem levar de 24 a 48 horas. A Fiança Bancária, por depender da análise do banco, costuma levar vários dias ou semanas."
+cta_titulo: "Precisa de garantia para licitação ou contrato?"
+cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialista agora — sem burocracia."
 ---
 
 <div class="summary-box">

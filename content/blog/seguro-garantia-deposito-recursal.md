@@ -16,6 +16,8 @@ faq:
     a: "Vale para os recursos que exigem depósito recursal (ordinário, de revista, entre outros) e também para a fase de execução, cada um com a garantia estruturada conforme a etapa do processo."
   - q: "E se a empresa perder o processo?"
     a: "A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida — é uma garantia de liquidez para o processo."
+cta_titulo: "Prazo correndo ou depósitos parados em juízo?"
+cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita em minutos. A F&G estrutura apólices conforme o Ato Conjunto TST 1/2019 junto a mais de 25 seguradoras parceiras e emite em até 2 horas."
 ---
 
 <p class="article-cat">Seguro Judicial · Trabalhista</p>

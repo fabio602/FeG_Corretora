@@ -136,6 +136,8 @@ function renderArticle(mdPath) {
     .replace(/\{\{DATE_DISPLAY\}\}/g, isoToDisplayDate(fm.date))
     .replace(/\{\{READING_TIME\}\}/g, String(fm.readingTime))
     .replace(/\{\{AUTHOR_KEY\}\}/g, authorKey)
+    .replace(/\{\{CTA_TITULO\}\}/g, fm.cta_titulo || 'Precisa de Seguro Garantia?')
+    .replace(/\{\{CTA_TEXTO\}\}/g,  fm.cta_texto  || 'Análise gratuita e emissão em até 2 horas. Fale agora com um especialista.')
     .replace(/\{\{BREADCRUMB_TITLE\}\}/g, fm.title.length > 50 ? fm.title.slice(0, 50) + '…' : fm.title)
     .replace(/\{\{SCHEMA_JSON_LD\}\}/g, schemas)
     .replace(/\{\{BODY\}\}/g, `<h1>${fm.title}</h1>${leadHtml}\n${bodyHtml}`)

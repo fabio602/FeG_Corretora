@@ -16,6 +16,8 @@ faq:
     a: "Sim, desde que aprovada na análise de crédito da seguradora. Empresas com finanças organizadas, mesmo pequenas, conseguem limites. A análise é gratuita e não gera compromisso."
   - q: "O Seguro Garantia devolve o dinheiro se nada acontecer?"
     a: "Não há dinheiro a devolver, porque nada foi imobilizado. A empresa paga só o prêmio (o custo do seguro), e é exatamente essa a vantagem sobre a caução em dinheiro."
+cta_titulo: "Serve para o seu caso?"
+cta_texto: "Envie seu edital, contrato ou o número do processo no WhatsApp e receba a análise gratuita em minutos. A F&G é especializada exclusivamente em Seguro Garantia e emite apólices em até 2 horas com mais de 25 seguradoras parceiras."
 ---
 
 <p class="article-cat">Guia · Seguro Garantia</p>

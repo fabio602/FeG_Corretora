@@ -16,6 +16,8 @@ faq:
     a: "Na prática, processos a partir de R$ 50 mil já têm proposta viável no mercado. Abaixo disso, o custo de estruturação pode não compensar. Para valores acima de R$ 500 mil, a economia em relação ao depósito em dinheiro costuma ser muito expressiva."
   - q: "O que acontece se a empresa perder o processo?"
     a: "A seguradora paga ao credor o valor coberto pela apólice. Após isso, ela aciona a empresa para reembolso — é a chamada ação regressiva, prevista no contrato. Por isso, o seguro não elimina a dívida: ele garante o pagamento ao credor e preserva a liquidez da empresa enquanto o processo tramita."
+cta_titulo: "Tem um processo e precisa de garantia?"
+cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. A F&G estrutura apólices judiciais com 12+ seguradoras e emissão em até 2 horas."
 ---
 
 <p class="article-cat">Seguro Judicial</p>

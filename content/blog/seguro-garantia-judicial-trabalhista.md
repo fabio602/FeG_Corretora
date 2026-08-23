@@ -16,6 +16,8 @@ faq:
     a: "Sim. O art. 848 do CPC (aplicado subsidiariamente na execução trabalhista) autoriza a substituição da penhora a requerimento do executado, desde que a nova garantia seja igualmente idônea. A apólice de Seguro Garantia é equiparada ao depósito em dinheiro para esse fim. A empresa apresenta a apólice e pede a substituição; deferido, o bem é despenhorado e o bloqueio bancário é levantado."
   - q: "O que acontece se a empresa não pagar a condenação ao final?"
     a: "Se a empresa perder os embargos e não pagar voluntariamente, o juízo intima a seguradora para depositar o valor em juízo — o que ela faz de forma incondicional, conforme as cláusulas da apólice. Depois a seguradora cobra o reembolso da empresa. O seguro não cancela a dívida; ele garante que o juízo receba, e a empresa continua responsável pelo valor final."
+cta_titulo: "Bens penhorados ou processo em execução?"
+cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. A F&G estrutura apólices para fase recursal e execução — com 12+ seguradoras e emissão em até 2 horas."
 ---
 
 <p class="article-cat">Seguro Judicial · Trabalhista</p>

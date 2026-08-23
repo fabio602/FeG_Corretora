@@ -9,6 +9,8 @@ readingTime: 5
 author: "Fábio Lima"
 keywords: "palavra-chave principal, variação, termo relacionado"
 lead: "Parágrafo de abertura destacado. Aparece em negrito acima do corpo do artigo. Deve capturar o problema do leitor em 1-2 frases."
+cta_titulo: "Título do banner de CTA (opcional — padrão: Precisa de Seguro Garantia?)"
+cta_texto: "Texto específico do CTA. Quanto mais próximo do tema do artigo, maior a conversão. Ex: Envie o edital no WhatsApp e receba análise gratuita em minutos."
 faq:
   - q: "Pergunta frequente 1?"
     a: "Resposta clara e direta. Aparece no schema FAQPage indexado pelo Google."

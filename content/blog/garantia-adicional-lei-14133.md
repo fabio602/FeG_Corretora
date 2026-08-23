@@ -16,6 +16,8 @@ faq:
     a: "Depende do tribunal de contas que fiscaliza o órgão. A orientação didática do TCU exemplifica o cálculo a partir da linha dos 85%, mas a literalidade da lei e o entendimento formal do TCE-SP determinam a diferença cheia entre o valor orçado e a proposta. Em órgãos paulistas, provisione pelo valor cheio."
   - q: "Posso usar seguradoras diferentes para a garantia contratual e a adicional?"
     a: "Sim. A lei não exige a mesma modalidade nem o mesmo garantidor para as duas garantias. Distribuir entre seguradoras é inclusive uma boa prática quando o valor da adicional é alto, para não esgotar o limite de crédito em uma única companhia."
+cta_titulo: "Recebeu a exigência de garantia adicional e o prazo está correndo?"
+cta_texto: "Envie o termo de convocação ou o edital no WhatsApp e receba a análise gratuita em minutos. A F&G é especializada em Seguro Garantia para licitações da Lei 14.133 e emite sua apólice em até 2 horas."
 ---
 
 <p class="article-cat">Licitações · Lei 14.133</p>
