@@ -1,4 +1,4 @@
-import { buildBlogFromMarkdown } from './build-blog.mjs'
+import { buildBlogFromMarkdown, buildMaterialPages } from './build-blog.mjs'
 /**
  * build-legacy.mjs
  *
@@ -512,3 +512,6 @@ function injectCyberPrerender() {
   console.log('✅ /seguro-cyber/: H1 + Service schema')
 }
 injectCyberPrerender()
+
+// ── Material pages com captura de lead ────────────────────────────────────────
+buildMaterialPages(DIST, join(DIST, 'sitemap.xml'))
