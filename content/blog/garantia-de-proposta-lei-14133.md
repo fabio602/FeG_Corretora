@@ -21,7 +21,7 @@ faq:
   - q: "Em quanto tempo a garantia é devolvida após a licitação?"
     a: "Em até 10 dias úteis contados da assinatura do contrato pelo vencedor ou da data em que a licitação for declarada fracassada ou deserta."
   - q: "Posso usar Seguro Garantia como garantia de proposta?"
-    a: "Sim. O artigo 58, combinado com o artigo 96, parágrafo 1, da Lei 14.133/2021 lista o Seguro Garantia como uma das modalidades aceitas, à escolha do licitante."
+    a: "Sim. O artigo 58, combinado com o artigo 96, parágrafo 1, da Lei 14.133/2021 lista quatro modalidades aceitas, à escolha do licitante: caução em dinheiro ou títulos da dívida pública, Seguro Garantia, fiança bancária e título de capitalização custeado por pagamento único."
 ---
 
 ## O que é a garantia de proposta e por que ela aparece em editais
@@ -38,7 +38,7 @@ O artigo 58 estabelece que a garantia de proposta, quando exigida, deve:
 
 - **Ser facultativa para o órgão:** o edital pode ou não exigi-la, mas se exigir, a regra vale para todos os licitantes sem exceção
 - **Respeitar o limite de 1%** do valor estimado da contratação
-- **Aceitar três modalidades**, à escolha do licitante: caução em dinheiro ou títulos da dívida pública, Seguro Garantia ou fiança bancária
+- **Aceitar quatro modalidades**, à escolha do licitante: caução em dinheiro ou títulos da dívida pública, Seguro Garantia, fiança bancária ou título de capitalização custeado por pagamento único
 - **Ser devolvida em até 10 dias úteis** após a assinatura do contrato ou a declaração de fracasso da licitação
 
 O ponto mais crítico é o efeito da recusa: se o vencedor se recusar a assinar o contrato ou não apresentar a documentação exigida, a garantia é executada pelo seu valor integral.
@@ -59,7 +59,7 @@ O cálculo é direto: aplica-se o percentual definido no edital (até 1%) sobre 
 Uma construtora vai disputar uma licitação de fornecimento de materiais estimada em R$ 3,5 milhões. O edital exige garantia de proposta de 1%.
 
 - Valor da garantia exigida: R$ 35.000
-- Se optar por Seguro Garantia, o prêmio típico fica entre 0,3% e 0,8% do valor garantido, ou seja, entre R$ 105 e R$ 280 por todo o período da licitação
+- Se optar por Seguro Garantia, as seguradoras aplicam um prêmio mínimo por apólice, normalmente na casa de algumas centenas de reais; o custo real depende da análise de crédito do tomador e do prazo do processo
 - Se optar por caução em dinheiro, R$ 35.000 ficam imobilizados até 10 dias após o resultado
 
 A diferença de custo entre as modalidades é expressiva, sobretudo quando a empresa participa de vários processos ao mesmo tempo.
