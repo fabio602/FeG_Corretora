@@ -4,8 +4,10 @@ title: "Seguro Garantia Judicial: como funciona e quando usar"
 description: "Entenda o que é o Seguro Garantia Judicial, em quais processos ele pode ser usado e por que ele é mais vantajoso do que imobilizar capital ou ter bens penhorados."
 canonical: https://fegsegurogarantia.com.br/blog/seguro-garantia-judicial/
 date: 2026-07-10
-category: "Artigo"
+category: "Judicial"
 readingTime: 7
+featured: true
+image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia judicial, o que é seguro garantia judicial, seguro garantia processo judicial, substituir depósito judicial, garantia juízo"
 lead: "Perder um processo judicial sem ter recursos para honrar a condenação pode comprometer a operação inteira de uma empresa. O Seguro Garantia Judicial existe para evitar exatamente esse cenário — e funciona em muito mais situações do que a maioria dos empresários imagina."

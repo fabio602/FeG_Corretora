@@ -4,8 +4,10 @@ title: "Garantia adicional na Lei 14.133: quando o órgão pode exigir e como ca
 description: "Quando a garantia adicional é exigida na Lei 14.133, a divergência de cálculo entre TCU e TCE-SP e como atender a exigência sem perder o contrato."
 canonical: https://fegsegurogarantia.com.br/blog/garantia-adicional-lei-14133/
 date: 2026-07-06
-category: "Seguro Garantia"
+category: "Licitação"
 readingTime: 6
+featured: false
+image: ""
 author: "Fábio Lima"
 keywords: "garantia adicional lei 14.133, seguro garantia adicional licitação, cálculo garantia adicional"
 lead: "Venceu uma licitação de obra ou serviço de engenharia com desconto agressivo e recebeu a exigência de garantia adicional na Lei 14.133? A exigência tem base legal, é obrigatória, o prazo é curto e, dependendo do órgão, o valor cobrado pode ser bem maior do que a empresa planejou. Este artigo mostra a regra, a divergência real de cálculo entre os tribunais de contas e um caso concreto que ilustra o que acontece na prática."

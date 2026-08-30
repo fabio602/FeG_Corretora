@@ -4,8 +4,10 @@ title: "Seguro Garantia em Contratos Privados: obras, fornecimento e prestação
 description: "Como o Seguro Garantia funciona em contratos privados de obras, fornecimento e serviços, quem pode exigir, limites de cobertura e vantagens sobre o depósito bancário."
 canonical: https://fegsegurogarantia.com.br/blog/seguro-garantia-contratos-privados/
 date: 2026-08-30
-category: "Guia"
+category: "Execução de Contrato"
 readingTime: 8
+featured: false
+image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia contratos privados, performance bond, garantia obras privadas, seguro garantia fornecimento, seguro garantia serviços"
 lead: "O Seguro Garantia não é exclusividade das licitações. Contratos privados de construção, fornecimento e prestação de serviços também podem exigi-lo, e para muitas empresas ele é a alternativa mais inteligente ao depósito bancário."
