@@ -1,58 +1,64 @@
 ---
 slug: meu-novo-artigo
-title: "Título do artigo — conciso e descritivo"
+title: "Titulo do artigo - conciso e descritivo"
 description: "Meta description com 140-160 caracteres. Aparece no Google e deve resumir o artigo de forma atraente para quem busca."
 canonical: https://fegsegurogarantia.com.br/blog/meu-novo-artigo/
 date: 2026-09-01
-category: "Guia"
+category: "Para o seu negocio"
 readingTime: 5
-author: "Fábio Lima"
-keywords: "palavra-chave principal, variação, termo relacionado"
-lead: "Parágrafo de abertura destacado. Aparece em negrito acima do corpo do artigo. Deve capturar o problema do leitor em 1-2 frases."
-cta_titulo: "Título do banner de CTA (opcional — padrão: Precisa de Seguro Garantia?)"
-cta_texto: "Texto específico do CTA. Quanto mais próximo do tema do artigo, maior a conversão. Ex: Envie o edital no WhatsApp e receba análise gratuita em minutos."
+author: "Fabio Lima"
+keywords: "palavra-chave principal, variacao, termo relacionado"
+lead: "Paragrafo de abertura destacado. Captura o problema do leitor em 1-2 frases."
+image: ""
+featured: false
+cta_titulo: "Titulo do banner de CTA (opcional)"
+cta_texto: "Texto especifico do CTA. Quanto mais proximo do tema, maior a conversao."
 faq:
   - q: "Pergunta frequente 1?"
-    a: "Resposta clara e direta. Aparece no schema FAQPage indexado pelo Google."
+    a: "Resposta clara e direta."
   - q: "Pergunta frequente 2?"
-    a: "Outra resposta. Adicione quantas quiser."
+    a: "Outra resposta."
 ---
 
-## Primeira seção (H2)
+## Primeira secao (H2)
 
-O corpo do artigo começa aqui. Use `##` para seções principais — o H1 já vem do campo `title` acima.
+O corpo do artigo comeca aqui. Use ## para secoes principais.
 
-Parágrafos normais ficam separados por uma linha em branco.
+## Segunda secao
 
-**Negrito** e *itálico* funcionam normalmente.
+### Subsecao (H3)
 
-## Segunda seção
+---
 
-### Subseção (H3)
+CAMPOS DO FRONTMATTER
+=====================
 
-Listas:
-- Item 1
-- Item 2
-- Item 3
-
-Listas numeradas:
-1. Passo um
-2. Passo dois
-
-Links internos: [Seguro Garantia Licitante](/seguro-garantia-licitante/)
-
-Links externos: [Lei 14.133](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14133.htm)
-
-## HTML embutido (quando necessário)
-
-Tabelas, blocos especiais e outros elementos HTML podem ser inseridos diretamente.
-O HTML **não pode ter indentação** — deve começar na coluna zero:
-
-<div class="callout">
-<p><strong>Atenção:</strong> Insira HTML sem indentação (sem espaços no início da linha).</p>
-</div>
-
-## Perguntas frequentes
-
-As perguntas do campo `faq:` do frontmatter são renderizadas automaticamente
-como acordeão no final da página. Não precisa duplicar aqui.
+slug          - Igual ao nome do arquivo (sem .md). Define a URL /blog/<slug>/.
+title         - Titulo do artigo. Vira o H1 e o title da pagina.
+description   - Meta description (140-160 chars).
+canonical     - URL completa com barra final.
+date          - AAAA-MM-DD. Determina a ordem de exibicao (mais recente primeiro).
+category      - Uma das categorias validas:
+                  Licitacao
+                  Execucao de Contrato
+                  Judicial
+                  Trabalhista
+                  Locatico
+                  Responsabilidade Civil
+                  Cyber
+                  Para o seu negocio
+                  O build quebra se o valor nao estiver nessa lista.
+readingTime   - Tempo estimado em minutos.
+author        - Nome do autor (ex: Fabio Lima).
+keywords      - Palavras-chave separadas por virgula.
+lead          - Paragrafo de abertura destacado (aparece acima do corpo).
+image         - (OPCIONAL) Caminho ou URL da imagem de capa. Tamanho recomendado:
+                  1200x630 px, JPEG ou PNG. Ex: /blog/capas/meu-artigo.jpg.
+                  Se ausente, o build gera uma capa SVG automatica em
+                  /blog/capas/<slug>.svg com o titulo e a categoria.
+featured      - (OPCIONAL) true ou false (padrao false). Marca o artigo para
+                  aparecer na faixa de destaques do topo do /blog/. Use em ate
+                  3 artigos simultaneamente.
+cta_titulo    - (OPCIONAL) Titulo do banner de CTA. Padrao generico se ausente.
+cta_texto     - (OPCIONAL) Texto do CTA. Quanto mais especifico do tema, melhor.
+faq           - (OPCIONAL) Lista de perguntas e respostas para o schema FAQPage.

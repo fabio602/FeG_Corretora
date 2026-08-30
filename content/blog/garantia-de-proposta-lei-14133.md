@@ -4,8 +4,10 @@ title: "Garantia de Proposta na Lei 14.133: quando o edital pode exigir e como c
 description: "Entenda quando o edital pode exigir garantia de proposta, qual o limite legal, quais modalidades aceitas e o que acontece se o vencedor recusar o contrato."
 canonical: https://fegsegurogarantia.com.br/blog/garantia-de-proposta-lei-14133/
 date: 2026-08-30
-category: "Licitações"
+category: "Licitação"
 readingTime: 7
+featured: true
+image: ""
 author: "Fábio Lima"
 keywords: "garantia de proposta, lei 14133, licitação, seguro garantia proposta, artigo 58"
 lead: "Se o edital da sua licitação exige garantia de proposta e você ainda não sabe qual modalidade escolher nem quanto vai custar, este artigo responde essas perguntas com base no artigo 58 da Lei 14.133/2021."

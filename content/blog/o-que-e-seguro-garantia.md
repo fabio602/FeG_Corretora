@@ -4,8 +4,10 @@ title: "O que é Seguro Garantia? Entenda de forma simples como funciona"
 description: "Guia simples e direto: o que é Seguro Garantia, para que serve, quem são as partes, quanto custa e quando sua empresa precisa de um. Explicado por especialistas."
 canonical: https://fegsegurogarantia.com.br/blog/o-que-e-seguro-garantia/
 date: 2026-07-08
-category: "Guia"
+category: "Para o seu negócio"
 readingTime: 7
+featured: true
+image: ""
 author: "Fábio Lima"
 keywords: "o que é seguro garantia, como funciona seguro garantia, seguro garantia para que serve"
 lead: "Seguro Garantia é um seguro que substitui dinheiro parado. Em vez de a sua empresa depositar uma caução, imobilizar capital ou comprometer o limite bancário para provar que vai cumprir um contrato, uma seguradora emite uma apólice garantindo esse compromisso. Se a empresa não cumprir, a seguradora indeniza o beneficiário. Simples assim."

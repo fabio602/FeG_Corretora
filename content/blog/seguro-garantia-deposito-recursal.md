@@ -4,8 +4,10 @@ title: "Seguro Garantia para depósito recursal: como funciona | F&amp;G Correto
 description: "Como substituir o depósito recursal trabalhista por Seguro Garantia Judicial, o que exige o Ato Conjunto TST 1/2019 e a linha do tempo completa do processo."
 canonical: https://fegsegurogarantia.com.br/blog/seguro-garantia-deposito-recursal/
 date: 2026-07-07
-category: "Seguro Judicial"
+category: "Trabalhista"
 readingTime: 5
+featured: false
+image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia depósito recursal, substituir depósito recursal, seguro garantia judicial trabalhista"
 lead: "Sua empresa foi condenada em uma ação trabalhista e precisa recorrer? Antes de fazer o depósito recursal em dinheiro, saiba que a lei permite substituí-lo por uma apólice de Seguro Garantia Judicial, liberando o caixa da empresa durante todo o processo."

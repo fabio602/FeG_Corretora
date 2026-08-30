@@ -4,8 +4,10 @@ title: "Como funciona o Seguro Garantia Judicial Trabalhista"
 description: "Como o Seguro Garantia Judicial substitui o depósito recursal e a penhora de bens em ações trabalhistas. Guia completo com as duas fases, tabela comparativa e requisitos legais."
 canonical: https://fegsegurogarantia.com.br/blog/seguro-garantia-judicial-trabalhista/
 date: 2026-07-06
-category: "Artigo"
+category: "Trabalhista"
 readingTime: 8
+featured: false
+image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia judicial trabalhista, substituir penhora trabalhista, seguro garantia execução trabalhista, garantia juízo trabalhista"
 lead: "Sua empresa enfrenta uma ação trabalhista e não quer imobilizar capital em depósitos judiciais ou ver seus bens penhorados? O Seguro Garantia Judicial Trabalhista existe exatamente para isso — mas ele funciona de forma diferente em cada fase do processo. Este guia explica as duas situações em que a apólice é cabível e como tirar o máximo de cada uma."
