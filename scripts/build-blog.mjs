@@ -284,7 +284,7 @@ function buildNewsletterFooter() {
   <div class="footer-inner">
     <div>
       <p class="footer-brand">F&amp;G Seguro Garantia</p>
-      <p class="footer-info">Corretora autorizada SUSEP<br>Boituva, SP - Brasil<br>CNPJ/SUSEP K7E4NJ</p>
+      <p class="footer-info">Corretora autorizada SUSEP<br>Boituva, SP - Brasil<br>CNPJ 56.123.874/0001-90<br>SUSEP 242160653</p>
     </div>
     <div class="footer-col">
       <h4>Modalidades</h4>
@@ -709,7 +709,7 @@ function buildBlogListing(articles) {
 </nav>
 <header class="blog-header">
   <h1 class="blog-header-title">Blog F&amp;G</h1>
-  <p class="blog-header-sub">Tudo sobre Seguro Garantia para empresas que licitam e contratam com o poder publico</p>
+  <p class="blog-header-sub">Tudo sobre Seguro Garantia para empresas usarem seu capital de forma inteligente</p>
   <div class="blog-search"><input type="text" id="blog-search-input" placeholder="Buscar artigos..." aria-label="Buscar artigos" autocomplete="off"/></div>
 </header>
 <section class="featured-section">
