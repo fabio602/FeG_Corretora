@@ -17,7 +17,7 @@ faq:
   - q: "Qual o valor máximo da garantia de proposta?"
     a: "O limite é 1% do valor estimado para a contratação, conforme o artigo 58 da Lei 14.133/2021."
   - q: "O que acontece se o vencedor recusar assinar o contrato?"
-    a: "A garantia de proposta é executada integralmente. O valor vai para o órgão público e o licitante pode ser sancionado."
+    a: "O órgão público pode abrir sinistro junto à seguradora e solicitar a indenização prevista na garantia. Além disso, a lei autoriza a aplicação de sanções ao licitante que recusa a assinatura do contrato."
   - q: "Em quanto tempo a garantia é devolvida após a licitação?"
     a: "Em até 10 dias úteis contados da assinatura do contrato pelo vencedor ou da data em que a licitação for declarada fracassada ou deserta."
   - q: "Posso usar Seguro Garantia como garantia de proposta?"
@@ -28,7 +28,7 @@ faq:
 
 Participar de uma licitação envolve um compromisso real: se você ganhar, precisa assinar o contrato e cumprir o que prometeu. A garantia de proposta existe justamente para proteger a Administração Pública contra o risco de o vencedor recusar o contrato depois de declarado.
 
-Antes da Lei 14.133/2021, a garantia de proposta era disciplinada de forma esparsa. Com a nova lei, ela ganhou regras claras no artigo 58, que definiu limite de valor, modalidades aceitas e prazo de devolução.
+Na lei anterior, a 8.666/1993, a garantia de proposta não tinha regras tão claras. A Lei 14.133/2021 organizou o assunto no artigo 58, definindo limite de valor, modalidades aceitas e prazo de devolução.
 
 Nem todo edital exige essa garantia. Ela aparece mais frequentemente em contratos de maior valor ou complexidade, onde o risco de desistência do vencedor traz prejuízo concreto ao órgão.
 
@@ -39,9 +39,9 @@ O artigo 58 estabelece que a garantia de proposta, quando exigida, deve:
 - **Ser facultativa para o órgão:** o edital pode ou não exigi-la, mas se exigir, a regra vale para todos os licitantes sem exceção
 - **Respeitar o limite de 1%** do valor estimado da contratação
 - **Aceitar quatro modalidades**, à escolha do licitante: caução em dinheiro ou títulos da dívida pública, Seguro Garantia, fiança bancária ou título de capitalização custeado por pagamento único
-- **Ser devolvida em até 10 dias úteis** após a assinatura do contrato ou a declaração de fracasso da licitação
+- **Ser devolvida em até 10 dias úteis** após a assinatura do contrato ou a declaração de fracasso da licitação, no caso de caução em dinheiro e títulos da dívida pública; quando o licitante optou pelo Seguro Garantia, não há valor a devolver: a apólice simplesmente perde a vigência ou é cancelada após o resultado da licitação
 
-O ponto mais crítico é o efeito da recusa: se o vencedor se recusar a assinar o contrato ou não apresentar a documentação exigida, a garantia é executada pelo seu valor integral.
+O ponto mais crítico é o efeito da recusa: se o vencedor se recusar a assinar o contrato ou não apresentar a documentação exigida, o órgão público pode abrir sinistro junto à seguradora e solicitar a indenização prevista na garantia, além de aplicar as sanções previstas na lei ao licitante.
 
 ## Como calcular o valor da garantia de proposta
 
@@ -50,9 +50,11 @@ O cálculo é direto: aplica-se o percentual definido no edital (até 1%) sobre 
 | Valor estimado do contrato | Percentual do edital | Valor da garantia de proposta |
 |---|---|---|
 | R$ 500.000 | 1% | R$ 5.000 |
-| R$ 2.000.000 | 0,5% | R$ 10.000 |
+| R$ 2.000.000 | 1% | R$ 20.000 |
 | R$ 10.000.000 | 1% | R$ 100.000 |
 | R$ 50.000.000 | 1% | R$ 500.000 |
+
+Percentuais menores, como 0,5%, são pouco utilizados na prática e aparecem apenas em contratações de valor muito expressivo, onde o órgão opta por reduzir a exigência para facilitar a participação de empresas.
 
 ### Exemplo prático
 
@@ -70,7 +72,7 @@ A diferença de custo entre as modalidades é expressiva, sobretudo quando a emp
 <table class="comp-table">
 <thead>
 <tr>
-<th>Critério</th>
+<th>O que comparar</th>
 <th>Seguro Garantia</th>
 <th>Caução em Dinheiro</th>
 <th>Fiança Bancária</th>
@@ -127,7 +129,7 @@ Por outro lado, a exigência pode ser questionada se o edital fixar valor acima 
 
 A garantia de proposta e a garantia contratual são exigências distintas. Ao assinar o contrato, o vencedor assume uma nova obrigação: prestar a garantia de execução, que pode chegar a 5% do valor contratual (e em casos especiais, a 10% ou 30%).
 
-Nesse momento, a garantia de proposta é devolvida ou cancelada, e a empresa passa a operar com a garantia contratual ativa. Na F&G, costumamos orientar os clientes a já contratar o Seguro Garantia Licitante com vigência estendida para cobrir a fase contratual sem a necessidade de emitir duas apólices separadas.
+Nesse momento, a garantia de proposta é devolvida ou cancelada, e a empresa passa a operar com a garantia contratual ativa. A garantia de proposta e a garantia contratual são apólices distintas. Quando o cliente vence a licitação, a F&G apoia a empresa na emissão do novo seguro, a garantia de execução do contrato, com a mesma agilidade.
 
 ## Prazo de validade da apólice
 
