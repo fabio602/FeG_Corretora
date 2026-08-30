@@ -51,14 +51,14 @@ export const VALID_CATEGORIES = [
 
 // ── Cores dos selos de categoria ──────────────────────────────────────────────
 const CATEGORY_COLORS = {
-  'Licitação':             { bg: '#DBEAFE', text: '#1E3A8A' },
-  'Execução de Contrato':  { bg: '#DCFCE7', text: '#14532D' },
-  'Judicial':              { bg: '#EDE9FE', text: '#4C1D95' },
-  'Trabalhista':           { bg: '#FEF3C7', text: '#78350F' },
-  'Locatício':             { bg: '#CCFBF1', text: '#134E4A' },
-  'Responsabilidade Civil':{ bg: '#FFE4E6', text: '#881337' },
-  'Cyber':                 { bg: '#F3E8FF', text: '#581C87' },
-  'Para o seu negócio':    { bg: '#E0E7FF', text: '#1E1B4B' },
+  'Licitação':             { bg: '#E7EDF5', text: '#1C3A5E' },
+  'Execução de Contrato':  { bg: '#DDE6F0', text: '#16324F' },
+  'Judicial':              { bg: '#E3EAF2', text: '#22456B' },
+  'Trabalhista':           { bg: '#FBE7DE', text: '#9C3612' },
+  'Locatício':             { bg: '#FDEFE8', text: '#B24418' },
+  'Responsabilidade Civil':{ bg: '#EEF1F5', text: '#2C4C70' },
+  'Cyber':                 { bg: '#E1E8F1', text: '#1C3A5E' },
+  'Para o seu negócio':    { bg: '#F2F4F7', text: '#334E6E' },
 }
 
 // ── Conteudos ricos (ativo: false = nao renderiza) ────────────────────────────
@@ -186,7 +186,7 @@ function generateCoverSVG(slug, title, category) {
   const titleSVG = lines.map((l, i) =>
     `<text x="72" y="${titleY + i * 64}" font-family="Georgia,serif" font-size="52" font-weight="700" fill="white">${l}</text>`
   ).join('\n  ')
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1C3A5E"/><stop offset="100%" stop-color="#0F2035"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><rect x="0" y="0" width="12" height="630" fill="#E8572A"/><rect x="0" y="530" width="1200" height="100" fill="rgba(0,0,0,0.25)"/><rect x="56" y="60" width="220" height="38" rx="6" fill="${color.bg}"/><text x="72" y="87" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${color.text}" letter-spacing="2">${category.toUpperCase()}</text>${titleSVG}<text x="72" y="578" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">fegsegurogarantia.com.br</text></svg>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1C3A5E"/><stop offset="100%" stop-color="#0F2035"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><rect x="0" y="0" width="12" height="630" fill="#E8572A"/><rect x="0" y="530" width="1200" height="100" fill="rgba(0,0,0,0.25)"/><rect x="56" y="60" width="${Math.round(category.length * 13.5 + 32)}" height="38" rx="6" fill="#E8572A"/><text x="72" y="87" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" letter-spacing="2">${category.toUpperCase()}</text>${titleSVG}<text x="72" y="578" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">fegsegurogarantia.com.br</text></svg>`
 }
 
 // ── JSON-LD schemas ───────────────────────────────────────────────────────────
@@ -637,7 +637,7 @@ function buildBlogListing(articles) {
     .feat-side:hover .feat-side-title { color:var(--orange); }
     .feat-side-body { padding:16px; }
     .feat-side-title { font-family:'Source Serif 4',Georgia,serif; font-size:16px; font-weight:700; color:var(--navy); margin:8px 0 6px; line-height:1.3; transition:color .2s; }
-    .badge { display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:999px; }
+    .badge { display:inline-block; width:auto; align-self:flex-start; font-size:11px; font-weight:600; padding:3px 10px; border-radius:999px; }
     .rich-section { background:var(--navy); padding:56px 0; }
     .rich-section-title { font-family:'Source Serif 4',Georgia,serif; font-size:clamp(22px,3vw,32px); font-weight:700; color:#fff; margin-bottom:32px; }
     .rich-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
