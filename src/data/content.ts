@@ -136,5 +136,5 @@ export const PARTNERS = [
   { name: 'Pottencial Seguro Garantia', src: '/partners/pottencial.webp' },
   { name: 'Tokio Marine', src: '/partners/tokio.webp' },
   { name: 'AXA Seguro Garantia', src: '/partners/axa.webp' },
-  { name: 'Berkley Brasil Seguros', src: '/partners/berkley.webp' },
+  { name: 'Berkley Brasil Seguros', src: '/partners/berkley.svg' },
 ]

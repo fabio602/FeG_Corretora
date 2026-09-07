@@ -63,3 +63,13 @@ h1, h2, h3, h4 {
 
 /* Largura de texto corrido */
 .prose-limit { max-width: 52ch; }
+
+/* ── Seguradoras parceiras: marquee interativo ─────────────────────────── */
+@keyframes fg-partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.fg-partners{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.fg-partners-track{display:flex;align-items:center;width:max-content;animation:fg-partners-scroll 36s linear infinite}
+.fg-partners-track:hover{animation-play-state:paused}
+.fg-partners-logo{height:2.5rem;width:auto;object-fit:contain;margin-right:3rem;filter:grayscale(1);opacity:.5;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+.fg-partners-track:hover .fg-partners-logo{opacity:.25}
+.fg-partners-logo:hover,.fg-partners-track:hover .fg-partners-logo:hover{filter:grayscale(0);opacity:1;transform:scale(1.15)}
+@media (prefers-reduced-motion:reduce){.fg-partners-track{animation:none}}

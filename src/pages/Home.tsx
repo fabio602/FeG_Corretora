@@ -389,14 +389,14 @@ export default function Home() {
       </section>
 
       {/* PARCEIROS */}
-      <section className="py-12 bg-white overflow-hidden">
+      <section className="py-12 bg-white overflow-hidden fg-partners">
         <div className="container mb-6 text-center">
           <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Seguradoras parceiras</span>
         </div>
-        <div className="flex gap-12 animate-[scroll_20s_linear_infinite] w-max items-center px-8">
+        <div className="fg-partners-track">
           {[...PARTNERS, ...PARTNERS].map((p, i) => (
             <img key={i} src={p.src} alt={p.name} title={p.name}
-              className="h-10 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
+              className="fg-partners-logo"
               width="120" height="40" loading="lazy" />
           ))}
         </div>
