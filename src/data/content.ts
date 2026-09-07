@@ -137,4 +137,6 @@ export const PARTNERS = [
   { name: 'Tokio Marine', src: '/partners/tokio.webp' },
   { name: 'AXA Seguro Garantia', src: '/partners/axa.webp' },
   { name: 'Berkley Brasil Seguros', src: '/partners/berkley.svg' },
+  { name: 'Avla Seguros', src: '/partners/avla.webp' },
+  { name: 'Fator Seguradora', src: '/partners/fator.webp' },
 ]
