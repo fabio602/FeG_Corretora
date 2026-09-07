@@ -58,7 +58,7 @@ export default function Footer() {
               </li>
               <li className="text-blue-300">Boituva, SP — Brasil</li>
               <li className="flex gap-3 pt-1">
-                <a href="https://www.instagram.com/fg_segurogarantia" target="_blank" rel="noopener noreferrer" aria-label="Instagram F&G" className="hover:text-white transition-colors">Instagram</a>
+                <a href="https://www.instagram.com/fgsegurogarantia" target="_blank" rel="noopener noreferrer" aria-label="Instagram F&G" className="hover:text-white transition-colors">Instagram</a>
                 <a href="https://www.linkedin.com/in/fabio-lima-30161327/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Fábio Lima" className="hover:text-white transition-colors">LinkedIn</a>
               </li>
             </ul>
