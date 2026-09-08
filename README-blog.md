@@ -24,14 +24,29 @@ O nome do arquivo vira o slug da URL:
 | `description` | Sim | Meta description para o Google (140-160 chars) |
 | `canonical` | Sim | URL completa com barra final: `https://fegsegurogarantia.com.br/blog/seu-slug/` |
 | `date` | Sim | Data no formato `AAAA-MM-DD` |
-| `category` | Sim | Ex: Guia, Comparativo, Seguro Judicial |
+| `category` | Sim | Uma das 8 categorias válidas (lista abaixo). O build **quebra** se o valor não estiver na lista |
 | `readingTime` | Sim | Tempo estimado de leitura em minutos |
 | `author` | Sim | Nome do autor |
 | `keywords` | Não | Palavras-chave separadas por vírgula |
 | `lead` | Não | Parágrafo de abertura destacado (aparece em itálico no topo) |
+| `image` | Não | Capa própria (1200x630, JPEG ou PNG). Se ausente, o build gera uma capa SVG sozinho |
+| `featured` | Não | `true` destaca o artigo no topo do `/blog/`. Use em no máximo 3 ao mesmo tempo |
 | `cta_titulo` | Não | Título do banner de CTA no final do artigo (padrão genérico se ausente) |
 | `cta_texto` | Não | Texto do CTA — use texto específico do tema para melhor conversão |
 | `faq` | Não | Lista de perguntas/respostas para o schema FAQPage do Google |
+
+**Categorias válidas** (exatamente assim, com acento):
+
+```
+Licitação
+Execução de Contrato
+Judicial
+Trabalhista
+Locatício
+Responsabilidade Civil
+Cyber
+Para o seu negócio
+```
 
 ---
 
@@ -53,11 +68,42 @@ node scripts/build-legacy.mjs
 
 O artigo aparece automaticamente na listagem `/blog/` e no `sitemap.xml`.
 
+Rode o build antes de commitar. Ele valida o frontmatter e avisa no console se algo
+estiver errado — é mais barato descobrir aqui do que depois do deploy.
+
+**Se o build falhar com `ENOTEMPTY` ou `EPERM` em `dist/`:** o iCloud costuma criar
+cópias de conflito com sufixo ` 2` (`dist/blog 2`, `dist/materiais 2`) que o `rm -rf`
+do build não consegue remover. Mova ou apague essas pastas pelo Finder e rode de novo.
+
 ---
 
-### 5. Suba para o Hostinger
+### 5. Publique
 
-Copie o conteúdo da pasta `dist/` para o `public_html/` no File Manager do Hostinger.
+O deploy é automático. Basta o código entrar na `main`:
+
+```bash
+git checkout -b blog/AAAA-MM-DD
+git add content/blog/
+git commit -m "Descricao do que entrou"
+git push -u origin blog/AAAA-MM-DD
+gh pr create --fill
+```
+
+Depois do merge, a Hostinger roda o build e publica sozinha — leva menos de um minuto.
+**Não é preciso subir nada no File Manager.** A pasta `dist/` nem vai para o
+repositório (está no `.gitignore`); ela é regerada no servidor a partir dos `.md`.
+
+Confira a URL no ar antes de considerar publicado.
+
+---
+
+### 6. Peça a indexação no Google
+
+Em [Search Console](https://search.google.com/search-console) → **Inspeção de URL**,
+cole a URL do artigo e clique em **Solicitar indexação**.
+
+O `sitemap.xml` já está enviado e o Google relê de tempos em tempos, mas o pedido
+direto costuma antecipar a primeira aparição em dias.
 
 ---
 
