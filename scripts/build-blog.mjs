@@ -182,11 +182,18 @@ function generateCoverSVG(slug, title, category) {
     if (lines.length === 2) { line = words.slice(words.indexOf(w) + 1).join(' ') || ''; break }
   }
   if (line) lines.push(line.trim())
+  // Badge da categoria. A largura da pilula e o comprimento do texto sao
+  // calculados juntos e amarrados por textLength, entao o texto cabe sempre,
+  // independente da fonte que o renderizador usar. lengthAdjust="spacing"
+  // ajusta so o espacamento entre letras, sem deformar os glifos.
+  const cat = category.toUpperCase()
+  const catTextW = Math.round(cat.length * (20 * 0.67 + 2))
+  const badgeW = catTextW + 32
   const titleY = lines.length === 1 ? 310 : lines.length === 2 ? 290 : 270
   const titleSVG = lines.map((l, i) =>
     `<text x="72" y="${titleY + i * 64}" font-family="Georgia,serif" font-size="52" font-weight="700" fill="white">${l}</text>`
   ).join('\n  ')
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1C3A5E"/><stop offset="100%" stop-color="#0F2035"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><rect x="0" y="0" width="12" height="630" fill="#E8572A"/><rect x="0" y="530" width="1200" height="100" fill="rgba(0,0,0,0.25)"/><rect x="56" y="60" width="220" height="38" rx="6" fill="${color.bg}"/><text x="72" y="87" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${color.text}" letter-spacing="2">${category.toUpperCase()}</text>${titleSVG}<text x="72" y="578" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">fegsegurogarantia.com.br</text></svg>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1C3A5E"/><stop offset="100%" stop-color="#0F2035"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><rect x="0" y="0" width="12" height="630" fill="#E8572A"/><rect x="0" y="530" width="1200" height="100" fill="rgba(0,0,0,0.25)"/><rect x="56" y="60" width="${badgeW}" height="38" rx="6" fill="${color.bg}"/><text x="72" y="87" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${color.text}" textLength="${catTextW}" lengthAdjust="spacing">${cat}</text>${titleSVG}<text x="72" y="578" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">fegsegurogarantia.com.br</text></svg>`
 }
 
 // ── JSON-LD schemas ───────────────────────────────────────────────────────────
