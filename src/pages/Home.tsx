@@ -381,7 +381,7 @@ export default function Home() {
                 Atendo todas as modalidades: licitante, execução de contrato, judicial, trabalhista, aduaneiro, loteamento, locatício e energia. E trabalho com um painel de mais de 25 seguradoras, o que na prática significa buscar a taxa e o limite certos para o seu caso em vez de encaixar a sua empresa no produto de uma única companhia.
               </p>
               <ul className="space-y-3">
-                {['Dedicação exclusiva a Seguro Garantia','Todas as modalidades, inclusive as menos comuns','Você fala comigo, não com um call center','Mais de 25 seguradoras no mesmo painel'].map(item => (
+                {['Dedicação exclusiva a Seguro Garantia','Todas as modalidades, inclusive as menos comuns','Atendimento pessoal, humanizado e personalizado','Mais de 25 seguradoras no mesmo painel'].map(item => (
                   <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
                     <span className="w-5 h-5 rounded-full bg-fg-orange text-white text-xs flex items-center justify-center font-bold flex-shrink-0">✓</span>
                     {item}
