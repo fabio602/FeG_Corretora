@@ -25,7 +25,7 @@ const AUTHORS = {
   'fabio-lima': {
     name:     'Fabio Lima',
     initials: 'FL',
-    bio:      'Especialista em Seguro Garantia com mais de 10 anos atendendo empresas em licitacoes e contratos publicos. Fundador da F&G Corretora.',
+    bio:      'Administrador de formacao e corretor dedicado exclusivamente a Seguro Garantia, em todas as modalidades. Fundador da F&G Corretora.',
     wa:       WA_URL,
   },
 }

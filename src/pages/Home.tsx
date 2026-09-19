@@ -4,12 +4,13 @@ import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, PARTNERS, WA_URL, FORM_EMAIL } from '../data/content'
 import { routePath } from '../data/routes'
 import { ModalityIcon, IconDoc, IconCompare, IconClockCheck, IconClock, IconNetwork, IconGlobe, IconCheck } from '../components/icons/SiteIcons'
+import { CountUp } from '../components/Motion'
 
 const STATS = [
-  { value: '2h', label: 'Para emitir a apólice' },
-  { value: '25+', label: 'Seguradoras parceiras' },
-  { value: 'R$100M+', label: 'Volume já garantido' },
-  { value: '5,0 ★', label: '24 avaliações Google' },
+  { to: 2,   suffix: 'h',            label: 'Para emitir a apólice' },
+  { to: 25,  suffix: '+',            label: 'Seguradoras parceiras' },
+  { to: 100, prefix: 'R$', suffix: 'M+', label: 'Volume já garantido' },
+  { to: 5,   decimals: 1, suffix: ' ★',  label: '24 avaliações Google' },
 ]
 
 const REVIEWS = [
@@ -211,13 +212,13 @@ export default function Home() {
       </Helmet>
 
       {/* HERO */}
-      <section className="bg-fg-bg pt-28 pb-16">
+      <section className="relative overflow-hidden bg-fg-bg pt-28 pb-16">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-14 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1.5 text-xs font-semibold text-gray-700 mb-5">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8572A" strokeWidth="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Autorizado SUSEP · Emissão em até 2h
+                SUSEP 242160653 · Emissão em até 2h
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-fg-navy leading-tight mb-4">
                 Seguro Garantia para quem não pode perder prazo nem{' '}
@@ -244,25 +245,29 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Card apólice */}
-            <div className="relative">
-              <div className="relative bg-white rounded-2xl shadow-2xl p-8">
-                <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-6">
+            {/* Painel fotográfico em bloco: cena inteira, aresta dura */}
+            <div className="fg-hero-shot">
+              <img src="/fabio-cena.webp" width="1500" height="1250" fetchPriority="high"
+                alt="Fábio Lima, corretor responsável pela F&G Seguro Garantia" />
+              <span className="fg-wedge fg-hero-wedge" aria-hidden="true" />
+            </div>
+
+              <div className="fg-hero-card">
+                <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-sm mb-3">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                   Emitida
                 </span>
-                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Modalidade</p>
-                <p className="text-sm font-medium text-gray-700 mb-6">Executante Construtor</p>
-                <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Valor segurado</p>
-                <p className="text-4xl font-extrabold text-fg-navy mb-7 tracking-tight">
-                  R$ 250.000<span className="text-2xl font-bold">,00</span>
+                <p className="text-[11px] text-gray-400 uppercase tracking-wider mb-0.5">Modalidade</p>
+                <p className="text-sm font-medium text-gray-700 mb-3">Executante Construtor</p>
+                <p className="text-[11px] text-gray-400 uppercase tracking-wider mb-0.5">Valor segurado</p>
+                <p className="text-2xl font-extrabold text-fg-navy mb-3 tracking-tight">
+                  R$ 250.000<span className="text-lg font-bold">,00</span>
                 </p>
-                <div className="border-t pt-4 flex items-center gap-2">
+                <div className="border-t pt-3 flex items-center gap-2">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  <span className="text-sm text-gray-400">Emitida em <strong className="text-fg-orange font-semibold">1h47min</strong></span>
+                  <span className="text-xs text-gray-400">Emitida em <strong className="text-fg-orange font-semibold">1h47min</strong></span>
                 </div>
               </div>
-            </div>
           </div>
 
         </div>
@@ -272,8 +277,10 @@ export default function Home() {
       <div className="w-full bg-fg-navy">
         <div className="flex divide-x divide-white/10">
           {STATS.map(s => (
-            <div key={s.value} className="flex-1 py-5 px-4 text-center">
-              <div className="text-xl font-bold leading-none" style={{color:'#EAC8AC'}}>{s.value}</div>
+            <div key={s.label} className="flex-1 py-5 px-4 text-center">
+              <div className="text-xl font-bold leading-none tabular-nums" style={{color:'#EAC8AC'}}>
+                <CountUp to={s.to} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} />
+              </div>
               <div className="text-xs text-blue-200 mt-1 leading-tight">{s.label}</div>
             </div>
           ))}
@@ -282,7 +289,7 @@ export default function Home() {
 
       {/* MODALIDADES */}
       <section id="modalidades" className="py-20 bg-white">
-        <div className="container">
+        <div className="container reveal">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">O que fazemos</span>
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Modalidades de Seguro Garantia</h2>
@@ -304,7 +311,7 @@ export default function Home() {
 
       {/* COMO FUNCIONA */}
       <section id="como-funciona" className="py-20 bg-fg-bg">
-        <div className="container">
+        <div className="container reveal">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Processo</span>
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Como funciona</h2>
@@ -335,7 +342,7 @@ export default function Home() {
 
       {/* VANTAGENS */}
       <section id="vantagens" className="py-16 bg-fg-navy">
-        <div className="container">
+        <div className="container reveal">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
             {[
               { Icon: IconClock,   value: '2h',   label: 'Tempo médio de emissão' },
@@ -356,33 +363,35 @@ export default function Home() {
       <ReviewCarousel />
 
       {/* QUEM SOMOS */}
-      <section id="quem-somos" className="py-20 bg-fg-bg">
+      <section id="quem-somos" className="relative overflow-hidden py-20 md:py-24 bg-fg-bg">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Nossa equipe</span>
-              <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Fábio &amp; Geisa Lima</h2>
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div className="fg-sobre-shot w-full max-w-[360px] mx-auto md:max-w-none">
+              <img src="/fabio-sobre-cena.webp" width="1100" height="1265" loading="lazy"
+                alt="Fábio Lima, corretor de Seguro Garantia da F&G" />
+              <span className="fg-wedge fg-sobre-wedge" aria-hidden="true" />
             </div>
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src="/couple-new.webp" alt="Fábio e Geisa Lima, fundadores da F&G Corretora de Seguro Garantia"
-                className="rounded-2xl w-full shadow-md" width="640" height="480" loading="lazy" />
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-5 prose-limit">
-                  Fundadores da F&G Corretora, especializados exclusivamente em Seguro Garantia. Mais de 10 anos atendendo empresas em licitações, contratos públicos e processos judiciais em todo o Brasil.
-                </p>
-                <ul className="space-y-3">
-                  {['Especialistas em Seguro Garantia','Atendimento 100% dedicado','Parceiros Tokio, AXA, Pottencial e mais','Emissão em até 2 horas'].map(item => (
-                    <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
-                      <span className="w-5 h-5 rounded-full bg-fg-orange text-white text-xs flex items-center justify-center font-bold flex-shrink-0">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer"
-                  className="inline-block mt-6 px-6 py-3 bg-fg-orange text-white font-bold rounded-lg hover:bg-orange-700 transition-colors">
-                  Falar com a equipe
-                </a>
-              </div>
+            <div className="reveal md:col-start-2">
+              <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Quem vai te atender</span>
+              <h2 className="text-3xl font-extrabold text-fg-navy mt-2 mb-5">Fábio Lima</h2>
+              <p className="text-gray-600 leading-relaxed mb-4 prose-limit">
+                Administrador de formação e corretor dedicado exclusivamente a Seguro Garantia. Acompanho pessoalmente cada apólice, da leitura do edital até a entrega ao órgão, atendendo construtoras, fornecedores e prestadores de serviço em todo o Brasil.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-5 prose-limit">
+                Atendo todas as modalidades: licitante, execução de contrato, judicial, trabalhista, aduaneiro, loteamento, locatício e energia. E trabalho com um painel de mais de 25 seguradoras, o que na prática significa buscar a taxa e o limite certos para o seu caso em vez de encaixar a sua empresa no produto de uma única companhia.
+              </p>
+              <ul className="space-y-3">
+                {['Dedicação exclusiva a Seguro Garantia','Todas as modalidades, inclusive as menos comuns','Você fala comigo, não com um call center','Mais de 25 seguradoras no mesmo painel'].map(item => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
+                    <span className="w-5 h-5 rounded-full bg-fg-orange text-white text-xs flex items-center justify-center font-bold flex-shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                className="inline-block mt-6 px-6 py-3 bg-fg-orange text-white font-bold rounded-lg hover:bg-orange-700 transition-colors">
+                Falar direto comigo
+              </a>
             </div>
           </div>
         </div>
@@ -390,7 +399,7 @@ export default function Home() {
 
       {/* PARCEIROS */}
       <section className="py-12 bg-white overflow-hidden fg-partners">
-        <div className="container mb-6 text-center">
+        <div className="container mb-6 text-center reveal">
           <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Seguradoras parceiras</span>
         </div>
         <div className="fg-partners-track">
@@ -404,11 +413,13 @@ export default function Home() {
 
       {/* CONTATO */}
       <section id="contato" className="py-20 bg-fg-bg">
-        <div className="container max-w-xl">
+        <div className="container max-w-xl reveal">
           <div className="text-center mb-10">
+            <img src="/fabio-avatar.webp" alt="Fábio Lima" width="72" height="72" loading="lazy"
+              className="rounded-full object-cover mx-auto mb-4 shadow-md" style={{width:'72px',height:'72px'}} />
             <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Fale conosco</span>
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Solicitar análise gratuita</h2>
-            <p className="text-gray-500 mt-2 text-sm">Respondemos em até 2 horas pelo WhatsApp ou e-mail.</p>
+            <p className="text-gray-500 mt-2 text-sm">Quem responde é o Fábio, em até 2 horas pelo WhatsApp ou e-mail.</p>
           </div>
           <div className="bg-white rounded-2xl shadow-sm p-8">
             <ContactForm />

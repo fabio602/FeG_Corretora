@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton'
+import { RevealEngine } from './components/Motion'
 
 const Home         = lazy(() => import('./pages/Home'))
 const Modalidade   = lazy(() => import('./pages/Modalidade'))
@@ -42,6 +43,7 @@ function AppInner() {
     <>
       <TrailingSlashNormalizer />
       <ScrollToTop />
+      <RevealEngine />
       <Navbar />
       <main>
         <Suspense fallback={<Spinner />}>

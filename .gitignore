@@ -2,3 +2,10 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+_arquivo/
+Claude outputs/
+
+# duplicatas que o iCloud cria
+* 2.*
+* 2/
