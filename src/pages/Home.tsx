@@ -33,7 +33,7 @@ const DETALHES: Record<string, { quando: string; quanto: string; vigencia: strin
   },
   '/seguro-garantia-aduaneiro/': {
     quando: 'Quando a empresa transporta mercadoria ainda não desembaraçada entre recintos alfandegados e a Receita exige garantia dos tributos suspensos no Termo de Responsabilidade. O seguro aduaneiro é uma das três formas aceitas (IN SRF 248/2002, art. 22, § 2º).',
-    quanto: 'O montante dos tributos suspensos (art. 23). Há dispensa automática em alguns casos, como transportador com patrimônio líquido acima de R$ 2 milhões ou certificado OEA — conferimos isso antes de propor a apólice.',
+    quanto: 'O montante dos tributos suspensos (art. 23). Há dispensa automática em alguns casos, como transportador com patrimônio líquido acima de R$ 2 milhões ou certificado OEA. Conferimos isso antes de propor a apólice.',
     vigencia: 'O termo de responsabilidade vale 3 anos e a garantia precisa estar vigente na data da ocorrência (arts. 20 e 24). Na prática a apólice é anual e renovável.',
   },
   '/seguro-garantia-loteamento/': {
@@ -106,7 +106,7 @@ function ContactForm() {
       const res = await fetch(`https://formsubmit.co/ajax/${FORM_EMAIL}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ ...form, _subject: 'Novo contato — F&G Seguro Garantia' }),
+        body: JSON.stringify({ ...form, _subject: 'Novo contato no site da F&G Seguro Garantia' }),
       })
       setStatus(res.ok ? 'ok' : 'err')
     } catch { setStatus('err') }
@@ -283,8 +283,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Seguro Garantia | Emissão em até 2h | F&G Corretora — Boituva SP</title>
-        <meta name="description" content="Corretora especializada em Seguro Garantia para licitações e contratos. Analisamos o edital e emitimos a apólice em até 2 horas. Boituva, SP — atendemos todo o Brasil." />
+        <title>Seguro Garantia | Emissão em até 2h | F&G Corretora Boituva SP</title>
+        <meta name="description" content="Corretora especializada em Seguro Garantia para licitações e contratos. Analisamos o edital e emitimos a apólice em até 2 horas. Boituva, SP. Atendemos todo o Brasil." />
         <link rel="canonical" href="https://fegsegurogarantia.com.br/" />
         <meta property="og:title" content="Seguro Garantia | Emissão em até 2h | F&G Corretora" />
         <meta property="og:description" content="Corretora especializada em Seguro Garantia. Emissão em até 2 horas. Atendemos todo o Brasil." />
@@ -376,8 +376,8 @@ export default function Home() {
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Modalidades de Seguro Garantia</h2>
           </div>
           <p className="text-center text-sm text-gray-500 max-w-2xl mx-auto mb-10">
-            Em todas elas a apólice vale enquanto valer a obrigação garantida. A seguradora avisa com 90 dias de
-            antecedência do vencimento e não pode recusar a renovação enquanto o risco existir (Circular SUSEP 662/2022).
+            Seja um edital, um contrato privado ou um processo, existe uma modalidade que resolve a exigência sem
+            tirar dinheiro do seu caixa. Descobrir qual é a certa para o seu caso é a minha parte.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -440,7 +440,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">Processo</span>
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Como funciona</h2>
-            <p className="text-gray-500 mt-2 text-sm">Da solicitação à apólice em mãos — tudo digital</p>
+            <p className="text-gray-500 mt-2 text-sm">Da solicitação à apólice em mãos, tudo digital</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[

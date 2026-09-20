@@ -57,7 +57,7 @@ const PROGRESS_BAR_SCRIPT = `\n<script>
 function transformArticle(html, slug) {
   // Idempotency guard
   if (html.includes('reading-progress')) {
-    console.log(`  ⏭️  ${slug} — já transformado, pulando`)
+    console.log(`  ⏭️  ${slug}, já transformado, pulando`)
     return html
   }
 

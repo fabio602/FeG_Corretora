@@ -1,4 +1,4 @@
-# F&G Corretora de Seguros — Seguro Garantia
+# F&G Corretora de Seguros: Seguro Garantia
 
 > Corretora especializada em Seguro Garantia para empresas que participam de licitações públicas, contratos de execução, processos judiciais e locações comerciais. Autorizada pela SUSEP. Emissão de apólices em até 2 horas. Atendimento digital em todo o Brasil. Sede em Boituva, SP.
 
@@ -10,15 +10,20 @@
 
 ## Páginas principais
 
-- [Home](https://fegsegurogarantia.com.br/) — Apresentação da corretora, modalidades de Seguro Garantia e como funciona o processo de emissão.
-- [Seguro Garantia Licitante (Proposta)](https://fegsegurogarantia.com.br/seguro-garantia-licitante) — Garantia exigida para participação em licitações públicas (Lei 14.133/2021). Substitui caução em dinheiro ou bens.
-- [Seguro Garantia de Execução de Contrato](https://fegsegurogarantia.com.br/seguro-garantia-execucao-contrato) — Garante que o contratado cumprirá as obrigações do contrato público ou privado.
-- [Seguro Garantia Judicial](https://fegsegurogarantia.com.br/seguro-garantia-judicial) — Substitui o depósito recursal em processos judiciais e administrativos. Preserva o caixa da empresa.
-- [Garantia Locatícia](https://fegsegurogarantia.com.br/seguro-garantia-locaticia) — Alternativa ao fiador e caução em contratos de locação comercial.
-- [Seguro Garantia Adicional](https://fegsegurogarantia.com.br/seguro-garantia-adicional) — Exigido quando a proposta vencedora fica abaixo de 85% do valor de referência do edital (Lei 14.133/2021, art. 59, § 5º).
-- [Seguro Garantia Compra e Venda de Energia](https://fegsegurogarantia.com.br/seguro-garantia-energia) — Para agentes habilitados na CCEE (mercado livre de energia). Substitui aportes financeiros exigidos.
-- [Perguntas Frequentes](https://fegsegurogarantia.com.br/perguntas-frequentes) — Dúvidas comuns sobre Seguro Garantia, prazos, custos e processo de emissão.
-- [Blog](https://fegsegurogarantia.com.br/blog) — Artigos e guias sobre Seguro Garantia, licitações e Lei 14.133.
+- [Home](https://fegsegurogarantia.com.br/): Apresentação da corretora, as 11 modalidades de Seguro Garantia e como funciona o processo de emissão.
+- [Seguro Garantia Licitante (Proposta)](https://fegsegurogarantia.com.br/seguro-garantia-licitante): Garantia exigida para participação em licitações públicas (Lei 14.133/2021). Substitui caução em dinheiro ou bens.
+- [Seguro Garantia de Execução de Contrato](https://fegsegurogarantia.com.br/seguro-garantia-execucao-contrato): Garante que o contratado cumprirá as obrigações do contrato público ou privado.
+- [Seguro Garantia Judicial](https://fegsegurogarantia.com.br/seguro-garantia-judicial): Substitui o depósito em dinheiro e a penhora em ações cíveis e execuções fiscais (CPC, arts. 835, § 2º e 848).
+- [Seguro Garantia Judicial Trabalhista](https://fegsegurogarantia.com.br/seguro-garantia-judicial-trabalhista): Substitui o depósito recursal na Justiça do Trabalho (CLT, art. 899, § 11) e garante a execução trabalhista. Padrão do Ato Conjunto TST 1/2019.
+- [Garantia Locatícia](https://fegsegurogarantia.com.br/seguro-garantia-locaticia): Alternativa ao fiador e caução em contratos de locação comercial.
+- [Seguro Garantia Adicional](https://fegsegurogarantia.com.br/seguro-garantia-adicional): Exigido quando a proposta vencedora fica abaixo de 85% do valor de referência do edital (Lei 14.133/2021, art. 59, § 5º).
+- [Seguro Garantia Compra e Venda de Energia](https://fegsegurogarantia.com.br/seguro-garantia-energia): Para agentes habilitados na CCEE (mercado livre de energia). Substitui aportes financeiros exigidos.
+- [Seguro Garantia Aduaneiro](https://fegsegurogarantia.com.br/seguro-garantia-aduaneiro): Garante à União os tributos suspensos no regime de trânsito aduaneiro (IN SRF 248/2002, art. 22).
+- [Seguro Garantia de Loteamento](https://fegsegurogarantia.com.br/seguro-garantia-loteamento): Garante à Prefeitura a execução das obras de infraestrutura do loteamento (Lei 6.766/79, art. 18, V).
+- [Seguro Garantia de Adiantamento de Pagamento](https://fegsegurogarantia.com.br/seguro-garantia-adiantamento-pagamento): Garante a devolução do valor adiantado ao contratado (Lei 14.133/2021, art. 145).
+- [Obrigações Trabalhistas e Previdenciárias](https://fegsegurogarantia.com.br/seguro-garantia-trabalhista-previdenciario): Cobertura adicional da garantia de execução para verbas em que o contratante responde subsidiariamente (Lei 14.133/2021, art. 121, § 3º, I).
+- [Perguntas Frequentes](https://fegsegurogarantia.com.br/perguntas-frequentes): Dúvidas comuns sobre Seguro Garantia, prazos, custos e processo de emissão.
+- [Blog](https://fegsegurogarantia.com.br/blog): Artigos e guias sobre Seguro Garantia, licitações e Lei 14.133.
 
 ## Sobre a empresa
 

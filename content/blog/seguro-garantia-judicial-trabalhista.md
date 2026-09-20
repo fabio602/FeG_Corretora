@@ -10,16 +10,16 @@ featured: false
 image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia judicial trabalhista, substituir penhora trabalhista, seguro garantia execução trabalhista, garantia juízo trabalhista"
-lead: "Sua empresa enfrenta uma ação trabalhista e não quer imobilizar capital em depósitos judiciais ou ver seus bens penhorados? O Seguro Garantia Judicial Trabalhista existe exatamente para isso — mas ele funciona de forma diferente em cada fase do processo. Este guia explica as duas situações em que a apólice é cabível e como tirar o máximo de cada uma."
+lead: "Sua empresa enfrenta uma ação trabalhista e não quer imobilizar capital em depósitos judiciais ou ver seus bens penhorados? O Seguro Garantia Judicial Trabalhista existe exatamente para isso, mas ele funciona de forma diferente em cada fase do processo. Este guia explica as duas situações em que a apólice é cabível e como tirar o máximo de cada uma."
 faq:
   - q: "O juiz trabalhista é obrigado a aceitar o Seguro Garantia?"
     a: "Sim, desde que a apólice atenda todos os requisitos do Ato Conjunto TST/CSJT/CGJT nº 1/2019. O Tribunal Superior do Trabalho pacificou o entendimento de que a recusa de apólice tecnicamente adequada configura excesso na execução. Na prática, apólices bem estruturadas são aceitas sem maiores questionamentos."
   - q: "Posso substituir uma penhora já decretada pelo Seguro Garantia?"
     a: "Sim. O art. 848 do CPC (aplicado subsidiariamente na execução trabalhista) autoriza a substituição da penhora a requerimento do executado, desde que a nova garantia seja igualmente idônea. A apólice de Seguro Garantia é equiparada ao depósito em dinheiro para esse fim. A empresa apresenta a apólice e pede a substituição; deferido, o bem é despenhorado e o bloqueio bancário é levantado."
   - q: "O que acontece se a empresa não pagar a condenação ao final?"
-    a: "Se a empresa perder os embargos e não pagar voluntariamente, o juízo intima a seguradora para depositar o valor em juízo — o que ela faz de forma incondicional, conforme as cláusulas da apólice. Depois a seguradora cobra o reembolso da empresa. O seguro não cancela a dívida; ele garante que o juízo receba, e a empresa continua responsável pelo valor final."
+    a: "Se a empresa perder os embargos e não pagar voluntariamente, o juízo intima a seguradora para depositar o valor em juízo, o que ela faz de forma incondicional, conforme as cláusulas da apólice. Depois a seguradora cobra o reembolso da empresa. O seguro não cancela a dívida; ele garante que o juízo receba, e a empresa continua responsável pelo valor final."
 cta_titulo: "Bens penhorados ou processo em execução?"
-cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. A F&G estrutura apólices para fase recursal e execução — com 12+ seguradoras e emissão em até 2 horas."
+cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. A F&G estrutura apólices para fase recursal e execução, com 12+ seguradoras e emissão em até 2 horas."
 ---
 
 <p class="article-cat">Seguro Judicial · Trabalhista</p>
@@ -29,7 +29,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <p>A base legal está no <strong>art. 899, § 11 da CLT</strong> (Lei 13.467/2017) para a fase recursal, e nos <strong>arts. 835 e 848 do CPC</strong> para a fase de execução, com os detalhes operacionais estabelecidos pelo <strong>Ato Conjunto TST/CSJT/CGJT nº 1/2019</strong>.</p>
 
 <h2>As duas fases: recursal e execução</h2>
-<p>Muitas empresas conhecem o seguro garantia apenas para substituir o depósito recursal — mas ele também é aceito na fase de execução, quando a condenação já transitou em julgado. São situações distintas, com regras e valores diferentes.</p>
+<p>Muitas empresas conhecem o seguro garantia apenas para substituir o depósito recursal, mas ele também é aceito na fase de execução, quando a condenação já transitou em julgado. São situações distintas, com regras e valores diferentes.</p>
 
 <div class="comparison">
 <table>
@@ -58,7 +58,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 </table>
 </div>
 
-<p>A F&amp;G emite apólices para <strong>ambas as fases</strong> — inclusive quando a empresa já tem bens penhorados e quer substituir a penhora pela apólice, recuperando o uso dos ativos.</p>
+<p>A F&amp;G emite apólices para <strong>ambas as fases</strong>, inclusive quando a empresa já tem bens penhorados e quer substituir a penhora pela apólice, recuperando o uso dos ativos.</p>
 
 <a href="/blog/seguro-garantia-deposito-recursal/" class="art-link-box">
 <div class="art-link-icon">📄</div>
@@ -70,16 +70,16 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 </a>
 
 <h2>Substituindo a penhora na fase de execução</h2>
-<p>Esta é a fase em que o seguro garantia faz mais diferença — e onde mais empresas deixam dinheiro na mesa. Quando a condenação transita em julgado e a empresa não paga de imediato (seja para discutir os cálculos, opor embargos à execução ou negociar parcelamento), o juízo vai buscar a garantia de outra forma:</p>
+<p>Esta é a fase em que o seguro garantia faz mais diferença, e onde mais empresas deixam dinheiro na mesa. Quando a condenação transita em julgado e a empresa não paga de imediato (seja para discutir os cálculos, opor embargos à execução ou negociar parcelamento), o juízo vai buscar a garantia de outra forma:</p>
 <ul>
 <li><strong>Bloqueio de conta bancária</strong> via BACENJUD (sistema de bloqueio eletrônico)</li>
-<li><strong>Penhora de bens móveis</strong> — veículos, equipamentos, estoques</li>
-<li><strong>Penhora de imóveis</strong> — com registro em cartório e risco de leilão</li>
-<li><strong>Penhora de créditos</strong> — faturamento, recebíveis, quotas sociais</li>
+<li><strong>Penhora de bens móveis</strong>: veículos, equipamentos, estoques</li>
+<li><strong>Penhora de imóveis</strong>: com registro em cartório e risco de leilão</li>
+<li><strong>Penhora de créditos</strong>: faturamento, recebíveis, quotas sociais</li>
 </ul>
 
 <blockquote>
-<p>A penhora de bens não impede apenas a venda do ativo — ela afeta o rating de crédito da empresa e pode inviabilizar financiamentos e novos contratos enquanto durar o processo.</p>
+<p>A penhora de bens não impede apenas a venda do ativo, ela afeta o rating de crédito da empresa e pode inviabilizar financiamentos e novos contratos enquanto durar o processo.</p>
 </blockquote>
 
 <p>O Seguro Garantia substitui todas essas modalidades. A empresa apresenta a apólice ao juízo, requer a substituição e, uma vez aceita, os bens são despenhorados e as contas desbloqueadas.</p>
@@ -121,7 +121,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
     <div class="tl2-num">5</div>
     <div>
       <p class="tl2-title">Empresa opera normalmente</p>
-      <p class="tl2-desc">Com o bem despenhorado e a conta desbloqueada, a empresa retoma sua capacidade operacional. O processo continua — embargos, recursos, negociação — sem impacto no caixa.</p>
+      <p class="tl2-desc">Com o bem despenhorado e a conta desbloqueada, a empresa retoma sua capacidade operacional. O processo continua, embargos, recursos, negociação, sem impacto no caixa.</p>
     </div>
 </div>
 </div>
@@ -156,7 +156,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
         <td><strong>Seguro Garantia <span class="badge-best">melhor</span></strong></td>
         <td>Prêmio anual sobre os R$ 260.000</td>
         <td>Fração do valor total (varia por perfil)</td>
-        <td>Nenhum — apólice emitida por seguradora SUSEP</td>
+        <td>Nenhum: apólice emitida por seguradora SUSEP</td>
       </tr>
     </tbody>
 </table>
@@ -170,7 +170,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <div class="benefit-card">
     <div class="benefit-num">01</div>
     <div class="benefit-title">Empresas com alto volume de ações</div>
-    <p class="benefit-desc">Quanto mais ações simultâneas, maior o efeito multiplicador — cada processo substituído libera capital para o negócio.</p>
+    <p class="benefit-desc">Quanto mais ações simultâneas, maior o efeito multiplicador, cada processo substituído libera capital para o negócio.</p>
 </div>
 <div class="benefit-card">
     <div class="benefit-num">02</div>
@@ -185,11 +185,11 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <div class="benefit-card">
     <div class="benefit-num">04</div>
     <div class="benefit-title">Empresas com condenações altas</div>
-    <p class="benefit-desc">Quanto maior o valor garantido, maior a economia de capital — o prêmio cresce, mas proporcionalmente muito menos que o valor depositado cresceria.</p>
+    <p class="benefit-desc">Quanto maior o valor garantido, maior a economia de capital, o prêmio cresce, mas proporcionalmente muito menos que o valor depositado cresceria.</p>
 </div>
 </div>
 
-<h2>Requisitos técnicos da apólice — o que o juízo exige</h2>
+<h2>Requisitos técnicos da apólice, o que o juízo exige</h2>
 <p>A rejeição de uma apólice pelo juiz trabalhista é um risco real e pode ter consequências graves (manutenção da penhora, execução forçada). Os pontos críticos a verificar:</p>
 
 <div class="steps">
@@ -197,7 +197,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
     <div class="step-num">1</div>
     <div class="step-body">
       <strong>Valor correto com acréscimo de 30%</strong>
-      Na execução, a garantia não é o valor da condenação — é a condenação acrescida de 30%, conforme o Ato Conjunto 1/2019. Apólice pelo valor exato da condenação será rejeitada.
+      Na execução, a garantia não é o valor da condenação, é a condenação acrescida de 30%, conforme o Ato Conjunto 1/2019. Apólice pelo valor exato da condenação será rejeitada.
     </div>
 </div>
 <div class="step">
@@ -211,7 +211,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
     <div class="step-num">3</div>
     <div class="step-body">
       <strong>Pagamento incondicional</strong>
-      A seguradora deve pagar em juízo sem discutir o mérito da condenação — assim como um depósito em dinheiro funcionaria. Apólices com cláusulas condicionantes são recusadas.
+      A seguradora deve pagar em juízo sem discutir o mérito da condenação, assim como um depósito em dinheiro funcionaria. Apólices com cláusulas condicionantes são recusadas.
     </div>
 </div>
 <div class="step">
@@ -232,7 +232,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 
 <div class="callout">
 <div class="callout-title">Atenção</div>
-<p>Apólice rejeitada em execução pode resultar na retomada imediata da penhora. A estruturação por corretor especializado elimina esse risco — a apólice sai certa na primeira vez.</p>
+<p>Apólice rejeitada em execução pode resultar na retomada imediata da penhora. A estruturação por corretor especializado elimina esse risco, a apólice sai certa na primeira vez.</p>
 </div>
 
 <h2>Perguntas frequentes</h2>
@@ -254,7 +254,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <details>
 <summary>O que acontece se a empresa não pagar a condenação ao final?</summary>
 <div class="faq-body">
-    <p>Se a empresa perder os embargos e não pagar voluntariamente, o juízo intima a seguradora para depositar o valor em juízo — o que ela faz de forma incondicional, conforme as cláusulas da apólice. Depois a seguradora cobra o reembolso da empresa. O seguro não cancela a dívida; ele garante que o juízo receba, e a empresa continua responsável pelo valor final.</p>
+    <p>Se a empresa perder os embargos e não pagar voluntariamente, o juízo intima a seguradora para depositar o valor em juízo, o que ela faz de forma incondicional, conforme as cláusulas da apólice. Depois a seguradora cobra o reembolso da empresa. O seguro não cancela a dívida; ele garante que o juízo receba, e a empresa continua responsável pelo valor final.</p>
 </div>
 </details>
 <p style="font-size:13px;color:var(--muted);margin-top:40px;line-height:1.6;">

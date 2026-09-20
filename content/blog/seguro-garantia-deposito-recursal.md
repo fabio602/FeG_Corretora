@@ -17,7 +17,7 @@ faq:
   - q: "O seguro garantia vale para qualquer recurso trabalhista?"
     a: "Vale para os recursos que exigem depósito recursal (ordinário, de revista, entre outros) e também para a fase de execução, cada um com a garantia estruturada conforme a etapa do processo."
   - q: "E se a empresa perder o processo?"
-    a: "A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida — é uma garantia de liquidez para o processo."
+    a: "A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida, é uma garantia de liquidez para o processo."
 cta_titulo: "Prazo correndo ou depósitos parados em juízo?"
 cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita em minutos. A F&G estrutura apólices conforme o Ato Conjunto TST 1/2019 junto a mais de 25 seguradoras parceiras e emite em até 2 horas."
 ---
@@ -191,7 +191,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita e
       </tr>
       <tr>
         <td><strong>Seguro Garantia Judicial</strong></td>
-        <td>Prêmio — fração pequena do valor garantido</td>
+        <td>Prêmio: fração pequena do valor garantido</td>
         <td>Caixa livre, sem consumo de limite bancário</td>
       </tr>
     </tbody>
@@ -203,24 +203,24 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita e
 <div class="steps">
 <div class="step">
     <div class="step-num">1</div>
-    <div class="step-body"><strong>Valor segurado correto</strong> — valor tabelado no recurso; condenação mais 30% na execução.</div>
+    <div class="step-body"><strong>Valor segurado correto</strong>: valor tabelado no recurso; condenação mais 30% na execução.</div>
 </div>
 <div class="step">
     <div class="step-num">2</div>
-    <div class="step-body"><strong>Cláusulas obrigatórias</strong> — renovação compulsória e pagamento incondicional após intimação.</div>
+    <div class="step-body"><strong>Cláusulas obrigatórias</strong>: renovação compulsória e pagamento incondicional após intimação.</div>
 </div>
 <div class="step">
     <div class="step-num">3</div>
-    <div class="step-body"><strong>Dados exatos</strong> — número do processo, partes e juízo espelhados na apólice sem divergência.</div>
+    <div class="step-body"><strong>Dados exatos</strong>: número do processo, partes e juízo espelhados na apólice sem divergência.</div>
 </div>
 <div class="step">
     <div class="step-num">4</div>
-    <div class="step-body"><strong>Seguradora idônea</strong> — registro ativo na SUSEP e apólice emitida por companhia habilitada.</div>
+    <div class="step-body"><strong>Seguradora idônea</strong>: registro ativo na SUSEP e apólice emitida por companhia habilitada.</div>
 </div>
 </div>
 <div class="callout">
 <div class="callout-title">⚠ Atenção</div>
-  A apólice rejeitada pode significar deserção do recurso — e não há segunda chance no prazo recursal. A estruturação por um corretor especializado elimina esse risco.
+  A apólice rejeitada pode significar deserção do recurso, e não há segunda chance no prazo recursal. A estruturação por um corretor especializado elimina esse risco.
 </div>
 
 <h2>Perguntas frequentes</h2>
@@ -234,7 +234,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita e
 </details>
 <details>
 <summary>E se a empresa perder o processo?</summary>
-<div class="faq-body"><p>A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida — é uma garantia de liquidez para o processo.</p></div>
+<div class="faq-body"><p>A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida, é uma garantia de liquidez para o processo.</p></div>
 </details>
 <p style="font-size:13px;color:var(--muted);margin-top:40px;line-height:1.6;">
 <strong>Referências:</strong> CLT, art. 899, § 11 (Lei 13.467/2017); Ato Conjunto TST/CSJT/CGJT nº 1/2019; CNJ, PCA 0009820-09.2019; jurisprudência do TST sobre aceitação de apólices com prazo de vigência determinado.

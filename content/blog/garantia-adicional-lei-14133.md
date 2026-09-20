@@ -68,7 +68,7 @@ cta_texto: "Envie o termo de convocação ou o edital no WhatsApp e receba a an�
 
 <h2>Caso real: quando o órgão mantém o cálculo cheio</h2>
 <p>Acompanhamos o caso de uma construtora que venceu a licitação de uma universidade pública paulista e apresentou pedido de reconsideração do cálculo da garantia adicional, fundamentado na orientação do TCU. A resposta do órgão foi tecnicamente sólida: o cálculo seguia a literalidade do artigo 59, parágrafo 5º, e o entendimento formal do TCE-SP, órgão competente para fiscalizar suas contratações, citando inclusive a legislação comentada e a cartilha do próprio tribunal. A exigência foi mantida integralmente, com prazo urgente para apresentação da garantia e assinatura do contrato.</p>
-<p><strong>A lição prática:</strong> em órgãos paulistas fiscalizados pelo TCE-SP, a empresa deve provisionar a garantia adicional pela diferença cheia. Quem aposta apenas na leitura do TCU pode ter dias — às vezes horas — para apresentar uma garantia 3 vezes maior do que planejou, sob pena de perder a contratação.</p>
+<p><strong>A lição prática:</strong> em órgãos paulistas fiscalizados pelo TCE-SP, a empresa deve provisionar a garantia adicional pela diferença cheia. Quem aposta apenas na leitura do TCU pode ter dias, às vezes horas, para apresentar uma garantia 3 vezes maior do que planejou, sob pena de perder a contratação.</p>
 
 <h2>Boas práticas antes mesmo de dar o lance</h2>
 <div class="steps">

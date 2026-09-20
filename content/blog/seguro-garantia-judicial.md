@@ -10,14 +10,14 @@ featured: true
 image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia judicial, o que é seguro garantia judicial, seguro garantia processo judicial, substituir depósito judicial, garantia juízo"
-lead: "Perder um processo judicial sem ter recursos para honrar a condenação pode comprometer a operação inteira de uma empresa. O Seguro Garantia Judicial existe para evitar exatamente esse cenário — e funciona em muito mais situações do que a maioria dos empresários imagina."
+lead: "Perder um processo judicial sem ter recursos para honrar a condenação pode comprometer a operação inteira de uma empresa. O Seguro Garantia Judicial existe para evitar exatamente esse cenário, e funciona em muito mais situações do que a maioria dos empresários imagina."
 faq:
   - q: "O juiz é obrigado a aceitar o Seguro Garantia no lugar do depósito?"
-    a: "Em execuções fiscais, sim — o art. 9º da Lei 6.830/80 e o art. 835 do CPC listam o seguro garantia como meio de penhora aceito. Em processos trabalhistas, a Resolução 61/2024 do TST regulamentou expressamente a aceitação. Em processos cíveis, depende da interpretação do juiz, mas a tendência da jurisprudência é favorável à aceitação quando a apólice cobre integralmente o débito."
+    a: "Em execuções fiscais, sim, o art. 9º da Lei 6.830/80 e o art. 835 do CPC listam o seguro garantia como meio de penhora aceito. Em processos trabalhistas, a Resolução 61/2024 do TST regulamentou expressamente a aceitação. Em processos cíveis, depende da interpretação do juiz, mas a tendência da jurisprudência é favorável à aceitação quando a apólice cobre integralmente o débito."
   - q: "Qual é o valor mínimo de processo para compensar contratar o seguro?"
     a: "Na prática, processos a partir de R$ 50 mil já têm proposta viável no mercado. Abaixo disso, o custo de estruturação pode não compensar. Para valores acima de R$ 500 mil, a economia em relação ao depósito em dinheiro costuma ser muito expressiva."
   - q: "O que acontece se a empresa perder o processo?"
-    a: "A seguradora paga ao credor o valor coberto pela apólice. Após isso, ela aciona a empresa para reembolso — é a chamada ação regressiva, prevista no contrato. Por isso, o seguro não elimina a dívida: ele garante o pagamento ao credor e preserva a liquidez da empresa enquanto o processo tramita."
+    a: "A seguradora paga ao credor o valor coberto pela apólice. Após isso, ela aciona a empresa para reembolso, é a chamada ação regressiva, prevista no contrato. Por isso, o seguro não elimina a dívida: ele garante o pagamento ao credor e preserva a liquidez da empresa enquanto o processo tramita."
 cta_titulo: "Tem um processo e precisa de garantia?"
 cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. A F&G estrutura apólices judiciais com 12+ seguradoras e emissão em até 2 horas."
 ---
@@ -25,13 +25,13 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <p class="article-cat">Seguro Judicial</p>
 <h2>O que é o Seguro Garantia Judicial</h2>
 
-<p>O Seguro Garantia Judicial é uma apólice emitida por uma seguradora regulada pela SUSEP que garante ao juízo o pagamento de uma condenação caso a empresa-tomadora não cumpra a obrigação. Em vez de imobilizar dinheiro em depósito ou ter bens penhorados, a empresa apresenta a apólice como garantia — e continua operando normalmente.</p>
+<p>O Seguro Garantia Judicial é uma apólice emitida por uma seguradora regulada pela SUSEP que garante ao juízo o pagamento de uma condenação caso a empresa-tomadora não cumpra a obrigação. Em vez de imobilizar dinheiro em depósito ou ter bens penhorados, a empresa apresenta a apólice como garantia, e continua operando normalmente.</p>
 
 <p>Na prática, funciona assim: a seguradora analisa o risco da empresa, emite a apólice pelo valor exigido pelo juízo (geralmente o valor do débito acrescido de 30% a 40% para cobrir juros e custas) e o juiz aceita esse documento no lugar do dinheiro. Se a empresa perder o processo, a seguradora paga ao credor. Se ganhar, a apólice é encerrada sem custo adicional.</p>
 
 <div class="callout">
 <div class="callout-title">Importante</div>
-<p>A apólice não quita a dívida — ela garante o pagamento caso a empresa seja condenada. O prêmio pago à seguradora é o custo da garantia, não da dívida em si.</p>
+<p>A apólice não quita a dívida, ela garante o pagamento caso a empresa seja condenada. O prêmio pago à seguradora é o custo da garantia, não da dívida em si.</p>
 </div>
 
 <h2>Em quais situações pode ser usado</h2>
@@ -39,7 +39,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <p>O uso do Seguro Garantia Judicial é bem mais amplo do que muitas empresas sabem. Os principais cenários são:</p>
 
 <h3>Processos cíveis e trabalhistas</h3>
-<p>Ações de indenização, cobranças contratuais e execuções trabalhistas são os usos mais comuns. Em ações trabalhistas, a apólice pode substituir tanto o depósito recursal — exigido para recorrer — quanto a penhora de bens na fase de execução.</p>
+<p>Ações de indenização, cobranças contratuais e execuções trabalhistas são os usos mais comuns. Em ações trabalhistas, a apólice pode substituir tanto o depósito recursal, exigido para recorrer, quanto a penhora de bens na fase de execução.</p>
 
 <h3>Execuções fiscais</h3>
 <p>Quando o Fisco executa débitos de impostos, taxas ou contribuições, a empresa pode oferecer uma apólice para garantir o juízo e suspender os atos de constrição enquanto discute a dívida. É uma das formas mais eficientes de manter o fluxo de caixa durante um contencioso tributário.</p>
@@ -110,13 +110,13 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <div class="benefit-card">
     <div class="benefit-num">04</div>
     <div class="benefit-title">Custo previsível</div>
-    <div class="benefit-desc">O prêmio anual varia entre 1% e 3% do valor garantido — um custo fixo que facilita o planejamento financeiro.</div>
+    <div class="benefit-desc">O prêmio anual varia entre 1% e 3% do valor garantido, um custo fixo que facilita o planejamento financeiro.</div>
 </div>
 </div>
 
 <h2>Como contratar</h2>
 
-<p>O processo é direto. A seguradora precisa de três informações básicas para fazer a análise: o número do processo, o valor exigido como garantia pelo juízo e os dados financeiros da empresa. Com isso, ela avalia o risco e emite uma proposta — em geral em 24 a 48 horas para casos menores e mais simples.</p>
+<p>O processo é direto. A seguradora precisa de três informações básicas para fazer a análise: o número do processo, o valor exigido como garantia pelo juízo e os dados financeiros da empresa. Com isso, ela avalia o risco e emite uma proposta, em geral em 24 a 48 horas para casos menores e mais simples.</p>
 
 <p>Na F&G, o processo começa pelo WhatsApp: você envia o número do processo, a gente analisa o edital ou a decisão judicial e já apresenta as opções disponíveis entre as 12+ seguradoras com as quais operamos. Emissão em até 2 horas após a aprovação da proposta.</p>
 
@@ -134,7 +134,7 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <details>
 <summary>O juiz é obrigado a aceitar o Seguro Garantia no lugar do depósito?</summary>
 <div class="faq-body">
-    <p>Em execuções fiscais, sim — o art. 9º da Lei 6.830/80 e o art. 835 do CPC listam o seguro garantia como meio de penhora aceito. Em processos trabalhistas, a Resolução 61/2024 do TST regulamentou expressamente a aceitação. Em processos cíveis, depende da interpretação do juiz, mas a tendência da jurisprudência é favorável à aceitação quando a apólice cobre integralmente o débito.</p>
+    <p>Em execuções fiscais, sim, o art. 9º da Lei 6.830/80 e o art. 835 do CPC listam o seguro garantia como meio de penhora aceito. Em processos trabalhistas, a Resolução 61/2024 do TST regulamentou expressamente a aceitação. Em processos cíveis, depende da interpretação do juiz, mas a tendência da jurisprudência é favorável à aceitação quando a apólice cobre integralmente o débito.</p>
 </div>
 </details>
 
@@ -148,6 +148,6 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
 <details>
 <summary>O que acontece se a empresa perder o processo?</summary>
 <div class="faq-body">
-    <p>A seguradora paga ao credor o valor coberto pela apólice. Após isso, ela aciona a empresa para reembolso — é a chamada ação regressiva, prevista no contrato. Por isso, o seguro não elimina a dívida: ele garante o pagamento ao credor e preserva a liquidez da empresa enquanto o processo tramita.</p>
+    <p>A seguradora paga ao credor o valor coberto pela apólice. Após isso, ela aciona a empresa para reembolso, é a chamada ação regressiva, prevista no contrato. Por isso, o seguro não elimina a dívida: ele garante o pagamento ao credor e preserva a liquidez da empresa enquanto o processo tramita.</p>
 </div>
 </details>

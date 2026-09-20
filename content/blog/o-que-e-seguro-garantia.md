@@ -89,7 +89,7 @@ cta_texto: "Envie seu edital, contrato ou o número do processo no WhatsApp e re
 <p>O padrão é sempre o mesmo: onde alguém exigiria <strong>dinheiro parado ou um fiador</strong>, o Seguro Garantia entra no lugar.</p>
 
 <h2>Quanto custa</h2>
-<p>O tomador não paga o valor garantido — paga apenas o <strong>prêmio</strong>, uma fração pequena desse valor, definida conforme a análise de crédito da empresa, a modalidade e o prazo.</p>
+<p>O tomador não paga o valor garantido, paga apenas o <strong>prêmio</strong>, uma fração pequena desse valor, definida conforme a análise de crédito da empresa, a modalidade e o prazo.</p>
 <p><strong>Exemplo real:</strong> para garantir R$ 100.000,00 em uma licitação, uma empresa saudável pode pagar um prêmio na casa de centenas de reais. Garantias de proposta (licitante) começam a partir de R$ 150,00.</p>
 
 <div class="comparison">
@@ -102,7 +102,7 @@ cta_texto: "Envie seu edital, contrato ou o número do processo no WhatsApp e re
         <td><strong>Caução em dinheiro</strong></td>
         <td>100% do valor garantido</td>
         <td class="cross">✗ Sim</td>
-        <td>—</td>
+        <td class="check">✓ Não</td>
       </tr>
       <tr>
         <td><strong>Fiança bancária</strong></td>
@@ -112,7 +112,7 @@ cta_texto: "Envie seu edital, contrato ou o número do processo no WhatsApp e re
       </tr>
       <tr>
         <td><strong>Seguro Garantia</strong></td>
-        <td>Prêmio — menor custo</td>
+        <td>Prêmio: menor custo</td>
         <td class="check">✓ Não</td>
         <td class="check">✓ Não</td>
       </tr>
@@ -132,7 +132,7 @@ cta_texto: "Envie seu edital, contrato ou o número do processo no WhatsApp e re
 </div>
 <div class="step">
     <div class="step-num">2</div>
-    <div class="step-body"><strong>Análise de crédito</strong><p>A seguradora avalia a saúde financeira da empresa e aprova um limite — parecido com um limite de cartão — que a empresa usa para emitir apólices.</p></div>
+    <div class="step-body"><strong>Análise de crédito</strong><p>A seguradora avalia a saúde financeira da empresa e aprova um limite, parecido com um limite de cartão, que a empresa usa para emitir apólices.</p></div>
 </div>
 <div class="step">
     <div class="step-num">3</div>

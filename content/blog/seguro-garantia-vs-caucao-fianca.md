@@ -10,10 +10,10 @@ featured: false
 image: ""
 author: "Fábio Lima"
 keywords: "seguro garantia vs caucao, seguro garantia vs fianca bancaria, caucao em dinheiro licitacao, diferenca seguro garantia caucao"
-lead: "Quando o edital ou o contrato exige garantia, você tem três caminhos. A escolha errada pode imobilizar dezenas de milhares de reais no caixa ou travar o crédito bancário. Este guia mostra as diferenças lado a lado — sem enrolação."
+lead: "Quando o edital ou o contrato exige garantia, você tem três caminhos. A escolha errada pode imobilizar dezenas de milhares de reais no caixa ou travar o crédito bancário. Este guia mostra as diferenças lado a lado, sem enrolação."
 faq:
   - q: "Qual a diferença entre Seguro Garantia e Caução em dinheiro?"
-    a: "Na Caução em dinheiro, a empresa imobiliza o valor do depósito — geralmente 5% do contrato — no caixa até a conclusão da obra. No Seguro Garantia, a empresa paga apenas um prêmio (em torno de 0,5% a 2% do valor garantido) e mantém o capital livre para operar. A cobertura é equivalente, mas o impacto financeiro é radicalmente diferente."
+    a: "Na Caução em dinheiro, a empresa imobiliza o valor do depósito, geralmente 5% do contrato, no caixa até a conclusão da obra. No Seguro Garantia, a empresa paga apenas um prêmio (em torno de 0,5% a 2% do valor garantido) e mantém o capital livre para operar. A cobertura é equivalente, mas o impacto financeiro é radicalmente diferente."
   - q: "Seguro Garantia é aceito em licitações no lugar da caução?"
     a: "Sim. A Lei 14.133/2021 (Nova Lei de Licitações) e a Lei 8.666/93 preveem o Seguro Garantia como uma das modalidades de garantia contratual aceitas pela Administração Pública, equivalente à caução em dinheiro e à fiança bancária."
   - q: "Qual é mais barato: Seguro Garantia ou Fiança Bancária?"
@@ -21,7 +21,7 @@ faq:
   - q: "Em quanto tempo o Seguro Garantia é emitido?"
     a: "A F&amp;G emite o Seguro Garantia em até 2 horas úteis para contratos de até R$ 5 milhões. Casos mais complexos podem levar de 24 a 48 horas. A Fiança Bancária, por depender da análise do banco, costuma levar vários dias ou semanas."
 cta_titulo: "Precisa de garantia para licitação ou contrato?"
-cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialista agora — sem burocracia."
+cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialista agora, sem burocracia."
 ---
 
 <div class="summary-box">
@@ -38,7 +38,7 @@ cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialist
 <div class="modal-card">
     <span class="modal-card-badge badge-green">Recomendado</span>
     <div class="modal-card-title">Seguro Garantia</div>
-    <p class="modal-card-text">A empresa (tomadora) contrata uma seguradora para emitir uma apólice em favor do beneficiário. Paga apenas o prêmio — uma fração do valor garantido — e mantém o capital livre para operar.</p>
+    <p class="modal-card-text">A empresa (tomadora) contrata uma seguradora para emitir uma apólice em favor do beneficiário. Paga apenas o prêmio, uma fração do valor garantido, e mantém o capital livre para operar.</p>
 </div>
 <div class="modal-card">
     <span class="modal-card-badge badge-orange">Imobiliza caixa</span>
@@ -65,9 +65,9 @@ cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialist
     <tbody>
       <tr>
         <td>Impacto no caixa</td>
-        <td class="best">Mínimo — paga só o prêmio</td>
-        <td class="bad">Alto — imobiliza o valor total</td>
-        <td class="mid">Médio — consome limite de crédito</td>
+        <td class="best">Mínimo: paga só o prêmio</td>
+        <td class="bad">Alto: imobiliza o valor total</td>
+        <td class="mid">Médio: consome limite de crédito</td>
       </tr>
       <tr>
         <td>Custo típico</td>
@@ -95,9 +95,9 @@ cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialist
       </tr>
       <tr>
         <td>Aceitação em licitações</td>
-        <td class="best">Sim — Lei 8.666 e Lei 14.133</td>
-        <td class="best">Sim — Lei 8.666 e Lei 14.133</td>
-        <td class="best">Sim — Lei 8.666 e Lei 14.133</td>
+        <td class="best">Sim: Lei 8.666 e Lei 14.133</td>
+        <td class="best">Sim: Lei 8.666 e Lei 14.133</td>
+        <td class="best">Sim: Lei 8.666 e Lei 14.133</td>
       </tr>
       <tr>
         <td>Aceitação judicial</td>
@@ -107,7 +107,7 @@ cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialist
       </tr>
       <tr>
         <td>Renovação / ajuste</td>
-        <td class="best">Simples — endosso na apólice</td>
+        <td class="best">Simples: endosso na apólice</td>
         <td class="mid">Requer novo depósito</td>
         <td class="bad">Renegociação bancária</td>
       </tr>
@@ -148,13 +148,13 @@ cta_texto: "A F&G emite Seguro Garantia em até 2 horas. Fale com um especialist
 <h2>Por que o Seguro Garantia domina o mercado de licitações</h2>
 <p>A combinação de <strong>baixo custo, emissão rápida e capital livre</strong> faz do Seguro Garantia a escolha padrão de empresas que trabalham com contratações públicas. Enquanto a Caução imobiliza dinheiro que poderia financiar a própria execução do contrato, e a Fiança Bancária consome o crédito que poderia financiar capital de giro, o Seguro Garantia resolve a exigência do edital sem afetar a estrutura financeira da empresa.</p>
 <div class="highlight">
-<p><strong>Exemplo prático:</strong> um contrato de R$ 1 milhão que exige 5% de garantia equivale a R$ 50 mil imobilizados em caução — ou apenas R$ 500 a R$ 1.000 de prêmio em um Seguro Garantia. A diferença é suficiente para pagar vários salários ou cobrir materiais de obra.</p>
+<p><strong>Exemplo prático:</strong> um contrato de R$ 1 milhão que exige 5% de garantia equivale a R$ 50 mil imobilizados em caução, ou apenas R$ 500 a R$ 1.000 de prêmio em um Seguro Garantia. A diferença é suficiente para pagar vários salários ou cobrir materiais de obra.</p>
 </div>
-<p>Além disso, a <strong>Lei 14.133/2021</strong> — Nova Lei de Licitações — manteve as três modalidades como equivalentes, mas muitos órgãos públicos já incentivam o Seguro Garantia por sua maior segurança jurídica e pela solidez das seguradoras supervisionadas pela SUSEP.</p>
+<p>Além disso, a <strong>Lei 14.133/2021</strong>, a Nova Lei de Licitações, manteve as três modalidades como equivalentes, mas muitos órgãos públicos já incentivam o Seguro Garantia por sua maior segurança jurídica e pela solidez das seguradoras supervisionadas pela SUSEP.</p>
 <h2>Perguntas frequentes</h2>
 <details>
 <summary>Qual a diferença entre Seguro Garantia e Caução em dinheiro?</summary>
-<div class="faq-body"><p>Na Caução em dinheiro, a empresa imobiliza o valor do depósito — geralmente 5% do contrato — no caixa até a conclusão da obra. No Seguro Garantia, a empresa paga apenas um prêmio (em torno de 0,5% a 2% do valor garantido) e mantém o capital livre para operar. A cobertura é equivalente, mas o impacto financeiro é radicalmente diferente.</p></div>
+<div class="faq-body"><p>Na Caução em dinheiro, a empresa imobiliza o valor do depósito, geralmente 5% do contrato, no caixa até a conclusão da obra. No Seguro Garantia, a empresa paga apenas um prêmio (em torno de 0,5% a 2% do valor garantido) e mantém o capital livre para operar. A cobertura é equivalente, mas o impacto financeiro é radicalmente diferente.</p></div>
 </details>
 <details>
 <summary>Seguro Garantia é aceito em licitações no lugar da caução?</summary>

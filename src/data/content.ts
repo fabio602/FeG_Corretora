@@ -30,7 +30,7 @@ export const MODALIDADES = [
     icon: '🏛️',
     desc: 'Para empresas que participam de licitações públicas ou privadas (Lei 14.133/21). Substitui a caução em dinheiro e libera seu capital.',
     seoTitle: 'Seguro Garantia Licitante (Proposta) | Lei 14.133 | F&G',
-    seoDesc: 'Emitimos Seguro Garantia Licitante em até 2 horas. Para licitações públicas sob a Lei 14.133/2021. F&G Corretora — Boituva SP.',
+    seoDesc: 'Emitimos Seguro Garantia Licitante em até 2 horas. Para licitações públicas sob a Lei 14.133/2021. F&G Corretora, Boituva SP.',
     heading: 'Seguro Garantia',
     headingHighlight: 'Licitante (Proposta)',
     fullDesc: 'O Seguro Garantia Licitante garante que a empresa vencedora da licitação assina o contrato e cumpre as condições da proposta. Substitui a caução em dinheiro exigida pelos órgãos públicos.',
