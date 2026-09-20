@@ -236,14 +236,6 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita e
 <summary>E se a empresa perder o processo?</summary>
 <div class="faq-body"><p>A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida — é uma garantia de liquidez para o processo.</p></div>
 </details>
-
-
-<div>
-    <p class="author-name">Fábio Lima</p>
-    <p class="author-desc">Corretor especializado em Seguro Garantia, fundador da F&amp;G Seguro Garantia.</p>
-</div>
-</div>
-
 <p style="font-size:13px;color:var(--muted);margin-top:40px;line-height:1.6;">
 <strong>Referências:</strong> CLT, art. 899, § 11 (Lei 13.467/2017); Ato Conjunto TST/CSJT/CGJT nº 1/2019; CNJ, PCA 0009820-09.2019; jurisprudência do TST sobre aceitação de apólices com prazo de vigência determinado.
 </p>

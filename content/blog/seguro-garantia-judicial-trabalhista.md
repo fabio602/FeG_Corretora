@@ -257,13 +257,6 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
     <p>Se a empresa perder os embargos e não pagar voluntariamente, o juízo intima a seguradora para depositar o valor em juízo — o que ela faz de forma incondicional, conforme as cláusulas da apólice. Depois a seguradora cobra o reembolso da empresa. O seguro não cancela a dívida; ele garante que o juízo receba, e a empresa continua responsável pelo valor final.</p>
 </div>
 </details>
-
-<div>
-    <p class="author-name">Fábio Lima</p>
-    <p class="author-desc">Corretor especializado em Seguro Garantia, fundador da F&amp;G Seguro Garantia.</p>
-</div>
-</div>
-
 <p style="font-size:13px;color:var(--muted);margin-top:40px;line-height:1.6;">
 <strong>Referências:</strong> CLT, art. 899, § 11 (Lei 13.467/2017); CPC, arts. 835 e 848; Ato Conjunto TST/CSJT/CGJT nº 1/2019; Resolução CNJ nº 471/2022; jurisprudência do TST sobre substituição de penhora por seguro garantia.
 </p>

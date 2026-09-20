@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="border-t border-blue-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-blue-400">
           <p>© {new Date().getFullYear()} F&G Corretora de Seguros. Todos os direitos reservados.</p>
-          <p>SUSEP autorizada · Boituva, SP</p>
+          <p className="md:pr-16">CNPJ 56.123.874/0001-90 · SUSEP 242160653</p>
         </div>
       </div>
     </footer>

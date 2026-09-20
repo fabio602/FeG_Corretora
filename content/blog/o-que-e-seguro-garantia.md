@@ -160,10 +160,3 @@ cta_texto: "Envie seu edital, contrato ou o número do processo no WhatsApp e re
 <summary>O Seguro Garantia devolve o dinheiro se nada acontecer?</summary>
 <div class="faq-body"><p>Não há dinheiro a devolver, porque nada foi imobilizado. A empresa paga só o prêmio (o custo do seguro), e é exatamente essa a vantagem sobre a caução em dinheiro.</p></div>
 </details>
-
-
-<div>
-    <p class="author-name">Fábio Lima</p>
-    <p class="author-desc">Corretor especializado em Seguro Garantia, fundador da F&amp;G Seguro Garantia.</p>
-</div>
-</div>

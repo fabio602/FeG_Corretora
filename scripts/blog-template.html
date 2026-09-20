@@ -64,7 +64,7 @@
     .hero-h1{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(28px,4vw,46px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:18px;}
     .hero-lead{font-size:17px;color:rgba(255,255,255,.78);line-height:1.65;max-width:640px;margin:0 auto 28px;}
     .hero-meta{display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;color:rgba(255,255,255,.6);}
-    .hero-avatar{width:36px;height:36px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0;}
+    .hero-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;}
     .hero-meta-text{text-align:left;}
     .hero-author{font-weight:600;color:rgba(255,255,255,.9);display:block;}
     .hero-date{color:rgba(255,255,255,.55);}
@@ -114,7 +114,7 @@
     .article-cta-btn:hover{opacity:.9;}
     /* Author box */
     .author-box{display:flex;gap:20px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:2.5em;}
-    .author-avatar{width:56px;height:56px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;flex-shrink:0;}
+    .author-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;}
     .author-info{}
     .author-name{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:16px;}
     .author-bio{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;}
@@ -244,7 +244,7 @@
     <h1 class="hero-h1">{{H1}}</h1>
     <p class="hero-lead">{{LEAD}}</p>
     <div class="hero-meta">
-      <div class="hero-avatar" aria-hidden="true">{{AUTHOR_INITIALS}}</div>
+      <img class="hero-avatar" src="{{AUTHOR_AVATAR}}" alt="{{AUTHOR_NAME}}" width="36" height="36" />
       <div class="hero-meta-text">
         <span class="hero-author">{{AUTHOR}}</span>
         <span class="hero-date">{{DATE_DISPLAY}} &middot; {{READING_TIME}} min de leitura</span>

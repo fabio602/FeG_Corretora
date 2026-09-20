@@ -151,9 +151,3 @@ cta_texto: "Envie o número do processo no WhatsApp e receba análise gratuita. 
     <p>A seguradora paga ao credor o valor coberto pela apólice. Após isso, ela aciona a empresa para reembolso — é a chamada ação regressiva, prevista no contrato. Por isso, o seguro não elimina a dívida: ele garante o pagamento ao credor e preserva a liquidez da empresa enquanto o processo tramita.</p>
 </div>
 </details>
-
-<div>
-    <p class="author-name">Fábio Lima</p>
-    <p class="author-desc">Corretor especializado em Seguro Garantia na F&amp;G Corretora. Atua com licitações, contratos públicos e garantias judiciais para empresas de todo o Brasil.</p>
-</div>
-</div>

@@ -23,9 +23,10 @@ const BASE_URL  = 'https://fegsegurogarantia.com.br'
 // ── Autores (edite aqui para ajustar bio) ────────────────────────────────────
 const AUTHORS = {
   'fabio-lima': {
-    name:     'Fabio Lima',
+    name:     'Fábio Lima',
     initials: 'FL',
-    bio:      'Administrador de formacao e corretor dedicado exclusivamente a Seguro Garantia, em todas as modalidades. Fundador da F&G Corretora.',
+    avatar:   '/fabio-autor.webp',
+    bio:      'Administrador de formação e corretor dedicado exclusivamente a Seguro Garantia, em todas as modalidades. Fundador da F&G Corretora.',
     wa:       WA_URL,
   },
 }
@@ -455,7 +456,7 @@ function renderArticle(parsed, allArticles, template) {
     : `/blog/capas/${fm.slug}.svg`
 
   const authorBox = `<div class="author-box">
-  <div class="author-avatar">${author.initials}</div>
+  <img class="author-avatar" src="${author.avatar}" alt="${author.name}" width="56" height="56" loading="lazy" />
   <div class="author-info">
     <p class="author-name">${author.name}</p>
     <p class="author-bio">${author.bio}</p>
@@ -483,6 +484,8 @@ function renderArticle(parsed, allArticles, template) {
     .replace(/\{\{READING_TIME\}\}/g,    String(fm.readingTime))
     .replace(/\{\{AUTHOR\}\}/g,          author.name)
     .replace(/\{\{AUTHOR_INITIALS\}\}/g, author.initials)
+    .replace(/\{\{AUTHOR_AVATAR\}\}/g, author.avatar)
+    .replace(/\{\{AUTHOR_NAME\}\}/g, author.name)
     .replace(/\{\{COVER_SRC\}\}/g,       coverSrc)
     .replace(/\{\{TOC\}\}/g,             toc)
     .replace(/\{\{BODY\}\}/g,            bodyWithIds)

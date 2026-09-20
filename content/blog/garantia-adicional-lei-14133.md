@@ -123,14 +123,6 @@ cta_texto: "Envie o termo de convocação ou o edital no WhatsApp e receba a an�
     </div>
 </details>
 </div>
-
-
-<div>
-    <p class="author-name">Fábio Lima</p>
-    <p class="author-desc">Corretor especializado em Seguro Garantia, fundador da F&amp;G Seguro Garantia.</p>
-</div>
-</div>
-
 <p style="font-size:13px;color:var(--muted);margin-top:40px;line-height:1.6;">
 <strong>Referências:</strong> Lei 14.133/2021 (arts. 59, 96, 97 e 102); TCE-SP, Legislação Comentada e Cartilha da Nova Lei de Licitações; TCU, portal Licitações e Contratos (garantia adicional) e Acórdão 2378/2024; Circular SUSEP 662/2022; artigo técnico "A sistemática de utilização do Seguro Garantia como garantia adicional" (Fabiana Meira Maia, Clube do Seguro Garantia).
 </p>
