@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, PARTNERS, WA_URL, FORM_EMAIL } from '../data/content'
@@ -22,6 +22,53 @@ const REVIEWS = [
 ]
 
 const MAPS_URL = 'https://share.google/AtTRA9nk7u7cOrOaa'
+
+// Conteúdo que abre dentro de cada card. Os percentuais vêm da lei do objeto
+// principal (14.133, CPC, CLT, Lei 8.245), não da regra do seguro.
+const DETALHES: Record<string, { quando: string; quanto: string; vigencia: string }> = {
+  '/seguro-garantia-execucao-contrato/': {
+    quando: 'Quando o órgão exige garantia no edital, para a assinatura do contrato (Lei 14.133, art. 96). A escolha entre caução, seguro garantia, fiança bancária ou título de capitalização é sua, não do órgão.',
+    quanto: 'Até 5% do valor do contrato. Pode chegar a 10% se o órgão justificar a complexidade e os riscos (art. 98). Em obras de grande vulto, acima de R$ 200 milhões, vai a 30% e o seguro garantia com cláusula de retomada passa a ser obrigatório (art. 99).',
+    vigencia: 'Igual ou superior ao prazo do contrato, acompanhando as prorrogações por endosso (art. 97). O edital dá no mínimo 1 mês após a homologação para você apresentar a apólice.',
+  },
+  '/seguro-garantia-licitante/': {
+    quando: 'Quando o edital exige garantia de proposta como requisito de pré-habilitação (art. 58).',
+    quanto: 'No máximo 1% do valor estimado da contratação (art. 58, § 1º).',
+    vigencia: 'Conforme o edital, normalmente até a assinatura do contrato. A apólice encerra ali, sem devolução: o prazo de 10 dias úteis do art. 58, § 2º é devolução de caução em dinheiro e não se aplica ao seguro garantia.',
+  },
+  '/seguro-garantia-locaticia/': {
+    quando: 'Locação residencial ou comercial, no lugar de fiador ou caução. A Lei 8.245, art. 37, admite uma garantia por contrato, então ela substitui o fiador, não se soma a ele.',
+    quanto: 'A lei não fixa limite, exige apenas que a garantia cubra as obrigações do locatário (art. 41). O limite é definido na contratação e varia conforme a seguradora e o valor do aluguel, chegando a 30 aluguéis. A cobertura base é o aluguel com multa de atraso de até 10%; encargos, contas de consumo, danos, pintura e multa por rescisão entram como adicionais.',
+    vigencia: 'Acompanha o contrato de locação, com teto de 5 anos por contratação e renovação depois disso.',
+  },
+  '/seguro-garantia-judicial/': {
+    quando: 'Substitui depósito em dinheiro, com os mesmos efeitos da penhora. Em ação cível pelo art. 835, § 2º do CPC. Em reclamação trabalhista, no depósito recursal, pelo art. 899, § 11 da CLT.',
+    quanto: 'Valor do débito acrescido de 30% no cível. No trabalhista, o valor do depósito recursal acrescido de 30%, conforme o Ato Conjunto do TST. Em execução fiscal não há acréscimo: a apólice é atualizada monetariamente.',
+    vigencia: 'Até o trânsito em julgado, e desde a Lei 14.689/2023 a apólice não pode ser liquidada antes disso. No depósito recursal, a apólice é emitida com no mínimo 3 anos e renovada enquanto durar o processo.',
+  },
+  '/seguro-garantia-adicional/': {
+    quando: 'Só em obras e serviços de engenharia, quando a proposta vencedora fica abaixo de 85% do valor orçado pela Administração (art. 59, § 5º). É obrigatória: o gestor não pode dispensar.',
+    quanto: 'Os órgãos de controle divergem. Pela literalidade da lei e pelo entendimento do TCE-SP, é a diferença cheia entre o orçado e a proposta. A orientação didática do TCU calcula sobre a linha dos 85%. Num orçado de R$ 1 milhão com proposta de R$ 780 mil, isso é R$ 220 mil contra R$ 70 mil. Prevalece o tribunal que fiscaliza o órgão, e em São Paulo provisione pelo valor cheio.',
+    vigencia: 'Acompanha a garantia de execução do contrato.',
+  },
+  '/seguro-garantia-energia/': {
+    quando: 'Quando a operação no mercado livre de energia exige garantia, seja em leilão da ANEEL, seja em contrato de compra e venda entre as partes. Vale para qualquer empresa que receba essa exigência.',
+    quanto: 'Definido por quem exige, no edital ou no contrato. Em leilões recentes foi 1% para a garantia de proposta e 5% para o fiel cumprimento, e em outros, valor fixo por lote.',
+    vigencia: 'A da obrigação garantida. No fiel cumprimento de leilão costuma ir até 120 dias depois do início previsto da operação comercial.',
+  },
+}
+
+/** Quantas colunas a grade de modalidades tem no momento. */
+function useColunas() {
+  const [cols, setCols] = useState(3)
+  useEffect(() => {
+    const calc = () => setCols(window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)
+    calc()
+    window.addEventListener('resize', calc)
+    return () => window.removeEventListener('resize', calc)
+  }, [])
+  return cols
+}
 
 function ContactForm() {
   const [status, setStatus] = useState<'idle'|'sending'|'ok'|'err'>('idle')
@@ -199,6 +246,15 @@ function ReviewCarousel() {
 }
 
 export default function Home() {
+  const [modalidadeAberta, setModalidadeAberta] = useState<string | null>(null)
+  const colunas = useColunas()
+  const idxAberta = modalidadeAberta ? MODALIDADES.findIndex(m => m.slug === modalidadeAberta) : -1
+  const fimDaLinha = idxAberta >= 0
+    ? Math.min(Math.floor(idxAberta / colunas) * colunas + colunas - 1, MODALIDADES.length - 1)
+    : -1
+  const aberta = idxAberta >= 0 ? MODALIDADES[idxAberta] : null
+  const det = modalidadeAberta ? DETALHES[modalidadeAberta] : null
+
   return (
     <>
       <Helmet>
@@ -290,21 +346,64 @@ export default function Home() {
       {/* MODALIDADES */}
       <section id="modalidades" className="py-20 bg-white">
         <div className="container reveal">
-          <div className="text-center mb-12">
+          <div className="text-center mb-4">
             <span className="text-xs font-semibold text-fg-orange uppercase tracking-widest">O que fazemos</span>
             <h2 className="text-3xl font-extrabold text-fg-navy mt-2">Modalidades de Seguro Garantia</h2>
           </div>
+          <p className="text-center text-sm text-gray-500 max-w-2xl mx-auto mb-10">
+            Em todas elas a apólice vale enquanto valer a obrigação garantida. A seguradora avisa com 90 dias de
+            antecedência do vencimento e não pode recusar a renovação enquanto o risco existir (Circular SUSEP 662/2022).
+          </p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {MODALIDADES.map(m => (
-              <Link key={m.slug} to={routePath(m.slug)}
-                className="group bg-white border-b border-gray-100 rounded-2xl p-6 hover:bg-fg-bg transition-colors duration-150">
-                <div className="mb-3"><ModalityIcon slug={m.slug} className="w-8 h-8 text-fg-navy" /></div>
-                <span className="inline-block text-xs font-semibold text-fg-orange bg-orange-50 rounded-full px-2 py-0.5 mb-2">{m.badge}</span>
-                <h3 className="text-base font-bold text-fg-navy mb-2">{m.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.desc}</p>
-                <span className="text-sm font-semibold text-fg-orange group-hover:underline">Saiba mais →</span>
-              </Link>
-            ))}
+            {MODALIDADES.map((m, i) => {
+              const aberto = modalidadeAberta === m.slug
+              return (
+                <Fragment key={m.slug}>
+                  <button type="button" className="fg-card-mod"
+                    aria-expanded={aberto} aria-controls={aberto ? `detalhe-${fimDaLinha}` : undefined}
+                    onClick={() => setModalidadeAberta(aberto ? null : m.slug)}>
+                    <div className="mb-3"><ModalityIcon slug={m.slug} className="w-8 h-8 text-fg-navy" /></div>
+                    <span className="inline-block text-xs font-semibold text-fg-orange bg-orange-50 rounded-full px-2 py-0.5 mb-2">{m.badge}</span>
+                    <h3 className="text-base font-bold text-fg-navy mb-2">{m.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.desc}</p>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-fg-orange">
+                      {aberto ? 'Fechar' : 'Ver detalhes'}
+                      <svg className="fg-seta" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </button>
+
+                  {idxAberta >= 0 && i === fimDaLinha && aberta && det && (
+                    <div id={`detalhe-${idxAberta}`} className="fg-detalhe md:col-span-2 lg:col-span-3">
+                      <h4 className="text-lg font-bold text-fg-navy mb-5">{aberta.title}</h4>
+                      <div className="grid md:grid-cols-3 gap-6">
+                        <div>
+                          <p className="text-[11px] font-semibold text-fg-orange uppercase tracking-widest mb-1.5">Quando é exigido</p>
+                          <p className="text-sm text-gray-700 leading-relaxed">{det.quando}</p>
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-semibold text-fg-orange uppercase tracking-widest mb-1.5">Quanto costuma ser</p>
+                          <p className="text-sm text-gray-700 leading-relaxed">{det.quanto}</p>
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-semibold text-fg-orange uppercase tracking-widest mb-1.5">Qual a vigência</p>
+                          <p className="text-sm text-gray-700 leading-relaxed">{det.vigencia}</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-4 items-center mt-6 pt-5 border-t border-gray-200">
+                        <Link to={routePath(aberta.slug)} className="text-sm font-semibold text-fg-orange hover:underline">
+                          Ver a página completa →
+                        </Link>
+                        <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                          className="text-sm font-semibold text-fg-navy hover:underline">
+                          Falar comigo sobre essa modalidade
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </Fragment>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -338,6 +437,24 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* FAIXA FOTOGRÁFICA */}
+      <section className="relative overflow-hidden bg-fg-navy">
+        <img src="/faixa-obra.webp" width="1800" height="692" loading="lazy" alt=""
+          className="absolute inset-0 w-full h-full object-cover" />
+        <div className="relative container">
+          <div className="max-w-2xl reveal py-20 md:py-28">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+              A garantia que o edital exige, sem tirar dinheiro do seu caixa.
+            </h2>
+            <p className="text-blue-100 leading-relaxed prose-limit">
+              Analisamos a exigência, cotamos com mais de 25 seguradoras e emitimos a apólice em até 2 horas.
+            </p>
+          </div>
+        </div>
+        <span className="fg-wedge fg-faixa-wedge" aria-hidden="true" />
+        <span className="absolute inset-x-0 bottom-0 h-1 bg-fg-orange" aria-hidden="true" />
       </section>
 
       {/* VANTAGENS */}

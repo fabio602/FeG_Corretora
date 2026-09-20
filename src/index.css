@@ -105,3 +105,18 @@ h1, h2, h3, h4 {
   .fg-sobre-shot{position:absolute;left:0;top:0;bottom:0;width:42vw;aspect-ratio:auto;z-index:1}
   .fg-sobre-wedge{--s:7rem}
 }
+
+/* ── Cards de modalidade que abrem no lugar ───────────────────────────── */
+.fg-card-mod{display:block;width:100%;text-align:left;background:#fff;border:1px solid rgba(28,58,94,.10);border-radius:.75rem;padding:1.5rem;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.fg-card-mod:hover{background:#FAFAF8;border-color:rgba(28,58,94,.22)}
+.fg-card-mod[aria-expanded="true"]{background:#FAFAF8;border-color:#E8572A}
+.fg-seta{transition:transform .25s ease}
+.fg-card-mod[aria-expanded="true"] .fg-seta{transform:rotate(180deg)}
+.fg-detalhe{border:1px solid rgba(28,58,94,.14);border-left:3px solid #E8572A;border-radius:.75rem;background:#FAFAF8;padding:1.5rem}
+@media (prefers-reduced-motion:reduce){.fg-seta{transition:none}}
+
+/* ── Faixa fotográfica ────────────────────────────────────────────────── */
+.fg-faixa-wedge{--s:5rem;right:0;top:0;
+  -webkit-mask-image:radial-gradient(circle var(--s) at 0% 100%,transparent 0 99%,#000 99%);
+  mask-image:radial-gradient(circle var(--s) at 0% 100%,transparent 0 99%,#000 99%)}
+@media (min-width:768px){.fg-faixa-wedge{--s:8rem}}

@@ -63,8 +63,8 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-CHnV9W8g.js'),  join(DIST, 'assets', 'index-CHnV9W8g.js'))
-copyFileSync(join(LEGACY, 'assets', 'index-IiIPCvir.css'), join(DIST, 'assets', 'index-IiIPCvir.css'))
+copyFileSync(join(LEGACY, 'assets', 'index-D__W4v7C.js'),  join(DIST, 'assets', 'index-D__W4v7C.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-CL6FT56J.css'), join(DIST, 'assets', 'index-CL6FT56J.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
 // Scripts de injeção JS eliminados — substituídos pelo React (scroll, reviews, ui-fixes).
@@ -95,9 +95,9 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-CHnV9W8g.js"></script>
-  <link rel="preload" as="style" href="/assets/index-IiIPCvir.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-IiIPCvir.css">`
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-D__W4v7C.js"></script>
+  <link rel="preload" as="style" href="/assets/index-CL6FT56J.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-CL6FT56J.css">`
 
 
 // ── Conteúdo das modalidades para pré-renderização (SEO) ─────────────────────
