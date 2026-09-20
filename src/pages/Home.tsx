@@ -26,6 +26,31 @@ const MAPS_URL = 'https://share.google/AtTRA9nk7u7cOrOaa'
 // Conteúdo que abre dentro de cada card. Os percentuais vêm da lei do objeto
 // principal (14.133, CPC, CLT, Lei 8.245), não da regra do seguro.
 const DETALHES: Record<string, { quando: string; quanto: string; vigencia: string }> = {
+  '/seguro-garantia-judicial-trabalhista/': {
+    quando: 'Para recorrer sem depositar o valor em dinheiro (CLT, art. 899, § 11) e para garantir a execução trabalhista. O Ato Conjunto TST.CSJT.CGJT 1/2019 equipara a apólice a dinheiro quando ela cumpre os requisitos do art. 3º.',
+    quanto: 'O valor da condenação acrescido de, no mínimo, 30% (Ato Conjunto 1/2019, art. 3º, II). Na substituição do depósito recursal valem também os tetos que o TST reajusta todo ano.',
+    vigencia: 'No mínimo 3 anos, com cláusula de renovação automática e atualização da indenização pelos índices trabalhistas (art. 3º, III, VII e X).',
+  },
+  '/seguro-garantia-aduaneiro/': {
+    quando: 'Quando a empresa transporta mercadoria ainda não desembaraçada entre recintos alfandegados e a Receita exige garantia dos tributos suspensos no Termo de Responsabilidade. O seguro aduaneiro é uma das três formas aceitas (IN SRF 248/2002, art. 22, § 2º).',
+    quanto: 'O montante dos tributos suspensos (art. 23). Há dispensa automática em alguns casos, como transportador com patrimônio líquido acima de R$ 2 milhões ou certificado OEA — conferimos isso antes de propor a apólice.',
+    vigencia: 'O termo de responsabilidade vale 3 anos e a garantia precisa estar vigente na data da ocorrência (arts. 20 e 24). Na prática a apólice é anual e renovável.',
+  },
+  '/seguro-garantia-loteamento/': {
+    quando: 'Quando o loteador registra o empreendimento antes de concluir a infraestrutura e apresenta cronograma de obras no lugar do termo de verificação (Lei 6.766/79, art. 18, V).',
+    quanto: 'A lei federal não fixa percentual: quem define é a lei municipal, normalmente entre 100% e 150% do valor das obras. Sem previsão municipal, usa-se o valor do cronograma físico-financeiro.',
+    vigencia: 'O prazo do cronograma aprovado pela Prefeitura, que a lei limita a 4 anos, prorrogáveis por mais 4 (art. 18, V, na redação da Lei 14.118/2021).',
+  },
+  '/seguro-garantia-adiantamento-pagamento/': {
+    quando: 'Quando o contratante adianta recursos antes da entrega. Na Administração Pública o pagamento antecipado é vedado como regra e só é admitido com justificativa no processo e previsão no edital (Lei 14.133/2021, art. 145 e § 1º); o § 2º autoriza exigir garantia adicional para liberá-lo.',
+    quanto: 'O valor efetivamente adiantado. Não se aplicam aqui os percentuais de 5%, 10% ou 30% dos arts. 98 e 99, que são da garantia de execução.',
+    vigencia: 'Da liberação do adiantamento até a amortização total. O critério de amortização precisa estar escrito no contrato e espelhado na apólice: não há regra da SUSEP sobre isso, e é daí que nasce a maior parte das discussões de sinistro.',
+  },
+  '/seguro-garantia-trabalhista-previdenciario/': {
+    quando: 'Quando o edital ou o contrato exige garantia das verbas trabalhistas e previdenciárias, típico de serviços contínuos com dedicação exclusiva de mão de obra (Lei 14.133/2021, art. 121, § 3º, I). A origem é a responsabilidade subsidiária da Súmula 331 do TST.',
+    quanto: 'Tem importância segurada própria, somada à da garantia de execução. O percentual costuma acompanhar o da performance, conforme o contrato.',
+    vigencia: 'A mesma da garantia de execução do contrato principal. A cobertura é acoplada a ela e não se contrata isolada.',
+  },
   '/seguro-garantia-execucao-contrato/': {
     quando: 'Quando o órgão exige garantia no edital, para a assinatura do contrato (Lei 14.133, art. 96). A escolha entre caução, seguro garantia, fiança bancária ou título de capitalização é sua, não do órgão.',
     quanto: 'Até 5% do valor do contrato. Pode chegar a 10% se o órgão justificar a complexidade e os riscos (art. 98). Em obras de grande vulto, acima de R$ 200 milhões, vai a 30% e o seguro garantia com cláusula de retomada passa a ser obrigatório (art. 99).',

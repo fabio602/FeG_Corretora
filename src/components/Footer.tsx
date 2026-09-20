@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-fg-navy text-white pt-16 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <LogoHorizontal className="h-11 w-auto text-[#EAC8AC]" />
@@ -18,17 +18,14 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="md:col-span-2">
             <h3 className="font-semibold text-sm uppercase tracking-widest mb-4 text-fg-orange">Modalidades</h3>
-            <ul className="space-y-2 text-sm text-blue-200">
-              {MODALIDADES.filter(m => m.destaqueMenu).map(m => (
+            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-blue-200">
+              {MODALIDADES.map(m => (
                 <li key={m.slug}>
                   <Link to={routePath(m.slug)} className="hover:text-white transition-colors">{m.title}</Link>
                 </li>
               ))}
-              <li className="pt-1">
-                <Link to="/#modalidades" className="hover:text-white transition-colors text-blue-300">Ver todas as modalidades →</Link>
-              </li>
             </ul>
           </div>
 

@@ -63,8 +63,8 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-Bdb0TZ-8.js'),  join(DIST, 'assets', 'index-Bdb0TZ-8.js'))
-copyFileSync(join(LEGACY, 'assets', 'index-B7jZeUvq.css'), join(DIST, 'assets', 'index-B7jZeUvq.css'))
+copyFileSync(join(LEGACY, 'assets', 'index-4wMOt27C.js'),  join(DIST, 'assets', 'index-4wMOt27C.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-BRVWEG0Z.css'), join(DIST, 'assets', 'index-BRVWEG0Z.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
 // Scripts de injeção JS eliminados — substituídos pelo React (scroll, reviews, ui-fixes).
@@ -95,9 +95,9 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-Bdb0TZ-8.js"></script>
-  <link rel="preload" as="style" href="/assets/index-B7jZeUvq.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-B7jZeUvq.css">`
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-4wMOt27C.js"></script>
+  <link rel="preload" as="style" href="/assets/index-BRVWEG0Z.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-BRVWEG0Z.css">`
 
 
 // ── Conteúdo das modalidades para pré-renderização (SEO) ─────────────────────
@@ -273,6 +273,28 @@ function injectFAQInBlogDir() {
 }
 injectFAQInBlogDir()
 
+// ── 9b. Sitemap: auto-incluir paginas de modalidade ──────────────────────────
+function updateSitemapWithModalidades() {
+  const sitemapPath = join(DIST, 'sitemap.xml')
+  if (!existsSync(sitemapPath)) return
+
+  let sitemap = readFileSync(sitemapPath, 'utf-8')
+  const newEntries = []
+
+  for (const [key, route] of Object.entries(routes)) {
+    if (!key.startsWith('seguro-garantia-')) continue
+    const url = route.canonical
+    if (!url || sitemap.includes(`<loc>${url}</loc>`)) continue
+    newEntries.push(`  <url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`)
+  }
+
+  if (newEntries.length > 0) {
+    sitemap = sitemap.replace('</urlset>', newEntries.join('\n') + '\n</urlset>')
+    writeFileSync(sitemapPath, sitemap)
+    console.log(`✅ sitemap.xml +${newEntries.length} pagina(s) de modalidade`)
+  }
+}
+
 // ── 9. Sitemap: auto-incluir artigos do blog ──────────────────────────────────
 function updateSitemapWithBlog() {
   const sitemapPath = join(DIST, 'sitemap.xml')
@@ -303,6 +325,7 @@ function updateSitemapWithBlog() {
     console.log('✅ sitemap.xml já está atualizado')
   }
 }
+updateSitemapWithModalidades()
 updateSitemapWithBlog()
 
 // ── 10. Article schema (JSON-LD) para artigos do blog ────────────────────────

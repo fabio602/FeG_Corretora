@@ -66,10 +66,67 @@ export function IconEnergia({ className = '' }: { className?: string }) {
 }
 
 // Mapa slug → ícone
+export function IconTrabalhista({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${base} ${className}`} aria-hidden="true">
+      <rect x="2" y="7" width="20" height="14" rx="2"/>
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      <line x1="2" y1="13" x2="22" y2="13"/>
+    </svg>
+  )
+}
+
+export function IconAduaneiro({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${base} ${className}`} aria-hidden="true">
+      <path d="M1 3h15v13H1z"/>
+      <path d="M16 8h4l3 3v5h-7z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+  )
+}
+
+export function IconLoteamento({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${base} ${className}`} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="1"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+      <line x1="10" y1="10" x2="10" y2="21"/>
+      <line x1="16" y1="10" x2="16" y2="21"/>
+    </svg>
+  )
+}
+
+export function IconAdiantamento({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${base} ${className}`} aria-hidden="true">
+      <rect x="2" y="6" width="20" height="12" rx="2"/>
+      <circle cx="12" cy="12" r="2.5"/>
+      <path d="M6 12h.01M18 12h.01"/>
+    </svg>
+  )
+}
+
+export function IconSubsidiaria({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${base} ${className}`} aria-hidden="true">
+      <path d="M12 22s7-3.5 7-9V5l-7-3-7 3v8c0 5.5 7 9 7 9z"/>
+      <circle cx="12" cy="10" r="2"/>
+      <path d="M8.5 16a3.8 3.8 0 0 1 7 0"/>
+    </svg>
+  )
+}
+
 const MODALITY_ICON_MAP: Record<string, (p: { className?: string }) => JSX.Element> = {
   '/seguro-garantia-licitante/':          IconLicitante,
   '/seguro-garantia-execucao-contrato/':  IconExecucao,
   '/seguro-garantia-judicial/':           IconJudicial,
+  '/seguro-garantia-judicial-trabalhista/': IconTrabalhista,
+  '/seguro-garantia-aduaneiro/':          IconAduaneiro,
+  '/seguro-garantia-loteamento/':         IconLoteamento,
+  '/seguro-garantia-adiantamento-pagamento/': IconAdiantamento,
+  '/seguro-garantia-trabalhista-previdenciario/': IconSubsidiaria,
   '/seguro-garantia-locaticia/':          IconLocaticia,
   '/seguro-garantia-adicional/':          IconAdicional,
   '/seguro-garantia-energia/':            IconEnergia,

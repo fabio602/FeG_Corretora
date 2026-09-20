@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton'
 import { RevealEngine } from './components/Motion'
+import { MODALIDADES } from './data/content'
 
 const Home         = lazy(() => import('./pages/Home'))
 const Modalidade   = lazy(() => import('./pages/Modalidade'))
@@ -58,20 +59,16 @@ function AppInner() {
             <Route path="/blog/:slug/" element={<BlogArticle />} />
             <Route path="/seguro-cyber/" element={<Cyber />} />
 
-            {/* Modalidades — 6 rotas literais com barra final */}
-            <Route path="/seguro-garantia-licitante/" element={<Modalidade />} />
-            <Route path="/seguro-garantia-execucao-contrato/" element={<Modalidade />} />
-            <Route path="/seguro-garantia-judicial/" element={<Modalidade />} />
-            <Route path="/seguro-garantia-locaticia/" element={<Modalidade />} />
-            <Route path="/seguro-garantia-adicional/" element={<Modalidade />} />
-            <Route path="/seguro-garantia-energia/" element={<Modalidade />} />
-            {/* Compatibilidade: URLs sem barra (links antigos/Google) */}
-            <Route path="/seguro-garantia-licitante" element={<Navigate to="/seguro-garantia-licitante/" replace />} />
-            <Route path="/seguro-garantia-execucao-contrato" element={<Navigate to="/seguro-garantia-execucao-contrato/" replace />} />
-            <Route path="/seguro-garantia-judicial" element={<Navigate to="/seguro-garantia-judicial/" replace />} />
-            <Route path="/seguro-garantia-locaticia" element={<Navigate to="/seguro-garantia-locaticia/" replace />} />
-            <Route path="/seguro-garantia-adicional" element={<Navigate to="/seguro-garantia-adicional/" replace />} />
-            <Route path="/seguro-garantia-energia" element={<Navigate to="/seguro-garantia-energia/" replace />} />
+            {/* Modalidades — geradas a partir de MODALIDADES: acrescentar uma
+                modalidade em src/data/content.ts ja cria a rota, sem mexer aqui. */}
+            {MODALIDADES.map(m => (
+              <Route key={m.slug} path={m.slug} element={<Modalidade />} />
+            ))}
+            {/* Compatibilidade: URLs sem barra final (links antigos e Google) */}
+            {MODALIDADES.map(m => (
+              <Route key={`${m.slug}-sem-barra`} path={m.slug.replace(/\/$/, '')}
+                element={<Navigate to={m.slug} replace />} />
+            ))}
 
             {/* Catch-all: rotas inexistentes → home */}
             <Route path="*" element={<Home />} />
