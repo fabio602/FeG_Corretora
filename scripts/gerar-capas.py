@@ -13,7 +13,7 @@ import numpy as np, os, sys
 MAPA = {
  'o-que-e-seguro-garantia':                 ('handshake',    {'foco':0.40}),
  'garantia-de-proposta-lei-14133':          ('blueprint',    {'foco':0.42}),
- 'garantia-adicional-lei-14133':            ('calc',         {'foco':0.10}),
+ 'garantia-adicional-lei-14133':            ('cranes',       {'foco':0.42}),
  'garantia-de-execucao-contrato-lei-14133': ('construction', {'box':(0.00,0.30,0.55,0.92),'foco':0.50}),
  'seguro-garantia-contratos-privados':      ('cleaner',      {'foco':0.34}),
  'seguro-garantia-judicial':                ('justice',      {'foco':0.42}),

@@ -8,6 +8,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { createRequire } from 'module'
+import { createHash } from 'crypto'
 
 const require = createRequire(import.meta.url)
 const matter  = require('gray-matter')
@@ -17,6 +18,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const CONTENT   = join(__dirname, '..', 'content', 'blog')
 const DIST_BLOG = join(__dirname, '..', 'dist', 'blog')
 const SITEMAP   = join(__dirname, '..', 'dist', 'sitemap.xml')
+const PUBLIC_DIR = join(__dirname, '..', 'public')
+function carimba(caminho) {
+  const arq = join(PUBLIC_DIR, caminho.replace(/^\//, '').split('?')[0])
+  if (!existsSync(arq)) return caminho
+  const h = createHash('sha1').update(readFileSync(arq)).digest('hex').slice(0, 8)
+  return `${caminho}?v=${h}`
+}
+
 const WA_URL    = 'https://wa.me/5515998618659?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20gratuita%20de%20Seguro%20Garantia.'
 const BASE_URL  = 'https://fegsegurogarantia.com.br'
 
@@ -379,8 +388,8 @@ function computeImages(fm) {
     const imgFull = String(fm.image).startsWith('http') ? fm.image : `${BASE_URL}${fm.image}`
     ogImage = cardImage = imgFull
   } else {
-    ogImage   = `${BASE_URL}/blog/capas/${fm.slug}.webp`
-    cardImage = `/blog/capas/${fm.slug}-card.webp`
+    ogImage   = `${BASE_URL}${carimba(`/blog/capas/${fm.slug}.webp`)}`
+    cardImage = carimba(`/blog/capas/${fm.slug}-card.webp`)
   }
   return { ogImage, cardImage }
 }
@@ -425,7 +434,7 @@ function renderArticle(parsed, allArticles, template) {
   const leadHtml = fm.lead ? fm.lead : ''
   const coverSrc = fm.image && String(fm.image).trim()
     ? (String(fm.image).startsWith('http') ? fm.image : fm.image)
-    : `/blog/capas/${fm.slug}.webp`
+    : carimba(`/blog/capas/${fm.slug}.webp`)
 
   const authorBox = `<div class="author-box">
   <img class="author-avatar" src="${author.avatar}" alt="${author.name}" width="56" height="56" loading="lazy" />
