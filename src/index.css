@@ -107,12 +107,25 @@ h1, h2, h3, h4 {
 }
 
 /* ── Cards de modalidade que abrem no lugar ───────────────────────────── */
-.fg-card-mod{display:block;width:100%;text-align:left;background:#fff;border:1px solid rgba(28,58,94,.10);border-radius:.75rem;padding:1.5rem;cursor:pointer;transition:border-color .2s ease,background .2s ease}
-.fg-card-mod:hover{background:#FAFAF8;border-color:rgba(28,58,94,.22)}
-.fg-card-mod[aria-expanded="true"]{background:#FAFAF8;border-color:#E8572A}
+.fg-card-mod{position:relative;display:flex;flex-direction:column;width:100%;height:100%;text-align:left;background:#fff;border:1px solid rgba(28,58,94,.13);border-radius:.25rem;padding:1.75rem 1.5rem 1.5rem;cursor:pointer;overflow:hidden;transition:border-color .25s ease,background .25s ease}
+.fg-card-mod:hover{background:#FCFCFB;border-color:rgba(28,58,94,.3)}
+.fg-card-mod[aria-expanded="true"]{background:#FAFAF8;border-color:rgba(28,58,94,.3)}
+
+.fg-card-topo{position:absolute;left:0;top:0;width:100%;height:3px;background:#E8572A;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,.61,.36,1)}
+.fg-card-mod:hover .fg-card-topo,.fg-card-mod:focus-visible .fg-card-topo,.fg-card-mod[aria-expanded="true"] .fg-card-topo{transform:scaleX(1)}
+
+.fg-card-ico{display:flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;flex:none;background:#1C3A5E;color:#fff;margin-bottom:1.15rem;transition:background .25s ease}
+.fg-card-mod:hover .fg-card-ico,.fg-card-mod[aria-expanded="true"] .fg-card-ico{background:#E8572A}
+
+.fg-card-eyebrow{display:block;font-size:.6875rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#8B96A4;margin-bottom:.45rem}
+.fg-card-titulo{font-size:1.0625rem;font-weight:700;color:#1C3A5E;line-height:1.35;margin-bottom:.6rem}
+.fg-card-desc{font-size:.875rem;line-height:1.65;color:#5A6472;margin-bottom:1.25rem}
+.fg-card-acao{display:inline-flex;align-items:center;gap:.4rem;margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(28,58,94,.09);font-size:.8125rem;font-weight:700;letter-spacing:.02em;color:#1C3A5E;transition:color .2s ease}
+.fg-card-mod:hover .fg-card-acao,.fg-card-mod[aria-expanded="true"] .fg-card-acao{color:#E8572A}
+
 .fg-seta{transition:transform .25s ease}
 .fg-card-mod[aria-expanded="true"] .fg-seta{transform:rotate(180deg)}
-.fg-detalhe{border:1px solid rgba(28,58,94,.14);border-left:3px solid #E8572A;border-radius:.75rem;background:#FAFAF8;padding:1.5rem}
+.fg-detalhe{border:1px solid rgba(28,58,94,.14);border-left:3px solid #E8572A;border-radius:.25rem;background:#FAFAF8;padding:1.5rem}
 @media (prefers-reduced-motion:reduce){.fg-seta{transition:none}}
 
 /* ── Faixa fotográfica ────────────────────────────────────────────────── */

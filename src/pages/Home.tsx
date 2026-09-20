@@ -363,11 +363,12 @@ export default function Home() {
                   <button type="button" className="fg-card-mod"
                     aria-expanded={aberto} aria-controls={aberto ? `detalhe-${fimDaLinha}` : undefined}
                     onClick={() => setModalidadeAberta(aberto ? null : m.slug)}>
-                    <div className="mb-3"><ModalityIcon slug={m.slug} className="w-8 h-8 text-fg-navy" /></div>
-                    <span className="inline-block text-xs font-semibold text-fg-orange bg-orange-50 rounded-full px-2 py-0.5 mb-2">{m.badge}</span>
-                    <h3 className="text-base font-bold text-fg-navy mb-2">{m.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.desc}</p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-fg-orange">
+                    <span className="fg-card-topo" aria-hidden="true" />
+                    <span className="fg-card-ico"><ModalityIcon slug={m.slug} className="w-6 h-6" /></span>
+                    <span className="fg-card-eyebrow">{m.badge}</span>
+                    <h3 className="fg-card-titulo">{m.title}</h3>
+                    <p className="fg-card-desc">{m.desc}</p>
+                    <span className="fg-card-acao">
                       {aberto ? 'Fechar' : 'Ver detalhes'}
                       <svg className="fg-seta" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                     </span>
