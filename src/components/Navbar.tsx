@@ -65,6 +65,11 @@ export default function Navbar() {
         navigate('/')
         setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 300)
       }
+    } else if (href === '/' && location.pathname === '/') {
+      // Ja estamos na home: navigate('/') e' operacao vazia e o clique morre.
+      // Sobe a pagina, que e' o que a pessoa espera ao clicar em "Inicio".
+      const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      window.scrollTo({ top: 0, behavior: suave ? 'smooth' : 'auto' })
     } else {
       navigate(routePath(href))
     }
@@ -81,7 +86,8 @@ export default function Navbar() {
         <div className="container flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0"
+          <Link to="/" onClick={e => handleAnchor(e, '/')}
+            className="flex items-center gap-2 shrink-0"
             aria-label="F&G Seguro Garantia, ir para a home">
             <LogoHorizontal className="h-11 w-auto text-fg-navy" />
           </Link>
