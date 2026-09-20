@@ -52,14 +52,14 @@ export const VALID_CATEGORIES = [
 
 // ── Cores dos selos de categoria ──────────────────────────────────────────────
 const CATEGORY_COLORS = {
-  'Licitação':             { bg: '#DBEAFE', text: '#1E3A8A' },
-  'Execução de Contrato':  { bg: '#DCFCE7', text: '#14532D' },
-  'Judicial':              { bg: '#EDE9FE', text: '#4C1D95' },
-  'Trabalhista':           { bg: '#FEF3C7', text: '#78350F' },
-  'Locatício':             { bg: '#CCFBF1', text: '#134E4A' },
-  'Responsabilidade Civil':{ bg: '#FFE4E6', text: '#881337' },
-  'Cyber':                 { bg: '#F3E8FF', text: '#581C87' },
-  'Para o seu negócio':    { bg: '#E0E7FF', text: '#1E1B4B' },
+  'Licitação':                 { bg: 'transparent', text: '#E8572A' },
+  'Execução de Contrato':      { bg: 'transparent', text: '#E8572A' },
+  'Judicial':                  { bg: 'transparent', text: '#E8572A' },
+  'Trabalhista':               { bg: 'transparent', text: '#E8572A' },
+  'Locatício':                 { bg: 'transparent', text: '#E8572A' },
+  'Responsabilidade Civil':    { bg: 'transparent', text: '#E8572A' },
+  'Cyber':                     { bg: 'transparent', text: '#E8572A' },
+  'Para o seu negócio':        { bg: 'transparent', text: '#E8572A' },
 }
 
 // ── Conteudos ricos (ativo: false = nao renderiza) ────────────────────────────
@@ -171,31 +171,6 @@ function validateNoH1InBody(body, file) {
 }
 
 // ── Capa SVG automatica ───────────────────────────────────────────────────────
-function generateCoverSVG(slug, title, category) {
-  const color = CATEGORY_COLORS[category] || { bg: '#DBEAFE', text: '#1E3A8A' }
-  const words = title.replace(/"/g, '&quot;').split(' ')
-  const lines = []
-  let line = ''
-  for (const w of words) {
-    if ((line + ' ' + w).trim().length > 36 && line) {
-      lines.push(line.trim()); line = w
-    } else { line = (line + ' ' + w).trim() }
-    if (lines.length === 2) { line = words.slice(words.indexOf(w) + 1).join(' ') || ''; break }
-  }
-  if (line) lines.push(line.trim())
-  // Badge da categoria. A largura da pilula e o comprimento do texto sao
-  // calculados juntos e amarrados por textLength, entao o texto cabe sempre,
-  // independente da fonte que o renderizador usar. lengthAdjust="spacing"
-  // ajusta so o espacamento entre letras, sem deformar os glifos.
-  const cat = category.toUpperCase()
-  const catTextW = Math.round(cat.length * (20 * 0.67 + 2))
-  const badgeW = catTextW + 32
-  const titleY = lines.length === 1 ? 310 : lines.length === 2 ? 290 : 270
-  const titleSVG = lines.map((l, i) =>
-    `<text x="72" y="${titleY + i * 64}" font-family="Georgia,serif" font-size="52" font-weight="700" fill="white">${l}</text>`
-  ).join('\n  ')
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1C3A5E"/><stop offset="100%" stop-color="#0F2035"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><rect x="0" y="0" width="12" height="630" fill="#E8572A"/><rect x="0" y="530" width="1200" height="100" fill="rgba(0,0,0,0.25)"/><rect x="56" y="60" width="${badgeW}" height="38" rx="6" fill="${color.bg}"/><text x="72" y="87" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${color.text}" textLength="${catTextW}" lengthAdjust="spacing">${cat}</text>${titleSVG}<text x="72" y="578" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">fegsegurogarantia.com.br</text></svg>`
-}
 
 // ── JSON-LD schemas ───────────────────────────────────────────────────────────
 function buildArticleSchema(fm, ogImage) {
@@ -404,8 +379,8 @@ function computeImages(fm) {
     const imgFull = String(fm.image).startsWith('http') ? fm.image : `${BASE_URL}${fm.image}`
     ogImage = cardImage = imgFull
   } else {
-    ogImage   = `${BASE_URL}/logo-shield.png`
-    cardImage = `/blog/capas/${fm.slug}.svg`
+    ogImage   = `${BASE_URL}/blog/capas/${fm.slug}.webp`
+    cardImage = `/blog/capas/${fm.slug}-card.webp`
   }
   return { ogImage, cardImage }
 }
@@ -419,10 +394,7 @@ function renderArticle(parsed, allArticles, template) {
 
   const { ogImage, cardImage } = computeImages(fm)
 
-  // Generate SVG cover always (used for cards even when og uses PNG)
-  const capaDir = join(DIST_BLOG, 'capas')
-  mkdirSync(capaDir, { recursive: true })
-  writeFileSync(join(capaDir, `${fm.slug}.svg`), generateCoverSVG(fm.slug, fm.title, fm.category))
+  // Capas agora sao fotos tratadas em public/blog/capas/ (geradas fora do build).
 
   // Render markdown
   const rawBodyHtml = marked.parse(body)
@@ -453,7 +425,7 @@ function renderArticle(parsed, allArticles, template) {
   const leadHtml = fm.lead ? fm.lead : ''
   const coverSrc = fm.image && String(fm.image).trim()
     ? (String(fm.image).startsWith('http') ? fm.image : fm.image)
-    : `/blog/capas/${fm.slug}.svg`
+    : `/blog/capas/${fm.slug}.webp`
 
   const authorBox = `<div class="author-box">
   <img class="author-avatar" src="${author.avatar}" alt="${author.name}" width="56" height="56" loading="lazy" />
@@ -647,7 +619,7 @@ function buildBlogListing(articles) {
     .feat-side:hover .feat-side-title { color:var(--orange); }
     .feat-side-body { padding:16px; }
     .feat-side-title { font-family:'Source Serif 4',Georgia,serif; font-size:16px; font-weight:700; color:var(--navy); margin:8px 0 6px; line-height:1.3; transition:color .2s; }
-    .badge { display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:999px; }
+    .badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; }
     .rich-section { background:var(--navy); padding:56px 0; }
     .rich-section-title { font-family:'Source Serif 4',Georgia,serif; font-size:clamp(22px,3vw,32px); font-weight:700; color:#fff; margin-bottom:32px; }
     .rich-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
