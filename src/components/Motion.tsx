@@ -62,7 +62,9 @@ type CountUpProps = {
 /** Número que conta de 0 até o valor quando entra na tela. Conta uma vez só. */
 export function CountUp({ to, decimals = 0, prefix = '', suffix = '', duration = 1500 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null)
-  const [val, setVal] = useState(prefersReduced() ? to : 0)
+  // Fora do navegador (prerender para o Google) o numero ja nasce no valor
+  // final; no navegador continua contando de 0 ao entrar na tela.
+  const [val, setVal] = useState(typeof window === 'undefined' || prefersReduced() ? to : 0)
   const started = useRef(false)
 
   useEffect(() => {

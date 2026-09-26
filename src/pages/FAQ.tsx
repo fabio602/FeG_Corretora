@@ -23,7 +23,7 @@ export default function FAQPage() {
                   {item.q}
                   <span className="ml-4 text-fg-orange text-xl leading-none shrink-0">{open === i ? '−' : '+'}</span>
                 </button>
-                {open === i && <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed">{item.a}</div>}
+                <div hidden={open !== i} className="px-5 pb-5 text-sm text-gray-600 leading-relaxed">{item.a}</div>
               </div>
             ))}
           </div>

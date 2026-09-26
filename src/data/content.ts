@@ -52,7 +52,7 @@ export const MODALIDADES = [
     seoDesc: 'Substitua fiador e caução pelo Seguro Garantia Locatício. Aprovação rápida para locação comercial. F&G Corretora.',
     heading: 'Garantia',
     headingHighlight: 'Locatícia',
-    fullDesc: 'A Garantia Locatícia substitui fiador e depósito caução em contratos de aluguel comercial. A Lei do Inquilinato (8.245/91) prevê o Seguro Garantia como modalidade aceita.',
+    fullDesc: 'A Garantia Locatícia substitui fiador e depósito caução em contratos de aluguel comercial. A Lei do Inquilinato (8.245/91) prevê o seguro de fiança locatícia como modalidade aceita, no art. 37, III.',
     benefits: ['Sem imobilizar capital em caução', 'Sem precisar de fiador', 'Aprovação em horas', 'Aceito pelos principais imobiliários'],
     steps: [
       { icon: '🏢', title: 'Envie o contrato de locação', desc: 'Analisamos as condições e calculamos o prêmio.' },

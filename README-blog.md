@@ -77,6 +77,25 @@ do build não consegue remover. Mova ou apague essas pastas pelo Finder e rode d
 
 ---
 
+### 4b. Mexeu em `src/` (páginas, modalidades, componentes)? Regere o bundle e os snapshots
+
+A Hostinger não compila o `src/`: o build copia o bundle pronto de `legacy/assets/`
+e os snapshots HTML de `legacy/prerender/` (o conteúdo que o Google lê sem executar
+JavaScript). Os dois vão para o git. Depois de qualquer mudança em `src/`:
+
+```bash
+npx vite build
+cp dist/assets/index-*.js  legacy/assets/index-Bhzvy-ks.js
+cp dist/assets/index-*.css legacy/assets/index-BRVWEG0Z.css
+node scripts/prerender.mjs
+node scripts/build-legacy.mjs
+```
+
+Os nomes `index-Bhzvy-ks.js` e `index-BRVWEG0Z.css` são fixos porque os HTMLs
+apontam para eles. Artigo novo no blog não precisa disso: só o passo 4.
+
+---
+
 ### 5. Publique
 
 O deploy é automático. Basta o código entrar na `main`:
