@@ -91,9 +91,7 @@ export default function Modalidade() {
                   {item.q}
                   <span className="ml-4 text-fg-orange text-lg leading-none">{openFaq === i ? '−' : '+'}</span>
                 </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{item.a}</div>
-                )}
+                <div hidden={openFaq !== i} className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{item.a}</div>
               </div>
             ))}
           </div>

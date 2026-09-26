@@ -14,6 +14,8 @@ import {
 } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT    = join(__dirname, '..')
@@ -85,7 +87,18 @@ copyDir(PUBLIC, DIST)
 console.log('✅ public/ copiado para dist/')
 
 // ── 5. Escreve dist/index.html (home) ───────────────────────────────────────
-const homeHtml = readFileSync(join(LEGACY, 'index.html'), 'utf-8')
+// Snapshots HTML das rotas da SPA, gerados por scripts/prerender.mjs
+// (renderToString de src/). Vao dentro do <div id="root"> para o Google ler o
+// conteudo completo sem executar JS; o React substitui tudo ao montar.
+const PRERENDER = join(LEGACY, 'prerender')
+function snapshot(nome) {
+  const p = join(PRERENDER, nome + '.html')
+  return existsSync(p) ? readFileSync(p, 'utf-8') : null
+}
+
+let homeHtml = readFileSync(join(LEGACY, 'index.html'), 'utf-8')
+const homeSnap = snapshot('home')
+if (homeSnap) homeHtml = homeHtml.replace('<div id="root"></div>', `<div id="root">${homeSnap}</div>`)
 writeFileSync(join(DIST, 'index.html'), injectGA4(homeHtml))
 console.log('✅ dist/index.html (home)')
 
@@ -123,7 +136,7 @@ const MODALIDADES_CONTENT = {
   '/seguro-garantia-locaticia': {
     heading: 'Garantia',
     headingHighlight: 'Locatícia',
-    fullDesc: 'A Garantia Locatícia substitui fiador e depósito caução em contratos de aluguel comercial. A Lei do Inquilinato (8.245/91) prevê o Seguro Garantia como modalidade aceita.',
+    fullDesc: 'A Garantia Locatícia substitui fiador e depósito caução em contratos de aluguel comercial. A Lei do Inquilinato (8.245/91) prevê o seguro de fiança locatícia como modalidade aceita, no art. 37, III.',
     benefits: ['Sem imobilizar capital em caução', 'Sem precisar de fiador', 'Aprovação em horas', 'Aceito pelos principais imobiliários'],
   },
   '/seguro-garantia-adicional': {
@@ -141,6 +154,9 @@ const MODALIDADES_CONTENT = {
 }
 
 function buildPrerender(slug) {
+  const snap = snapshot(slug)
+  if (snap) return `<div id="root">${snap}</div>`
+  // Sem snapshot: cai no resumo escrito a mao abaixo (so as 6 modalidades antigas).
   const m = MODALIDADES_CONTENT['/' + slug] || MODALIDADES_CONTENT[slug]
   if (!m) return '<div id="root"></div>'
   const liItems = m.benefits.map(b => `<li style="padding:6px 0;color:#374151;font-size:15px;">✔ ${b}</li>`).join('\n        ')
@@ -413,10 +429,10 @@ const MODALITY_FAQS = {
     { q: 'Em quanto tempo o Seguro Garantia Judicial é emitido?', a: 'A F&G Corretora emite o Seguro Garantia Judicial em horas, ideal para não perder prazos processuais. Basta enviar a decisão judicial ou o cálculo do valor da garantia exigido pelo juízo.' },
   ],
   'seguro-garantia-locaticia': [
-    { q: 'A Garantia Locatícia substitui o fiador em contratos de aluguel comercial?', a: 'Sim. A Lei do Inquilinato (Lei 8.245/91) prevê o Seguro Garantia como modalidade de garantia em contratos de locação, substituindo fiador, depósito caução e título de capitalização. É amplamente aceito pelas principais imobiliárias e proprietários.' },
+    { q: 'A Garantia Locatícia substitui o fiador em contratos de aluguel comercial?', a: 'Sim. A Lei do Inquilinato (Lei 8.245/91) prevê o seguro de fiança locatícia como modalidade de garantia em contratos de locação, no art. 37, III, substituindo fiador, depósito caução e título de capitalização. É amplamente aceito pelas principais imobiliárias e proprietários.' },
     { q: 'Qual o custo da Garantia Locatícia comparado ao depósito caução?', a: 'Com depósito caução, a empresa imobiliza 3 meses de aluguel que ficam bloqueados durante todo o contrato. Com a Garantia Locatícia, paga-se um prêmio anual (geralmente entre 8% e 12% do valor garantido) e o capital fica disponível para o negócio.' },
     { q: 'Em quanto tempo a Garantia Locatícia é aprovada?', a: 'A análise e aprovação da Garantia Locatícia são feitas em horas, ideal para fechar contratos rapidamente. A F&G Corretora gerencia todo o processo junto às seguradoras parceiras.' },
-    { q: 'A Garantia Locatícia é aceita em contratos de locação de galpões e espaços industriais?', a: 'Sim. A Garantia Locatícia é aceita em locações comerciais de qualquer tipo, incluindo galpões, escritórios, salas comerciais e espaços industriais, desde que o locador aceite o Seguro Garantia como modalidade de garantia.' },
+    { q: 'A Garantia Locatícia é aceita em contratos de locação de galpões e espaços industriais?', a: 'Sim. A Garantia Locatícia é aceita em locações comerciais de qualquer tipo, incluindo galpões, escritórios, salas comerciais e espaços industriais, desde que o locador aceite o seguro de fiança locatícia como modalidade de garantia.' },
   ],
   'seguro-garantia-adicional': [
     { q: 'Quando a Lei 14.133/21 exige o Seguro Garantia Adicional?', a: 'O art. 59, § 5º da Lei 14.133/21 exige o Seguro Garantia Adicional quando a proposta vencedora fica abaixo de 85% do valor de referência do edital. Nesse caso, a diferença entre o valor da proposta e 85% do orçamento deve ser coberta por garantia adicional.' },
@@ -460,12 +476,16 @@ injectModalityFAQSchemas()
 buildBlogFromMarkdown()
 
 // ── 12. Home: InsuranceAgency + Organization + WebSite schemas ───────────────────
+// Sem aggregateRating: a diretriz do Google exige que a nota venha de avaliacoes
+// visiveis na propria pagina e nao seja autodeclarada; um 5.0 solto so arrisca
+// acao manual por dados estruturados. Se um dia entrarem avaliacoes reais na
+// home (Google Business Profile), volta com a fonte junto.
 function injectHomeSchemas() {
   const p = join(DIST, 'index.html')
   if (!existsSync(p)) return
   let html = readFileSync(p, 'utf-8')
   if (html.includes('"InsuranceAgency"')) { console.log('✅ Home schemas já presentes'); return }
-  const schemas = JSON.parse("[{\"@context\": \"https://schema.org\", \"@type\": \"InsuranceAgency\", \"name\": \"F&G Seguro Garantia\", \"alternateName\": \"F&G Corretora de Seguros\", \"description\": \"Corretora especializada em Seguro Garantia para licita\u00e7\u00f5es, execu\u00e7\u00e3o de contratos e processos judiciais. Emiss\u00e3o em at\u00e9 2 horas. Atendemos todo o Brasil.\", \"url\": \"https://fegsegurogarantia.com.br\", \"telephone\": \"+55-15-99861-8659\", \"address\": {\"@type\": \"PostalAddress\", \"addressLocality\": \"Boituva\", \"addressRegion\": \"SP\", \"addressCountry\": \"BR\"}, \"areaServed\": {\"@type\": \"Country\", \"name\": \"Brasil\"}, \"knowsAbout\": [\"Seguro Garantia Licitante\", \"Seguro Garantia de Execu\u00e7\u00e3o de Contrato\", \"Seguro Garantia Judicial\", \"Garantia Locat\u00edcia\", \"Lei 14.133/2021\"], \"aggregateRating\": {\"@type\": \"AggregateRating\", \"ratingValue\": \"5.0\", \"reviewCount\": \"24\", \"bestRating\": \"5\", \"worstRating\": \"1\"}}, {\"@context\": \"https://schema.org\", \"@type\": \"Organization\", \"name\": \"F&G Seguro Garantia\", \"url\": \"https://fegsegurogarantia.com.br\", \"logo\": \"https://fegsegurogarantia.com.br/logo-shield.png\", \"contactPoint\": {\"@type\": \"ContactPoint\", \"telephone\": \"+55-15-99861-8659\", \"contactType\": \"customer service\", \"areaServed\": \"BR\", \"availableLanguage\": \"pt-BR\"}}, {\"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"F&G Seguro Garantia\", \"url\": \"https://fegsegurogarantia.com.br\"}]")
+  const schemas = JSON.parse("[{\"@context\": \"https://schema.org\", \"@type\": \"InsuranceAgency\", \"name\": \"F&G Seguro Garantia\", \"alternateName\": \"F&G Corretora de Seguros\", \"description\": \"Corretora especializada em Seguro Garantia para licita\u00e7\u00f5es, execu\u00e7\u00e3o de contratos e processos judiciais. Emiss\u00e3o em at\u00e9 2 horas. Atendemos todo o Brasil.\", \"url\": \"https://fegsegurogarantia.com.br\", \"telephone\": \"+55-15-99861-8659\", \"address\": {\"@type\": \"PostalAddress\", \"addressLocality\": \"Boituva\", \"addressRegion\": \"SP\", \"addressCountry\": \"BR\"}, \"areaServed\": {\"@type\": \"Country\", \"name\": \"Brasil\"}, \"knowsAbout\": [\"Seguro Garantia Licitante\", \"Seguro Garantia de Execu\u00e7\u00e3o de Contrato\", \"Seguro Garantia Judicial\", \"Garantia Locat\u00edcia\", \"Lei 14.133/2021\"]}, {\"@context\": \"https://schema.org\", \"@type\": \"Organization\", \"name\": \"F&G Seguro Garantia\", \"url\": \"https://fegsegurogarantia.com.br\", \"logo\": \"https://fegsegurogarantia.com.br/logo-shield.png\", \"contactPoint\": {\"@type\": \"ContactPoint\", \"telephone\": \"+55-15-99861-8659\", \"contactType\": \"customer service\", \"areaServed\": \"BR\", \"availableLanguage\": \"pt-BR\"}}, {\"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"F&G Seguro Garantia\", \"url\": \"https://fegsegurogarantia.com.br\"}]")
   const tags = schemas.map(s =>
     `  <script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n  </script>`
   ).join('\n')
@@ -537,3 +557,59 @@ injectCyberPrerender()
 
 // ── Material pages com captura de lead ────────────────────────────────────────
 buildMaterialPages(DIST, join(DIST, 'sitemap.xml'))
+
+// ── 16. sitemap.xml: lastmod por URL ─────────────────────────────────────────
+// O Google usa o lastmod para decidir o que recrawlar. Fontes, em ordem:
+// artigo do blog = date do frontmatter; demais rotas = data do ultimo commit
+// dos arquivos que geram a pagina (git), ou a data de modificacao do arquivo
+// quando o git nao estiver disponivel no ambiente de build.
+function dataFonte(...arquivos) {
+  const existentes = arquivos.map(a => join(ROOT, a)).filter(existsSync)
+  if (existentes.length === 0) return null
+  let melhor = null
+  for (const f of existentes) {
+    let d = null
+    try {
+      const { execSync } = require('child_process')
+      d = execSync(`git log -1 --format=%cs -- "${f}"`, { cwd: ROOT, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || null
+    } catch { /* sem git: usa mtime */ }
+    if (!d) d = statSync(f).mtime.toISOString().slice(0, 10)
+    if (!melhor || d > melhor) melhor = d
+  }
+  return melhor
+}
+function lastmodDaUrl(url) {
+  const path = url.replace('https://fegsegurogarantia.com.br', '')
+  const blog = /^\/blog\/([^/]+)\/$/.exec(path)
+  if (blog) {
+    const md = join(ROOT, 'content', 'blog', blog[1] + '.md')
+    if (existsSync(md)) {
+      const m = /^date:\s*["']?(\d{4}-\d{2}-\d{2})/m.exec(readFileSync(md, 'utf-8'))
+      if (m) return m[1]
+    }
+    return dataFonte(`dist/blog/${blog[1]}/index.html`)
+  }
+  if (path === '/') return dataFonte('legacy/prerender/home.html', 'legacy/index.html', 'src/pages/Home.tsx')
+  if (path === '/blog/') {
+    const datas = readdirSync(join(ROOT, 'content', 'blog')).filter(f => f.endsWith('.md'))
+      .map(f => (/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m.exec(readFileSync(join(ROOT, 'content', 'blog', f), 'utf-8')) || [])[1]).filter(Boolean)
+    return datas.sort().pop() || dataFonte('scripts/build-blog.mjs')
+  }
+  if (path.startsWith('/materiais/')) return dataFonte('scripts/build-blog.mjs')
+  const slug = path.replace(/^\/|\/$/g, '')
+  return dataFonte(`legacy/prerender/${slug}.html`, 'src/data/content.ts', `src/pages/${slug === 'perguntas-frequentes' ? 'FAQ' : slug === 'seguro-cyber' ? 'SeguroCyber' : 'Modalidade'}.tsx`)
+}
+function injectSitemapLastmod() {
+  const p = join(DIST, 'sitemap.xml')
+  if (!existsSync(p)) return
+  let n = 0
+  const xml = readFileSync(p, 'utf-8').replace(/<url><loc>([^<]+)<\/loc>(?!<lastmod>)/g, (m, url) => {
+    const d = lastmodDaUrl(url)
+    if (!d) return m
+    n++
+    return `<url><loc>${url}</loc><lastmod>${d}</lastmod>`
+  })
+  writeFileSync(p, xml)
+  console.log(`✅ sitemap.xml: lastmod em ${n} URL(s)`)
+}
+injectSitemapLastmod()

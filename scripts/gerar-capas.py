@@ -21,6 +21,10 @@ MAPA = {
  'seguro-garantia-deposito-recursal':       ('bridge',       {'foco':0.32}),
  'seguro-garantia-negado-limite-de-credito':('office',       {'box':(0.42,0.08,1.00,0.70),'foco':0.50}),
  'seguro-garantia-vs-caucao-fianca':        ('calc',         {'foco':0.62}),
+ 'aditivo-de-contrato-endosso-seguro-garantia':          ('welder',    {'foco':0.55}),
+ 'seguro-fianca-locaticia-lei-inquilinato':              ('blueprint', {'box':(0.30,0.05,1.00,1.00),'foco':0.50}),
+ 'seguro-cyber-pme-ransomware-lgpd':                     ('office',    {'box':(0.25,0.46,1.00,1.00),'foco':0.50}),
+ 'cobertura-trabalhista-previdenciaria-seguro-garantia': ('cleaner',   {'foco':0.76}),
 }
 NAVY  = np.array([18, 40, 63], dtype=np.float32)
 PESOS = np.array([.299, .587, .114], dtype=np.float32)
