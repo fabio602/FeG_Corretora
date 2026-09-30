@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Seguro Garantia Licitante | Garantia de proposta | F&G</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,700;0,8..60,800;1,8..60,800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1c3a5e;--navy2:#132a45;--orange:#e8572a;--bg:#fafaf8;--beige:#eac8ac;--line:#e4e1da;--muted:#5b6b80;--pad:clamp(16px,5vw,80px)}
+*{box-sizing:border-box;margin:0}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--navy);background:var(--bg);line-height:1.55}
+a{color:inherit}
+.proto{background:#fff4d6;color:#7a5a00;font-size:13px;text-align:center;padding:6px var(--pad)}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);border-bottom:1px solid var(--line);background:#fff}
+.logo img,.logo svg{height:46px;width:auto;display:block;flex-shrink:0;overflow:visible}
+@media (max-width:520px){.logo img,.logo svg{height:38px}}
+.flogo img,.flogo svg{height:52px;width:auto;display:block}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Source Serif 4",serif;font-weight:800;font-size:22px;text-decoration:none}
+.mark{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;font-size:15px}
+.mcta{display:none}
+.logo small{display:block;font-family:"IBM Plex Sans";font-size:10px;letter-spacing:.18em;font-weight:600;color:var(--muted)}
+.wa-top{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;font-weight:700;text-decoration:none;padding:10px 16px;border-radius:999px;font-size:15px}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,64px);padding:clamp(28px,5vw,64px) var(--pad);align-items:start;background:radial-gradient(1200px 500px at 0% 0%,#fff 0%,var(--bg) 60%)}
+.tag{display:inline-block;border:1px solid var(--beige);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+h1{font-family:"Source Serif 4",serif;font-weight:800;font-size:clamp(34px,4.6vw,62px);line-height:1.06;margin:18px 0 18px;letter-spacing:-.01em}
+h1 em{color:var(--orange);font-style:italic;display:block}
+.sub{font-size:clamp(16px,1.3vw,19px);color:#34506f;max-width:60ch}
+.hero ul{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px}
+.hero li{padding-left:30px;position:relative;font-weight:500}
+.hero li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;display:grid;place-items:center}
+.seals{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.seal{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--muted)}
+.seal b{display:block;color:var(--navy);font-size:17px}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 50px -25px rgba(19,42,69,.35);padding:clamp(20px,2.4vw,32px);position:sticky;top:16px}
+.who{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.who img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--beige)}
+.who b{display:block;font-size:17px}
+.who span{font-size:13.5px;color:var(--muted)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+label{display:grid;gap:5px;font-size:13px;font-weight:600}
+label.full,.full{grid-column:1/-1}
+input,select{font:inherit;font-weight:400;font-size:15px;padding:11px 12px;border:1px solid #cfd6df;border-radius:10px;background:#fff;color:var(--navy);width:100%}
+input:focus,select:focus{outline:2px solid var(--orange);outline-offset:1px;border-color:transparent}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.erro{color:#b3261e;font-size:13.5px;min-height:0;grid-column:1/-1}
+.erro:empty{display:none}
+.btn[disabled]{opacity:.6;cursor:wait}
+.cnpj-ok{font-size:12px;color:#1a7f4b;font-weight:500;min-height:16px}
+.file{border:1.5px dashed #b9c3cf;border-radius:10px;padding:12px;text-align:center;font-size:14px;color:var(--muted);cursor:pointer;font-weight:500}
+.file input{display:none}
+.btn{grid-column:1/-1;background:var(--orange);color:#fff;border:0;border-radius:12px;padding:15px;font:inherit;font-weight:700;font-size:17px;cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+.lgpd{grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center}
+.thanks{display:none;text-align:center;padding:10px 0}
+.thanks h3{font-family:"Source Serif 4",serif;font-size:26px;margin-bottom:8px}
+.thanks .wa-top{margin-top:16px;font-size:17px;padding:14px 22px}
+section{padding:clamp(40px,6vw,80px) var(--pad)}
+h2{font-family:"Source Serif 4",serif;font-weight:800;font-size:clamp(26px,2.8vw,38px);margin-bottom:26px}
+.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--orange);text-transform:uppercase;margin-bottom:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.step .n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:12px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:#46607d;font-size:15px}
+.about{background:var(--navy);color:#fff;display:grid;grid-template-columns:minmax(200px,34%) 1fr;gap:clamp(24px,4vw,60px);align-items:center}
+.about img{width:100%;border-radius:18px;aspect-ratio:2/3;object-fit:cover;object-position:top}
+.about h2{color:#fff}
+.about p{color:#d5deea;font-size:17px;max-width:65ch;margin-bottom:14px}
+.about .eyebrow{color:var(--beige)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.stars{color:#f5a623;letter-spacing:2px}
+.rev blockquote{margin:10px 0;font-size:15.5px}
+.rev figcaption{font-size:13px;color:var(--muted);font-weight:600}
+.gscore{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.gscore b{font-family:"Source Serif 4",serif;font-size:40px}
+.gscore a{font-size:14px;font-weight:600}
+.faq{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(20px,4vw,60px);background:#fff;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary:after{content:"+";color:var(--orange);font-size:22px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin-top:10px;color:#46607d}
+.cta-final{text-align:center;background:linear-gradient(180deg,var(--bg),#f3ece4)}
+.cta-final .btn{display:inline-block;padding:15px 30px;text-decoration:none}
+footer{padding:28px var(--pad);font-size:13px;color:#c9d4e2;background:var(--navy2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding-right:96px}
+.float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+@media (max-width:900px){
+ .hero,.faq{grid-template-columns:1fr}
+ .steps,.revs{grid-template-columns:1fr}
+ .card{position:static}
+ .seals{display:grid;grid-template-columns:1fr 1fr}
+ .mcta{display:block;text-align:center;text-decoration:none;margin:18px 0 4px}
+ .wa-top span{display:none}
+}
+@media (max-width:640px){.about{grid-template-columns:1fr}.about img{aspect-ratio:4/3.4;object-position:center 12%}}
+@media (max-width:520px){form{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="/" aria-label="F&amp;G Seguro Garantia"><img src="/lp/fg-logo-horizontal-azul.svg" alt="F&amp;G Seguro Garantia" width="143" height="46"></a>
+  <a class="wa-top" href="https://wa.me/5515998618659?text=Ol%C3%A1%2C%20F%C3%A1bio%21%20Quero%20cotar%20um%20Seguro%20Garantia%20Licitante%20%28garantia%20de%20proposta%29." target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+    <span>Falar no WhatsApp</span></a>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <span class="tag">Garantia de proposta · Lei 14.133/21</span>
+    <h1>Garantia de proposta pronta <em>antes da sessão</em> do pregão.</h1>
+    <p class="sub">Envie o edital. Eu confiro o percentual, o valor e a vigência exigidos, coto com mais de 25 seguradoras e te entrego a apólice para anexar à proposta.</p>
+    <a class="btn mcta" href="#cotar">Quero minha cotação</a>
+    <ul><li>Conferência do edital antes da emissão</li><li>Sem caução em dinheiro: seu caixa fica livre</li><li>Apólice por e-mail e WhatsApp</li></ul>
+    <div class="seals">
+      <div class="seal"><b>até 2h</b>para emitir a apólice*</div>
+      <div class="seal"><b>25+</b>seguradoras parceiras</div>
+      <div class="seal"><b>5,0 ★</b>avaliações no Google</div>
+      <div class="seal"><b>SUSEP</b>242160653</div>
+    </div>
+    <p class="note">* Prazo após o recebimento dos documentos, sujeito à análise e aceitação da seguradora.</p>
+  </div>
+
+  <div class="card" id="cotar">
+    <div class="who">
+      <img src="/lp/fabio-avatar-form.webp" width="52" height="52" alt="Fábio Lima">
+      <div><b>Quem responde é o Fábio</b><span>Corretor dedicado a Seguro Garantia</span></div>
+    </div>
+    <form id="f" novalidate>
+      <label class="full">Nome *<input name="nome" required placeholder="Seu nome"></label>
+      <label>WhatsApp *<input name="whatsapp" required inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" data-phone></label>
+      <label>E-mail *<input name="email" type="email" required autocomplete="email" placeholder="voce@empresa.com.br"></label>
+      <label class="full">CNPJ da empresa *<input name="cnpj" required inputmode="numeric" placeholder="00.000.000/0000-00" data-cnpj><span class="cnpj-ok" id="cnpjok"></span></label>
+      <label>Nº do edital / pregão<input type="text" name="edital" placeholder="Ex.: Pregão Eletrônico 045/2026"></label><label>Data da sessão *<input type="date" name="sessao" placeholder="" required></label><label>Valor estimado da licitação<input type="text" name="valor" placeholder="R$ 0,00" inputmode="decimal" data-money></label>
+      <div class="hp" aria-hidden="true"><label>Site<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <!-- campos ocultos de rastreio: preenchidos a partir da URL -->
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="gclid"><input type="hidden" name="lp" value="licitante">
+      <p class="erro full" id="erro" role="alert"></p>
+      <button class="btn" type="submit" id="enviar">Quero minha cotação</button>
+      <p class="lgpd">Seus dados são usados só para esta cotação.</p>
+    </form>
+    <div class="thanks" id="ok">
+      <h3>Recebi sua solicitação!</h3>
+      <p>Vou analisar os dados e te respondo pelo WhatsApp. Para adiantar, me mande o edital por lá:</p>
+      <a class="wa-top" id="wa2" href="https://wa.me/5515998618659?text=Ol%C3%A1%2C%20F%C3%A1bio%21%20Quero%20cotar%20um%20Seguro%20Garantia%20Licitante%20%28garantia%20de%20proposta%29." target="_blank" rel="noopener">Enviar o edital no WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="eyebrow">Como funciona</div>
+  <h2>Três passos, tudo digital</h2>
+  <div class="steps"><div class="step"><span class="n">1</span><h3>Você envia o edital</h3><p>Pelo formulário ou pelo WhatsApp. Pode ser o PDF ou o link do portal.</p></div><div class="step"><span class="n">2</span><h3>Eu confiro a exigência</h3><p>Percentual, valor, beneficiário e vigência da garantia de proposta, conforme o edital.</p></div><div class="step"><span class="n">3</span><h3>Você recebe a apólice</h3><p>Cotada com mais de 25 seguradoras e enviada pronta para anexar à proposta.</p></div></div>
+</section>
+
+<section class="about">
+  <img src="/lp/fabio-atendimento.webp" loading="lazy" width="533" height="799" alt="Fábio Lima, corretor da F&G Seguro Garantia">
+  <div>
+    <div class="eyebrow">Quem vai te atender</div>
+    <h2>Fábio Lima</h2>
+    <p>Administrador de formação e corretor dedicado exclusivamente a Seguro Garantia. Acompanho pessoalmente cada apólice, da leitura do documento até a entrega.</p>
+    <p>Trabalho com um painel de mais de 25 seguradoras. Na prática, isso significa buscar a taxa e o limite certos para a sua empresa, em vez de encaixar você no produto de uma única companhia.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Avaliações</div>
+  <div class="gscore"><b>5,0</b><div><div class="stars">★★★★★</div><a href="https://share.google/AtTRA9nk7u7cOrOaa" target="_blank" rel="noopener">Ver todas no Google</a></div></div>
+  <div class="revs"><figure class="rev"><div class="stars">★★★★★</div><blockquote>“Tive uma excelente experiência! O Fábio foi extremamente prestativo, educado e disposto a ajudar. Emissão do seguro rápida e eficiente!”</blockquote><figcaption>I.C Licitação · Google</figcaption></figure><figure class="rev"><div class="stars">★★★★★</div><blockquote>“Ótima experiência. Atendimento muito atencioso, consultivo, diversos esclarecimentos, soluções rápidas contemplando os prazos apertados do segmento.”</blockquote><figcaption>Edílson Lobo · Google</figcaption></figure><figure class="rev"><div class="stars">★★★★★</div><blockquote>“São profissionais que transmitem confiança, atenção e transparência em cada atendimento. Recomendo de coração pelo profissionalismo e dedicação.”</blockquote><figcaption>Monique Barros · Google</figcaption></figure></div>
+</section>
+
+<section class="faq">
+  <div><div class="eyebrow">Dúvidas</div><h2>Perguntas frequentes</h2><p style="color:var(--muted)">Não achou sua dúvida? Me chama no WhatsApp.</p></div>
+  <div><details><summary>Quanto é a garantia de proposta?</summary><p>Quem define é o edital. Pela Lei 14.133/21 (art. 58), ela pode ser de até 1% do valor estimado da contratação. Eu confiro o percentual exato no seu edital antes de emitir.</p></details><details><summary>Qual a vigência da apólice?</summary><p>Segue o que o edital pedir para a garantia de proposta. Quando o edital não fixa um prazo próprio, a referência costuma ser a validade da proposta. Eu confiro isso no documento.</p></details><details><summary>E se eu ganhar a licitação?</summary><p>A garantia de proposta encerra ali. Para assinar o contrato, normalmente é exigida uma nova apólice, a garantia de execução, e eu cuido dela também.</p></details><details><summary>Quanto custa?</summary><p>Depende do perfil da sua empresa, do valor e do prazo. Por isso a cotação é feita com várias seguradoras, para achar a melhor taxa para o seu caso.</p></details><details><summary>Minha empresa nunca fez Seguro Garantia. Consigo?</summary><p>Na maioria dos casos, sim. A primeira apólice exige um cadastro na seguradora, e eu te guio nos documentos.</p></details></div>
+</section>
+
+<section class="cta-final">
+  <h2>Mande o documento e deixe a garantia comigo.</h2>
+  <a class="btn" href="#cotar">Quero minha cotação</a>
+</section>
+</main>
+
+<footer>
+  <div class="flogo"><img src="/lp/fg-logo-horizontal-bege.svg" alt="F&amp;G Seguro Garantia" width="162" height="52" loading="lazy"></div>
+  <span>F&amp;G Seguro Garantia · CNPJ 56.123.874/0001-90 · SUSEP 242160653 · Boituva/SP</span>
+  <a href="/">fegsegurogarantia.com.br</a>
+</footer>
+
+<a class="float" href="https://wa.me/5515998618659?text=Ol%C3%A1%2C%20F%C3%A1bio%21%20Quero%20cotar%20um%20Seguro%20Garantia%20Licitante%20%28garantia%20de%20proposta%29." target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<script>
+const $=s=>document.querySelector(s);
+const FN="https://hfjvwibucplyhsvnwfor.supabase.co/functions/v1/lead-cotacao";
+const WA="5515998618659";
+let razao="";
+// rastreio: UTM e gclid da URL, guardados na sessão para sobreviver a recarga
+const q=new URLSearchParams(location.search);
+["utm_source","utm_medium","utm_campaign","utm_term","gclid"].forEach(k=>{const el=document.querySelector(`[name=${k}]`);let v=q.get(k);try{if(v)sessionStorage.setItem("fg_"+k,v);else v=sessionStorage.getItem("fg_"+k)}catch(e){}if(el&&v)el.value=v});
+// máscaras
+const cnpjOk=$("#cnpjok");
+function validaCNPJ(c){c=c.replace(/\D/g,"");if(c.length!==14||/^(\d)\1+$/.test(c))return false;const calc=n=>{let s=0,p=n-7;for(let i=0;i<n;i++){s+=+c[i]*p--;if(p<2)p=9}const r=s%11;return r<2?0:11-r};return calc(12)===+c[12]&&calc(13)===+c[13]}
+document.querySelectorAll("[data-cnpj]").forEach(i=>i.addEventListener("input",async()=>{let v=i.value.replace(/\D/g,"").slice(0,14);const d=v;v=v.replace(/^(\d{2})(\d)/,"$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3").replace(/\.(\d{3})(\d)/,".$1/$2").replace(/(\d{4})(\d)/,"$1-$2");i.value=v;razao="";cnpjOk.textContent="";cnpjOk.style.color="";
+ if(d.length<14)return;
+ if(!validaCNPJ(d)){cnpjOk.textContent="CNPJ inválido, confira os números";cnpjOk.style.color="#b3261e";return}
+ cnpjOk.textContent="Consultando…";
+ try{const r=await fetch("https://brasilapi.com.br/api/cnpj/v1/"+d);if(r.ok){const j=await r.json();if(i.value.replace(/\D/g,"")!==d)return;razao=j.razao_social||"";cnpjOk.textContent=razao?"✓ "+razao:""}else cnpjOk.textContent=""}catch(e){cnpjOk.textContent=""}}));
+document.querySelectorAll("[data-phone]").forEach(i=>i.addEventListener("input",()=>{let v=i.value.replace(/\D/g,"").slice(0,11);v=v.replace(/^(\d{2})(\d)/,"($1) $2").replace(/(\d{5})(\d)/,"$1-$2");i.value=v}));
+document.querySelectorAll("[data-money]").forEach(i=>i.addEventListener("input",()=>{let v=i.value.replace(/\D/g,"");i.value=v?"R$ "+(Number(v)/100).toLocaleString("pt-BR",{minimumFractionDigits:2}):""}));
+// envio
+$("#f").addEventListener("submit",async e=>{e.preventDefault();const f=e.target;const erro=$("#erro");erro.textContent="";let ok=true;
+ f.querySelectorAll("[required]").forEach(i=>{const vazio=!i.value.trim();if(vazio){i.style.borderColor="#e8572a";ok=false}else i.style.borderColor=""});
+ if(!ok){erro.textContent="Preencha os campos marcados com *.";return}
+ if(f.whatsapp.value.replace(/\D/g,"").length<10){f.whatsapp.style.borderColor="#e8572a";erro.textContent="Confira o WhatsApp com DDD.";return}
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value.trim())){f.email.style.borderColor="#e8572a";erro.textContent="Confira o e-mail.";return}
+ if(!validaCNPJ(f.cnpj.value)){f.cnpj.style.borderColor="#e8572a";erro.textContent="Confira o CNPJ.";return}
+ const g=n=>(f.elements[n]&&f.elements[n].value||"").trim();
+ const dados={lp:g("lp"),nome:g("nome"),fone:g("whatsapp"),mail:g("email"),cnpj:g("cnpj"),empresa:razao,
+  edital:g("edital"),sessao:g("sessao"),valor:g("valor"),percent:g("percent"),prazo:g("prazo"),website:g("website"),
+  utm_source:g("utm_source"),utm_medium:g("utm_medium"),utm_campaign:g("utm_campaign"),utm_term:g("utm_term"),gclid:g("gclid")};
+ const b=$("#enviar");b.disabled=true;b.textContent="Enviando…";
+ try{const r=await fetch(FN,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados)});if(!r.ok)throw new Error(r.status)}
+ catch(err){b.disabled=false;b.textContent="Quero minha cotação";erro.innerHTML='Não consegui enviar agora. <a href="https://wa.me/'+WA+'?text='+encodeURIComponent("Ol\u00e1, F\u00e1bio! Quero cotar um Seguro Garantia Licitante (garantia de proposta).")+'" target="_blank" rel="noopener">Me chama no WhatsApp</a> que eu te atendo por lá.';return}
+ try{const ga=window.gtag;if(typeof ga==="function")ga("event","generate_lead",{lead_source:"lp_"+dados.lp,form_id:"lp_"+dados.lp})}catch(e){}
+ const nome=dados.nome.split(" ")[0];const msg="Ol\u00e1, F\u00e1bio! Quero cotar um Seguro Garantia Licitante (garantia de proposta)."+" Sou "+dados.nome+(razao?", da "+razao:"")+" (CNPJ "+dados.cnpj+"). Acabei de preencher o formulário e vou enviar o edital aqui.";
+ $("#wa2").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+ f.style.display="none";$("#ok").style.display="block";$("#ok h3").textContent="Recebi, "+nome+"!";
+ $("#cotar").scrollIntoView({behavior:"smooth",block:"start"});});
+</script>
+</body>
+</html>
