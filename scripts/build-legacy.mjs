@@ -65,7 +65,7 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-CR7U6xz-.js'),  join(DIST, 'assets', 'index-CR7U6xz-.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-BnUOvyVH.js'),  join(DIST, 'assets', 'index-BnUOvyVH.js'))
 copyFileSync(join(LEGACY, 'assets', 'index-53e1DIbY.css'), join(DIST, 'assets', 'index-53e1DIbY.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
@@ -108,7 +108,7 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-CR7U6xz-.js"></script>
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-BnUOvyVH.js"></script>
   <link rel="preload" as="style" href="/assets/index-53e1DIbY.css">
   <link rel="stylesheet" crossorigin href="/assets/index-53e1DIbY.css">`
 
@@ -431,6 +431,14 @@ const MODALITY_FAQS = {
     { q: 'O Seguro Garantia Judicial é aceito em execução fiscal pela Receita Federal e SEFAZ?', a: 'Sim. O art. 9º, II da Lei de Execução Fiscal (Lei 6.830/80) e o art. 835 do CPC permitem o uso do Seguro Garantia em execuções fiscais. A Receita Federal e as Secretarias Estaduais de Fazenda são obrigadas a aceitar, desde que o valor cubra o débito atualizado.' },
     { q: 'Qual a base legal para usar Seguro Garantia no lugar de depósito em juízo?', a: 'O art. 835, III do Código de Processo Civil (CPC) estabelece o Seguro Garantia como modalidade de garantia em processos de execução. A lei prevê que o Seguro Garantia tem preferência sobre outros meios de garantia, exceto dinheiro.' },
     { q: 'Em quanto tempo o Seguro Garantia Judicial é emitido?', a: 'A F&G Corretora emite o Seguro Garantia Judicial em horas, ideal para não perder prazos processuais. Basta enviar a decisão judicial ou o cálculo do valor da garantia exigido pelo juízo.' },
+  ],
+  // Mesmas perguntas visíveis na página (pagina.faq da Judicial Trabalhista em content.ts)
+  'seguro-garantia-judicial-trabalhista': [
+    { q: 'Quais requisitos a apólice precisa ter?', a: 'O Ato Conjunto TST.CSJT.CGJT 1/2019 define o que a apólice precisa trazer: valor da condenação acrescido de no mínimo 30%, vigência mínima de 3 anos, atualização pelos índices trabalhistas e cláusula de renovação automática. Eu estruturo a apólice com esses requisitos.' },
+    { q: 'Posso substituir depósitos que já fiz em dinheiro?', a: 'Sim. Conforme decisão do CNJ, a substituição pode ocorrer a qualquer tempo. A empresa apresenta a apólice e requer a liberação dos valores depositados, recuperando caixa de processos antigos.' },
+    { q: 'O seguro garantia vale para qualquer recurso trabalhista?', a: 'Vale para os recursos que exigem depósito recursal (ordinário, de revista, entre outros) e também para a fase de execução, cada um com a garantia estruturada conforme a etapa do processo.' },
+    { q: 'E se a empresa perder o processo?', a: 'A obrigação de pagar continua sendo da empresa. A seguradora só deposita em juízo se a empresa não pagar após a intimação, e nesse caso cobra o reembolso do tomador. O seguro não é uma transferência da dívida, é uma garantia de liquidez para o processo.' },
+    { q: 'Quanto custa?', a: 'Depende do perfil da sua empresa, do valor e do prazo. Por isso a cotação é feita com várias seguradoras, para achar a melhor taxa para o seu caso.' },
   ],
   'seguro-garantia-locaticia': [
     { q: 'A Garantia Locatícia substitui o fiador em contratos de aluguel comercial?', a: 'Sim. A Lei do Inquilinato (Lei 8.245/91) prevê o seguro de fiança locatícia como modalidade de garantia em contratos de locação, no art. 37, III, substituindo fiador, depósito caução e título de capitalização. É amplamente aceito pelas principais imobiliárias e proprietários.' },
