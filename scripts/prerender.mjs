@@ -7,8 +7,9 @@
  * Roda na maquina de quem publica, junto com a regeneracao do bundle:
  *
  *   npx vite build                       # bundle novo em dist/assets
- *   cp dist/assets/index-*.js  legacy/assets/index-Bhzvy-ks.js
- *   cp dist/assets/index-*.css legacy/assets/index-BRVWEG0Z.css
+ *   # troque os arquivos de legacy/assets/ pelos de dist/assets/ (nome novo a
+ *   # cada versão, para o navegador não usar o pacote antigo em cache) e
+ *   # atualize os nomes em scripts/build-legacy.mjs e legacy/index.html
  *   node scripts/prerender.mjs           # snapshots em legacy/prerender/
  *   npm run build                        # dist/ final (o que a Hostinger faz)
  *

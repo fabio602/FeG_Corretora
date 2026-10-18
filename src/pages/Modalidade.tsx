@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { MODALIDADES, WA_URL, FAQ } from '../data/content'
+import ModalidadeNova, { type PaginaModalidade } from './ModalidadeNova'
 
 export default function Modalidade() {
   const { pathname } = useLocation()
@@ -10,6 +11,11 @@ export default function Modalidade() {
   // pathname também termina com '/' porque o servidor + normalizer garantem
   const mod = MODALIDADES.find(m => m.slug === pathname)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  // Modalidades com o modelo novo (campo `pagina` em content.ts)
+  if (mod && 'pagina' in mod && mod.pagina) {
+    return <ModalidadeNova mod={{ ...mod, pagina: mod.pagina as PaginaModalidade }} />
+  }
 
   if (!mod) return (
     <div className="pt-32 pb-20 text-center">

@@ -40,6 +40,31 @@ export const MODALIDADES = [
       { icon: '⚡', title: 'Emissão em até 2 horas', desc: 'Contado do recebimento dos documentos, sujeito à análise e aceitação da seguradora. Você não perde o prazo de entrega da proposta.' },
       { icon: '✅', title: 'Apólice digital', desc: 'Enviamos a apólice por e-mail. Sem burocracia.' },
     ],
+    // Modelo novo da página (mesma estrutura da /lp/licitante/). As modalidades sem
+    // este campo continuam no modelo antigo.
+    pagina: {
+      sobretitulo: 'Garantia de proposta · Lei 14.133/21',
+      titulo: 'Seguro Garantia Licitante',
+      tituloDestaque: 'pronto antes da sessão do pregão',
+      subtitulo: 'Envie o edital. Eu confiro o percentual, o valor e a vigência exigidos, coto com mais de 25 seguradoras e te entrego a apólice para anexar à proposta.',
+      waTexto: 'Olá, Fábio. Vim pela página de Seguro Garantia Licitante (garantia de proposta) do site e gostaria de uma cotação.',
+      ctaPrimario: 'Enviar meu edital pelo WhatsApp',
+      formularioHref: '/lp/licitante/#cotar',
+      tituloBeneficios: 'Por que usar o Seguro Garantia Licitante',
+      passos: [
+        { titulo: 'Você envia o edital', texto: 'Pelo WhatsApp ou pelo formulário. Pode ser o PDF ou o link do portal.' },
+        { titulo: 'Eu confiro a exigência', texto: 'Percentual, valor, beneficiário e vigência da garantia de proposta, conforme o edital.' },
+        { titulo: 'Você recebe a apólice', texto: 'Cotada com mais de 25 seguradoras e enviada pronta para anexar à proposta.' },
+      ],
+      faq: [
+        { q: 'Quanto é a garantia de proposta?', a: 'Quem define é o edital. Pela Lei 14.133/21 (art. 58), ela pode ser de até 1% do valor estimado da contratação. Eu confiro o percentual exato no seu edital antes de emitir.' },
+        { q: 'Qual a vigência da apólice?', a: 'Segue o que o edital pedir para a garantia de proposta. Quando o edital não fixa um prazo próprio, a referência costuma ser a validade da proposta. Eu confiro isso no documento.' },
+        { q: 'E se eu ganhar a licitação?', a: 'A garantia de proposta encerra ali. Para assinar o contrato, normalmente é exigida uma nova apólice, a garantia de execução, e eu cuido dela também.' },
+        { q: 'Quanto custa?', a: 'Depende do perfil da sua empresa, do valor e do prazo. Por isso a cotação é feita com várias seguradoras, para achar a melhor taxa para o seu caso.' },
+        { q: 'Minha empresa nunca fez Seguro Garantia. Consigo?', a: 'Na maioria dos casos, sim. A primeira apólice exige um cadastro na seguradora, e eu te guio nos documentos.' },
+      ],
+      ctaFinal: 'Mande o edital e deixe a garantia comigo.',
+    },
   },
   {
     title: 'Garantia Locatícia',
@@ -212,6 +237,14 @@ export const MODALIDADES = [
       { icon: '✅', title: 'Emissão conjunta', desc: 'Sai na mesma apólice da garantia de execução do contrato.' },
     ],
   },
+]
+
+// Avaliações reais do Google, com o texto exato, usadas nas páginas de modalidade.
+export const GOOGLE_REVIEWS_URL = 'https://share.google/AtTRA9nk7u7cOrOaa'
+export const AVALIACOES_DESTAQUE = [
+  { nome: 'I.C Licitação', texto: 'Tive uma excelente experiência! O Fábio foi extremamente prestativo, educado e disposto a ajudar. Emissão do seguro rápida e eficiente!' },
+  { nome: 'Edílson Lobo', texto: 'Ótima experiência. Atendimento muito atencioso, consultivo, diversos esclarecimentos, soluções rápidas contemplando os prazos apertados do segmento.' },
+  { nome: 'Monique Barros', texto: 'São profissionais que transmitem confiança, atenção e transparência em cada atendimento. Recomendo de coração pelo profissionalismo e dedicação.' },
 ]
 
 export const FAQ = [
