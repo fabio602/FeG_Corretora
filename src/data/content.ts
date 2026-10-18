@@ -34,10 +34,10 @@ export const MODALIDADES = [
     heading: 'Seguro Garantia',
     headingHighlight: 'Licitante (Proposta)',
     fullDesc: 'O Seguro Garantia Licitante garante que a empresa vencedora da licitação assina o contrato e cumpre as condições da proposta. Substitui a caução em dinheiro exigida pelos órgãos públicos.',
-    benefits: ['Libera capital de giro', 'Aceito em todos os órgãos públicos', 'Emissão em até 2 horas', 'Custo a partir de R$ 150'],
+    benefits: ['Libera capital de giro', 'Garantia prevista na Lei 14.133/21', 'Emissão em até 2 horas após os documentos', 'Custo a partir de R$ 150'],
     steps: [
       { icon: '📋', title: 'Analisamos o edital', desc: 'Identificamos o tipo de garantia, valor e prazo conforme a lei.' },
-      { icon: '⚡', title: 'Emissão em até 2 horas', desc: 'Você não perde o prazo de entrega da proposta.' },
+      { icon: '⚡', title: 'Emissão em até 2 horas', desc: 'Contado do recebimento dos documentos, sujeito à análise e aceitação da seguradora. Você não perde o prazo de entrega da proposta.' },
       { icon: '✅', title: 'Apólice digital', desc: 'Enviamos a apólice por e-mail. Sem burocracia.' },
     ],
   },

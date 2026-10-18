@@ -299,7 +299,7 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1.5 text-xs font-semibold text-gray-700 mb-5">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8572A" strokeWidth="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Autorizado SUSEP · Emissão em até 2h
+                Registrada na SUSEP · Emissão em até 2h
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-fg-navy leading-tight mb-4">
                 Seguro Garantia para quem não pode perder prazo nem{' '}
@@ -446,7 +446,7 @@ export default function Home() {
             {[
               { Icon: IconDoc,        n: '1', title: 'Analisamos a exigência', desc: 'Identificamos o tipo de Seguro Garantia necessário, o valor e o prazo da apólice conforme a lei.' },
               { Icon: IconCompare,    n: '2', title: 'Cotamos com 25+ seguradoras', desc: 'Buscamos a melhor taxa entre nossas seguradoras parceiras para o seu perfil e contrato.' },
-              { Icon: IconClockCheck, n: '3', title: 'Apólice em até 2 horas', desc: 'Emissão expressa para você não perder prazo. Enviamos por e-mail e WhatsApp.' },
+              { Icon: IconClockCheck, n: '3', title: 'Apólice em até 2 horas', desc: 'Emissão expressa para você não perder prazo, contada do recebimento dos documentos e sujeita à análise e aceitação da seguradora. Enviamos por e-mail e WhatsApp.' },
             ].map(s => (
               <div key={s.n} className="bg-white rounded-2xl p-8 text-center border border-gray-100">
                 <div className="flex justify-center mb-3"><s.Icon className="w-8 h-8 text-fg-navy" /></div>
