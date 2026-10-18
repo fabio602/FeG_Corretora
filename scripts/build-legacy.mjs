@@ -65,7 +65,7 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-ClNPXmcw.js'),  join(DIST, 'assets', 'index-ClNPXmcw.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-CR7U6xz-.js'),  join(DIST, 'assets', 'index-CR7U6xz-.js'))
 copyFileSync(join(LEGACY, 'assets', 'index-53e1DIbY.css'), join(DIST, 'assets', 'index-53e1DIbY.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
@@ -108,7 +108,7 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-ClNPXmcw.js"></script>
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-CR7U6xz-.js"></script>
   <link rel="preload" as="style" href="/assets/index-53e1DIbY.css">
   <link rel="stylesheet" crossorigin href="/assets/index-53e1DIbY.css">`
 
@@ -418,11 +418,13 @@ const MODALITY_FAQS = {
     { q: 'Quanto custa?', a: 'Depende do perfil da sua empresa, do valor e do prazo. Por isso a cotação é feita com várias seguradoras, para achar a melhor taxa para o seu caso.' },
     { q: 'Minha empresa nunca fez Seguro Garantia. Consigo?', a: 'Na maioria dos casos, sim. A primeira apólice exige um cadastro na seguradora, e eu te guio nos documentos.' },
   ],
+  // Mesmas perguntas visíveis na página (pagina.faq da Execução em content.ts)
   'seguro-garantia-execucao-contrato': [
-    { q: 'O que é o Seguro Garantia de Execução de Contrato?', a: 'É uma apólice exigida após a assinatura do contrato público ou privado. Garante ao contratante que o contratado vai cumprir todas as obrigações previstas, incluindo prazo, qualidade e especificações técnicas.' },
-    { q: 'Qual o percentual exigido para o Seguro Garantia de Execução de Contrato?', a: 'Pela Lei 14.133/21, a garantia de execução pode ser de até 5% do valor do contrato. Em obras de grande vulto ou com alta complexidade técnica, pode chegar a 10%. O percentual é definido no edital.' },
-    { q: 'O Seguro Garantia de Execução é obrigatório em todos os contratos públicos?', a: 'A exigência é facultativa para o órgão contratante, mas é prática comum em contratos de obras, serviços e fornecimento de médio e grande porte. Empresas que participam de licitações devem estar preparadas para apresentar a garantia.' },
-    { q: 'Quanto tempo demora para emitir o Seguro Garantia de Execução de Contrato?', a: 'Para contratos padrão, a F&G Corretora aprova e emite no mesmo dia. Contratos de valores elevados ou com cláusulas específicas podem demandar até 24 horas para análise de risco pela seguradora.' },
+    { q: 'Qual o valor da garantia?', a: 'Quem define é o contrato ou o edital. Pela Lei 14.133/21 (art. 98), nas contratações públicas a garantia é de até 5% do valor inicial do contrato, podendo chegar a 10% quando justificado pela complexidade e pelos riscos.' },
+    { q: 'Qual a vigência da apólice?', a: 'Acompanha o prazo de execução previsto no contrato, conforme a cláusula de garantia. Eu confiro isso no documento antes de emitir.' },
+    { q: 'A apólice cobre obrigações trabalhistas?', a: 'Só se o contrato exigir. Quando exige, a cobertura trabalhista e previdenciária entra na apólice. Quando não exige, não acrescentamos.' },
+    { q: 'E se o contrato for aditivado?', a: 'Emitimos o endosso da apólice para acompanhar o novo valor ou o novo prazo.' },
+    { q: 'Quanto custa?', a: 'Depende do perfil da sua empresa, do valor e do prazo. Por isso a cotação é feita com várias seguradoras, para achar a melhor taxa para o seu caso.' },
   ],
   'seguro-garantia-judicial': [
     { q: 'O Seguro Garantia Judicial substitui o depósito recursal em processos trabalhistas?', a: 'Sim. O art. 835, III do CPC e a Súmula 417 do TST reconhecem o Seguro Garantia como substituto do depósito recursal em ações trabalhistas. A apólice é apresentada nos autos e o valor em dinheiro fica disponível para a empresa.' },
