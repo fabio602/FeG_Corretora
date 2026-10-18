@@ -18,6 +18,7 @@ export type PaginaModalidade = {
   ctaPrimario: string
   formularioHref: string
   tituloBeneficios: string
+  beneficios?: string[]   // quando ausente, usa os benefits da modalidade
   passos: Passo[]
   faq: Pergunta[]
   ctaFinal: string
@@ -40,6 +41,7 @@ function Estrelas() {
 export default function ModalidadeNova({ mod }: { mod: Mod }) {
   const p = mod.pagina
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const beneficios = p.beneficios ?? mod.benefits
   const waHref = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(p.waTexto)}`
   const url = `https://fegsegurogarantia.com.br${mod.slug}`
 
@@ -113,8 +115,8 @@ export default function ModalidadeNova({ mod }: { mod: Mod }) {
       <section className="py-14 bg-white">
         <div className="container">
           <h2 className="text-2xl md:text-3xl font-bold text-fg-navy mb-8">{p.tituloBeneficios}</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {mod.benefits.map(b => (
+          <div className={`grid sm:grid-cols-2 gap-4 ${beneficios.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
+            {beneficios.map(b => (
               <div key={b} className="flex items-start gap-3 bg-fg-bg rounded-xl p-5">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8572A" strokeWidth="2.5" className="mt-0.5 shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 <span className="text-sm md:text-base text-gray-800">{b}</span>
