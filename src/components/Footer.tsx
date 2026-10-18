@@ -14,7 +14,7 @@ export default function Footer() {
               <LogoHorizontal className="h-11 w-auto text-[#EAC8AC]" />
             </div>
             <p className="text-sm text-blue-200 leading-relaxed">
-              Corretora especializada em Seguro Garantia. Autorizada SUSEP. Emissão em até 2 horas. Atendemos todo o Brasil.
+              Corretora especializada em Seguro Garantia, registrada na SUSEP. Emissão em até 2 horas após o recebimento dos documentos, sujeita à análise da seguradora. Atendemos todo o Brasil.
             </p>
           </div>
 

@@ -276,7 +276,7 @@ function buildNewsletterFooter() {
   <div class="footer-inner">
     <div>
       <p class="footer-brand">F&amp;G Seguro Garantia</p>
-      <p class="footer-info">Corretora autorizada SUSEP<br>Boituva, SP - Brasil<br>CNPJ 56.123.874/0001-90<br>SUSEP 242160653</p>
+      <p class="footer-info">Corretora registrada na SUSEP<br>Boituva, SP - Brasil<br>CNPJ 56.123.874/0001-90<br>SUSEP 242160653</p>
     </div>
     <div class="footer-col">
       <h4>Modalidades</h4>
@@ -296,7 +296,7 @@ function buildNewsletterFooter() {
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 F&amp;G Seguro Garantia. Todos os direitos reservados.</p>
-    <p>SUSEP autorizada &middot; Boituva, SP</p>
+    <p>Registrada na SUSEP &middot; Boituva, SP</p>
   </div>
 </footer>
 
