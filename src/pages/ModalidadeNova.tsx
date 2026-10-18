@@ -19,6 +19,7 @@ export type PaginaModalidade = {
   formularioHref: string
   tituloBeneficios: string
   beneficios?: string[]   // quando ausente, usa os benefits da modalidade
+  prazo?: { valor: string; frase: string }   // padrão: até 2h / Emissão em até 2 horas.
   passos: Passo[]
   faq: Pergunta[]
   ctaFinal: string
@@ -42,6 +43,7 @@ export default function ModalidadeNova({ mod }: { mod: Mod }) {
   const p = mod.pagina
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const beneficios = p.beneficios ?? mod.benefits
+  const prazo = p.prazo ?? { valor: 'até 2h', frase: 'Emissão em até 2 horas.' }
   const waHref = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(p.waTexto)}`
   const url = `https://fegsegurogarantia.com.br${mod.slug}`
 
@@ -90,7 +92,7 @@ export default function ModalidadeNova({ mod }: { mod: Mod }) {
               <dl className="grid grid-cols-2 gap-6">
                 <div className="flex flex-col-reverse">
                   <dt className="text-xs text-gray-500">para emitir a apólice*</dt>
-                  <dd className="text-3xl font-extrabold text-fg-navy">até 2h</dd>
+                  <dd className="text-3xl font-extrabold text-fg-navy">{prazo.valor}</dd>
                 </div>
                 <div className="flex flex-col-reverse">
                   <dt className="text-xs text-gray-500">seguradoras parceiras</dt>
@@ -217,7 +219,7 @@ export default function ModalidadeNova({ mod }: { mod: Mod }) {
       <section className="py-16 bg-fg-navy text-white">
         <div className="container text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">{p.ctaFinal}</h2>
-          <p className="text-blue-200 mb-8 text-sm">{RESSALVA.replace('* ', 'Emissão em até 2 horas. ')}</p>
+          <p className="text-blue-200 mb-8 text-sm">{RESSALVA.replace('* ', prazo.frase + ' ')}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <BotaoWhatsApp texto={p.ctaPrimario} claro />
             <a href={p.formularioHref}

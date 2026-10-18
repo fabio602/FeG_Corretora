@@ -65,7 +65,7 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-BnUOvyVH.js'),  join(DIST, 'assets', 'index-BnUOvyVH.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-DzOl8V8I.js'),  join(DIST, 'assets', 'index-DzOl8V8I.js'))
 copyFileSync(join(LEGACY, 'assets', 'index-53e1DIbY.css'), join(DIST, 'assets', 'index-53e1DIbY.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
@@ -108,7 +108,7 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-BnUOvyVH.js"></script>
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-DzOl8V8I.js"></script>
   <link rel="preload" as="style" href="/assets/index-53e1DIbY.css">
   <link rel="stylesheet" crossorigin href="/assets/index-53e1DIbY.css">`
 
@@ -452,11 +452,13 @@ const MODALITY_FAQS = {
     { q: 'O Seguro Garantia Adicional pode ser emitido junto com o Licitante?', a: 'Sim. A F&G Corretora emite o Seguro Garantia Adicional junto com o Licitante, no mesmo processo e prazo de até 2 horas, para que a empresa não perca o prazo de assinatura do contrato.' },
     { q: 'Qual o valor do Seguro Garantia Adicional?', a: 'O valor do Seguro Garantia Adicional corresponde à diferença entre 80% do orçamento estimado do edital e o valor da proposta vencedora, conforme art. 59, § 5º da Lei 14.133/21. O prêmio pago à seguradora é uma fração desse valor.' },
   ],
+  // Mesmas perguntas visíveis na página (pagina.faq da Energia em content.ts)
   'seguro-garantia-energia': [
-    { q: 'O Seguro Garantia de Energia substitui o depósito de margem exigido pela CCEE?', a: 'Sim. Agentes habilitados na CCEE (Câmara de Comercialização de Energia Elétrica) podem usar o Seguro Garantia de Compra e Venda de Energia no lugar do aporte financeiro de garantia exigido pela câmara, liberando capital operacional para o negócio.' },
-    { q: 'Quais agentes da CCEE precisam de Seguro Garantia de Energia?', a: 'Todos os agentes que realizam operações de compra e venda de energia no mercado livre (ACL) e no ambiente de contratação regulada (ACR) que estejam sujeitos à exigência de garantias financeiras pela CCEE podem usar o Seguro Garantia.' },
-    { q: 'Quanto tempo demora para emitir o Seguro Garantia de Energia Elétrica?', a: 'O prazo depende da análise dos contratos CCEE e dos parâmetros de garantia exigidos pela câmara. A F&G Corretora trabalha com seguradoras especializadas nesse segmento e agiliza o processo junto às resseguradoras.' },
-    { q: 'O Seguro Garantia de Energia libera capital operacional das empresas?', a: 'Sim. Em vez de imobilizar recursos financeiros como garantia na CCEE, a empresa paga um prêmio ao Seguro Garantia e mantém o capital disponível para investimentos operacionais, melhorando o fluxo de caixa.' },
+    { q: 'Para que serve a garantia no contrato de energia?', a: 'No mercado livre, quase todo contrato de compra de energia exige garantia financeira. O caminho padrão é fiança bancária ou caução, e o seguro garantia faz o mesmo papel para a comercializadora.' },
+    { q: 'Qual a diferença para a fiança bancária?', a: 'A fiança sai do limite de crédito da empresa no banco, com custo e reciprocidade. Com a apólice, o limite bancário fica livre para capital de giro e investimento.' },
+    { q: 'O que preciso para começar?', a: 'O contrato de compra e venda de energia (ou a minuta), o valor e o prazo da garantia exigida e o CNPJ da empresa. Com isso eu levo a operação às seguradoras e cuido do cadastro.' },
+    { q: 'Serve para renovar ou fechar com outra comercializadora?', a: 'Sim. A apólice sai com o valor e o prazo que cada contrato pede, então dá para renovar, aumentar volume ou fechar com comercializadora nova sem passar pelo banco outra vez.' },
+    { q: 'Quanto custa?', a: 'O custo é um percentual ao ano sobre o valor garantido, definido caso a caso pelo perfil da empresa, pelo valor e pelo prazo.' },
   ],
 }
 
