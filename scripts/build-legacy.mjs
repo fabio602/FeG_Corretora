@@ -65,8 +65,8 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-Bhzvy-ks.js'),  join(DIST, 'assets', 'index-Bhzvy-ks.js'))
-copyFileSync(join(LEGACY, 'assets', 'index-BRVWEG0Z.css'), join(DIST, 'assets', 'index-BRVWEG0Z.css'))
+copyFileSync(join(LEGACY, 'assets', 'index-ClNPXmcw.js'),  join(DIST, 'assets', 'index-ClNPXmcw.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-53e1DIbY.css'), join(DIST, 'assets', 'index-53e1DIbY.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
 // Scripts de injeção JS eliminados — substituídos pelo React (scroll, reviews, ui-fixes).
@@ -108,9 +108,9 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-Bhzvy-ks.js"></script>
-  <link rel="preload" as="style" href="/assets/index-BRVWEG0Z.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-BRVWEG0Z.css">`
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-ClNPXmcw.js"></script>
+  <link rel="preload" as="style" href="/assets/index-53e1DIbY.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-53e1DIbY.css">`
 
 
 // ── Conteúdo das modalidades para pré-renderização (SEO) ─────────────────────
@@ -410,11 +410,13 @@ injectArticleSchemaInBlogDir()
 
 // ── 11. FAQPage schema para páginas de modalidade ────────────────────────────
 const MODALITY_FAQS = {
+  // Mesmas perguntas visíveis na página (src/data/content.ts, pagina.faq do Licitante)
   'seguro-garantia-licitante': [
-    { q: 'O que é o Seguro Garantia Licitante e quando minha empresa precisa dele?', a: 'O Seguro Garantia Licitante é uma apólice exigida em licitações públicas e privadas para garantir que a empresa vencedora assina o contrato e cumpre as condições da proposta. É obrigatório sempre que o edital exigir garantia de proposta, substituindo o depósito em dinheiro.' },
-    { q: 'Qual o valor do Seguro Garantia Licitante exigido em licitações?', a: 'A Lei 14.133/21 permite que o edital exija até 1% do valor estimado do contrato como garantia de proposta. O prêmio pago à seguradora é uma fração desse valor, geralmente entre 0,5% e 2% do valor garantido.' },
-    { q: 'Em quanto tempo o Seguro Garantia Licitante é emitido?', a: 'A F&G Corretora emite o Seguro Garantia Licitante em até 2 horas após o recebimento do edital e das informações da empresa. Urgências são atendidas com prioridade via WhatsApp.' },
-    { q: 'O Seguro Garantia Licitante substitui a caução em dinheiro?', a: 'Sim. A Lei 14.133/21 prevê expressamente o Seguro Garantia como modalidade de garantia aceita em substituição ao depósito em dinheiro em licitações públicas federais, estaduais e municipais.' },
+    { q: 'Quanto é a garantia de proposta?', a: 'Quem define é o edital. Pela Lei 14.133/21 (art. 58), ela pode ser de até 1% do valor estimado da contratação. Eu confiro o percentual exato no seu edital antes de emitir.' },
+    { q: 'Qual a vigência da apólice?', a: 'Segue o que o edital pedir para a garantia de proposta. Quando o edital não fixa um prazo próprio, a referência costuma ser a validade da proposta. Eu confiro isso no documento.' },
+    { q: 'E se eu ganhar a licitação?', a: 'A garantia de proposta encerra ali. Para assinar o contrato, normalmente é exigida uma nova apólice, a garantia de execução, e eu cuido dela também.' },
+    { q: 'Quanto custa?', a: 'Depende do perfil da sua empresa, do valor e do prazo. Por isso a cotação é feita com várias seguradoras, para achar a melhor taxa para o seu caso.' },
+    { q: 'Minha empresa nunca fez Seguro Garantia. Consigo?', a: 'Na maioria dos casos, sim. A primeira apólice exige um cadastro na seguradora, e eu te guio nos documentos.' },
   ],
   'seguro-garantia-execucao-contrato': [
     { q: 'O que é o Seguro Garantia de Execução de Contrato?', a: 'É uma apólice exigida após a assinatura do contrato público ou privado. Garante ao contratante que o contratado vai cumprir todas as obrigações previstas, incluindo prazo, qualidade e especificações técnicas.' },
