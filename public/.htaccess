@@ -61,6 +61,13 @@ ErrorDocument 404 /404.html
   ExpiresByType font/woff2               "access plus 1 year"
 </IfModule>
 
+# ── Materiais com captura de lead: não indexar os arquivos (PDF/XLSX) ──────────
+<IfModule mod_headers.c>
+  <FilesMatch "\.(pdf|xlsx)$">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </FilesMatch>
+</IfModule>
+
 # ── Segurança ─────────────────────────────────────────────────────────────────
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"

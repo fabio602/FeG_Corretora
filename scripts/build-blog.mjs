@@ -954,8 +954,8 @@ function buildMaterialPage(mat) {
     <p class="mat-msg" id="mat-msg" aria-live="polite" role="status"></p>
     <div class="mat-success" id="mat-success">
       <p>Pronto! Seu material esta pronto para download.</p>
-      <a href="${mat.arquivo}" class="mat-dl-btn" id="mat-dl" download>Baixar agora</a>
-      <a href="${mat.arquivo}" class="mat-dl-anyway" download>Clique aqui se o download nao iniciar</a>
+      <a href="${mat.arquivo}" class="mat-dl-btn" id="mat-dl" rel="nofollow" download>Baixar agora</a>
+      <a href="${mat.arquivo}" class="mat-dl-anyway" rel="nofollow" download>Clique aqui se o download nao iniciar</a>
     </div>
   </div>
 </div>
