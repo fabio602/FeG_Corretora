@@ -12,6 +12,9 @@ RewriteRule ^(.*)$ https://fegsegurogarantia.com.br/$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+# ── URLs antigas → 301 ─────────────────────────────────────────────────────────
+RewriteRule ^home-2025/?$ / [R=301,L]
+
 # ── SPA: arquivos físicos servidos diretamente ────────────────────────────────
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
