@@ -25,6 +25,7 @@ MAPA = {
  'seguro-fianca-locaticia-lei-inquilinato':              ('blueprint', {'box':(0.30,0.05,1.00,1.00),'foco':0.50}),
  'seguro-cyber-pme-ransomware-lgpd':                     ('office',    {'box':(0.25,0.46,1.00,1.00),'foco':0.50}),
  'cobertura-trabalhista-previdenciaria-seguro-garantia': ('cleaner',   {'foco':0.76}),
+ 'seguro-garantia-solvencia-trabalhista-cartorios':      ('carimbo',   {'foco':0.45}),
 }
 NAVY  = np.array([18, 40, 63], dtype=np.float32)
 PESOS = np.array([.299, .587, .114], dtype=np.float32)
