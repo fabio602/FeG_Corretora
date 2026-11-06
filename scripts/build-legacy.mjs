@@ -627,3 +627,48 @@ function injectSitemapLastmod() {
   console.log(`✅ sitemap.xml: lastmod em ${n} URL(s)`)
 }
 injectSitemapLastmod()
+
+// ── 11. Consentimento de cookies (LGPD + Google Consent Mode v2) ─────────────
+// Injeta logo após <head>, ANTES do gtag.js, o padrão "negado" (ou a escolha já
+// salva pelo visitante) e o banner /cookies.js. Vale para todo HTML de dist/.
+const CONSENT_SNIPPET = `
+  <!-- Consentimento de cookies (LGPD): padrão negado até o visitante escolher -->
+  <script id="fg-consent-default">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function(){
+      var c = null;
+      try { c = JSON.parse(localStorage.getItem('fg_cookie_consent')); } catch (e) {}
+      if (!c || c.v !== 1) c = {};
+      var a = c.analytics ? 'granted' : 'denied';
+      var m = c.marketing ? 'granted' : 'denied';
+      gtag('consent', 'default', {
+        analytics_storage: a, ad_storage: m, ad_user_data: m, ad_personalization: m,
+        functionality_storage: 'granted', security_storage: 'granted', wait_for_update: 500
+      });
+      if (m === 'denied') gtag('set', 'ads_data_redaction', true);
+    })();
+  </script>
+  <script src="/cookies.js" defer></script>`
+
+function injectConsent(html) {
+  if (html.includes('fg-consent-default')) return html
+  const m = /<head[^>]*>/i.exec(html)
+  if (!m) return html
+  const i = m.index + m[0].length
+  return html.slice(0, i) + CONSENT_SNIPPET + html.slice(i)
+}
+
+function injectConsentInDir(dir) {
+  let n = 0
+  for (const entry of readdirSync(dir)) {
+    const p = join(dir, entry)
+    if (statSync(p).isDirectory()) { n += injectConsentInDir(p); continue }
+    if (!entry.endsWith('.html')) continue
+    const original = readFileSync(p, 'utf-8')
+    const updated = injectConsent(original)
+    if (updated !== original) { writeFileSync(p, updated); n++ }
+  }
+  return n
+}
+console.log(`✅ Consentimento de cookies injetado em ${injectConsentInDir(DIST)} HTML(s)`)
