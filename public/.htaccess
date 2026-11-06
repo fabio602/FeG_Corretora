@@ -42,7 +42,7 @@ ErrorDocument 404 /404.html
   <FilesMatch "\-[a-zA-Z0-9]{8}\.(js|css)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "^(hero-v4|reviews|ui-fixes|scroll-top|ga4-spa)\.js$">
+  <FilesMatch "^(hero-v4|reviews|ui-fixes|scroll-top|ga4-spa|cookies)\.js$">
     Header set Cache-Control "public, max-age=604800, must-revalidate"
   </FilesMatch>
   <FilesMatch "\.(webp|png|jpg|jpeg|svg|ico|gif|woff2|woff)$">
