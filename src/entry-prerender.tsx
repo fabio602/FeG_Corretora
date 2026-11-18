@@ -3,7 +3,7 @@
  *
  * Ponto de entrada usado SOMENTE por scripts/prerender.mjs, fora do navegador.
  * Renderiza cada rota da SPA em HTML estatico (renderToString) para o Google
- * receber o conteudo completo da home, das modalidades, do FAQ e do Cyber sem
+ * receber o conteudo completo da home, das modalidades e do FAQ sem
  * depender de executar JavaScript. O resultado vai para legacy/prerender/ e o
  * build-legacy.mjs coloca esse HTML dentro do <div id="root">; quando o React
  * monta no navegador, ele substitui o conteudo pelo interativo, identico.
@@ -24,7 +24,6 @@ import { MODALIDADES } from './data/content'
 import Home from './pages/Home'
 import Modalidade from './pages/Modalidade'
 import FAQPage from './pages/FAQ'
-import Cyber from './pages/SeguroCyber'
 
 function PrerenderApp({ url }: { url: string }) {
   const helmetContext = {}
@@ -36,7 +35,6 @@ function PrerenderApp({ url }: { url: string }) {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/perguntas-frequentes/" element={<FAQPage />} />
-            <Route path="/seguro-cyber/" element={<Cyber />} />
             {MODALIDADES.map(m => (
               <Route key={m.slug} path={m.slug} element={<Modalidade />} />
             ))}
@@ -54,7 +52,6 @@ export function routes(): string[] {
   return [
     '',
     'perguntas-frequentes',
-    'seguro-cyber',
     ...MODALIDADES.map(m => m.slug.replace(/^\/|\/$/g, '')),
   ]
 }

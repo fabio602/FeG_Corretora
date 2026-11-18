@@ -131,11 +131,6 @@ export default function Navbar() {
               className="text-sm font-medium text-gray-600 hover:text-fg-navy transition-colors">
               Blog
             </a>
-            <a href={routePath('/seguro-cyber')} onClick={e => { e.preventDefault(); navigate(routePath('/seguro-cyber')) }}
-              className="text-sm font-medium text-fg-orange hover:underline flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-fg-orange" aria-hidden="true" />
-              Seguro Cyber
-            </a>
           </nav>
 
           {/* Desktop CTAs */}
@@ -256,14 +251,6 @@ export default function Navbar() {
           </a>
 
           <a href={routePath('/blog')} onClick={e => handleAnchor(e, '/blog')} className={drawerLink}>Blog</a>
-
-          <a href={routePath('/seguro-cyber')}
-            onClick={e => { e.preventDefault(); navigate(routePath('/seguro-cyber')); setOpen(false) }}
-            className="flex items-center gap-2 min-h-[48px] py-1 text-[17px] font-medium
-                       border-b border-white/10 text-fg-orange active:opacity-70 transition-colors">
-            <span className="w-1.5 h-1.5 rounded-full bg-fg-orange shrink-0" aria-hidden="true" />
-            Seguro Cyber
-          </a>
 
           <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer"
             onClick={() => setOpen(false)}
