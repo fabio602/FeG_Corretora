@@ -55,7 +55,6 @@ export const VALID_CATEGORIES = [
   'Trabalhista',
   'Locatício',
   'Responsabilidade Civil',
-  'Cyber',
   'Para o seu negócio',
 ]
 
@@ -67,7 +66,6 @@ const CATEGORY_COLORS = {
   'Trabalhista':               { bg: 'transparent', text: '#E8572A' },
   'Locatício':                 { bg: 'transparent', text: '#E8572A' },
   'Responsabilidade Civil':    { bg: 'transparent', text: '#E8572A' },
-  'Cyber':                     { bg: 'transparent', text: '#E8572A' },
   'Para o seu negócio':        { bg: 'transparent', text: '#E8572A' },
 }
 
@@ -291,7 +289,6 @@ function buildNewsletterFooter() {
       <a href="/">Inicio</a>
       <a href="/blog/">Blog</a>
       <a href="/perguntas-frequentes/">Perguntas Frequentes</a>
-      <a href="/seguro-cyber/">Seguro Cyber</a>
     </div>
   </div>
   <div class="footer-bottom">

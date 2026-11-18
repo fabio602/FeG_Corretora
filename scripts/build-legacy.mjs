@@ -65,8 +65,8 @@ mkdirSync(join(DIST, 'assets'), { recursive: true })
 
 // ── 2. Copia bundle antigo ──────────────────────────────────────────────────
 console.log('📦 Copiando bundle legado…')
-copyFileSync(join(LEGACY, 'assets', 'index-Fq96Rc25.js'),  join(DIST, 'assets', 'index-Fq96Rc25.js'))
-copyFileSync(join(LEGACY, 'assets', 'index-53e1DIbY.css'), join(DIST, 'assets', 'index-53e1DIbY.css'))
+copyFileSync(join(LEGACY, 'assets', 'index-K9OPBlNe.js'),  join(DIST, 'assets', 'index-K9OPBlNe.js'))
+copyFileSync(join(LEGACY, 'assets', 'index-UtJ7hBn_.css'), join(DIST, 'assets', 'index-UtJ7hBn_.css'))
 
 // ── 3. Copia scripts de injeção ─────────────────────────────────────────────
 // Scripts de injeção JS eliminados — substituídos pelo React (scroll, reviews, ui-fixes).
@@ -108,9 +108,9 @@ const routes = JSON.parse(readFileSync(join(__dirname, 'seo-routes.json'), 'utf-
 // scroll-top.js, hero-v4.js, reviews.js e ui-fixes.js sairam daqui:
 // os arquivos nao existem no repositorio e davam 404 em toda pagina interna.
 // O bundle React ja faz o que eles faziam (ScrollToTop, carrossel de avaliacoes).
-const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-Fq96Rc25.js"></script>
-  <link rel="preload" as="style" href="/assets/index-53e1DIbY.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-53e1DIbY.css">`
+const ASSET_BLOCK = `  <script type="module" crossorigin src="/assets/index-K9OPBlNe.js"></script>
+  <link rel="preload" as="style" href="/assets/index-UtJ7hBn_.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-UtJ7hBn_.css">`
 
 
 // ── Conteúdo das modalidades para pré-renderização (SEO) ─────────────────────
@@ -550,24 +550,6 @@ function injectHomeH1() {
 }
 injectHomeH1()
 
-// ── 15. /seguro-cyber/: H1 + Service schema ──────────────────────────────────
-function injectCyberPrerender() {
-  const p = join(DIST, 'seguro-cyber', 'index.html')
-  if (!existsSync(p)) return
-  let html = readFileSync(p, 'utf-8')
-  if (!html.includes('"Service"')) {
-    const schema = JSON.parse("{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Seguro Cyber\", \"provider\": {\"@type\": \"InsuranceAgency\", \"name\": \"F&G Seguro Garantia\", \"url\": \"https://fegsegurogarantia.com.br\"}, \"description\": \"Prote\u00e7\u00e3o para empresas contra ataques ransomware, vazamento de dados, fraudes digitais e interrup\u00e7\u00e3o de opera\u00e7\u00f5es por incidentes cibern\u00e9ticos.\", \"url\": \"https://fegsegurogarantia.com.br/seguro-cyber/\", \"areaServed\": {\"@type\": \"Country\", \"name\": \"Brasil\"}}")
-    const tag = `  <script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n  </script>`
-    html = html.replace('</head>', tag + '\n</head>')
-  }
-  if (!html.includes('<h1')) {
-    const pre = '<div style="font-family:system-ui,sans-serif;padding:4rem 1.5rem 1rem;max-width:900px;margin:0 auto;"><h1 style="font-size:clamp(26px,3vw,42px);font-weight:800;color:#1C3A5E;line-height:1.2;margin:0 0 12px;">Seguro Cyber <span style="color:#E8572A;">para Empresas</span></h1><p style="font-size:16px;color:#4B5563;line-height:1.65;">Proteção contra ransomware, vazamento de dados, fraudes digitais e interrupção de operações cibernéticas.</p></div>'
-    html = html.replace('<div id="root"></div>', `<div id="root">${pre}</div>`)
-  }
-  writeFileSync(p, html)
-  console.log('✅ /seguro-cyber/: H1 + Service schema')
-}
-injectCyberPrerender()
 
 // ── Material pages com captura de lead ────────────────────────────────────────
 buildMaterialPages(DIST, join(DIST, 'sitemap.xml'))

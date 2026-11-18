@@ -74,8 +74,7 @@
     '/seguro-garantia-aduaneiro/': 'Seguro Garantia Aduaneiro',
     '/seguro-garantia-loteamento/': 'Seguro Garantia de Loteamento',
     '/seguro-garantia-adiantamento-pagamento/': 'Seguro Garantia de Adiantamento de Pagamento',
-    '/seguro-garantia-trabalhista-previdenciario/': 'cobertura de Obrigações Trabalhistas e Previdenciárias',
-    '/seguro-cyber/': 'Seguro Cyber'
+    '/seguro-garantia-trabalhista-previdenciario/': 'cobertura de Obrigações Trabalhistas e Previdenciárias'
   };
 
   function mensagemDaPagina() {

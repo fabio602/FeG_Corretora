@@ -44,7 +44,6 @@ Judicial
 Trabalhista
 Locatício
 Responsabilidade Civil
-Cyber
 Para o seu negócio
 ```
 

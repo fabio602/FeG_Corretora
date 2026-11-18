@@ -35,7 +35,6 @@ export default function Footer() {
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to={routePath('/perguntas-frequentes')} className="hover:text-white transition-colors">FAQ</Link></li>
               <li><Link to={routePath('/blog')} className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to={routePath('/seguro-cyber')} className="hover:text-white transition-colors">Seguro Cyber</Link></li>
             </ul>
           </div>
 

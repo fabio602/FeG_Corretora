@@ -80,15 +80,6 @@
     "og_description": "Artigos sobre Seguro Garantia, licitações e Lei 14.133/21. F&G Corretora.",
     "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
   },
-  "seguro-cyber": {
-    "slug": "seguro-cyber",
-    "title": "Seguro Cyber | Proteção contra Ataques Digitais | F&G Corretora",
-    "description": "Seguro Cyber para empresas. Proteção contra ataques hackers, ransomware e vazamento de dados. F&G Corretora, Boituva SP.",
-    "canonical": "https://fegsegurogarantia.com.br/seguro-cyber/",
-    "og_title": "Seguro Cyber | Proteção Digital para Empresas | F&G",
-    "og_description": "Proteja sua empresa contra ataques digitais. Seguro Cyber com cobertura completa. F&G Corretora.",
-    "og_image": "https://fegsegurogarantia.com.br/logo-shield.webp"
-  },
   "seguro-garantia-judicial-trabalhista": {
     "slug": "seguro-garantia-judicial-trabalhista",
     "title": "Seguro Garantia Judicial Trabalhista | Depósito Recursal | F&G",

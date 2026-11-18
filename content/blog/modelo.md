@@ -45,7 +45,6 @@ category      - Uma das categorias validas:
                   Trabalhista
                   Locatico
                   Responsabilidade Civil
-                  Cyber
                   Para o seu negocio
                   O build quebra se o valor nao estiver nessa lista.
 readingTime   - Tempo estimado em minutos.

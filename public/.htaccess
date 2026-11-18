@@ -14,6 +14,9 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # ── URLs antigas → 301 ─────────────────────────────────────────────────────────
 RewriteRule ^home-2025/?$ / [R=301,L]
+# Seguro Cyber retirado do site (nov/2026): foco exclusivo em Seguro Garantia
+RewriteRule ^seguro-cyber/?$ / [R=301,L]
+RewriteRule ^blog/seguro-cyber-pme-ransomware-lgpd/?$ /blog/ [R=301,L]
 
 # ── SPA: arquivos físicos servidos diretamente ────────────────────────────────
 RewriteRule ^index\.html$ - [L]
@@ -22,7 +25,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # ── SPA: rotas conhecidas → index.html (200) ─────────────────────────────────
-RewriteRule ^(seguro-garantia-licitante|seguro-garantia-execucao-contrato|seguro-garantia-judicial|seguro-garantia-locaticia|seguro-garantia-adicional|seguro-garantia-energia|perguntas-frequentes|seguro-cyber|blog)(\/.*)?$ /index.html [L]
+RewriteRule ^(seguro-garantia-licitante|seguro-garantia-execucao-contrato|seguro-garantia-judicial|seguro-garantia-locaticia|seguro-garantia-adicional|seguro-garantia-energia|perguntas-frequentes|blog)(\/.*)?$ /index.html [L]
 
 # ── #8: qualquer outro caminho inexistente → 404 real ────────────────────────
 ErrorDocument 404 /404.html

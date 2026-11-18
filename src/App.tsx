@@ -13,7 +13,6 @@ const Modalidade   = lazy(() => import('./pages/Modalidade'))
 const FAQPage      = lazy(() => import('./pages/FAQ'))
 const Blog         = lazy(() => import('./pages/Blog'))
 const BlogArticle  = lazy(() => import('./pages/BlogArticle'))
-const Cyber        = lazy(() => import('./pages/SeguroCyber'))
 
 function Spinner() {
   return (
@@ -57,7 +56,6 @@ function AppInner() {
             <Route path="/perguntas-frequentes/" element={<FAQPage />} />
             <Route path="/blog/" element={<Blog />} />
             <Route path="/blog/:slug/" element={<BlogArticle />} />
-            <Route path="/seguro-cyber/" element={<Cyber />} />
 
             {/* Modalidades — geradas a partir de MODALIDADES: acrescentar uma
                 modalidade em src/data/content.ts ja cria a rota, sem mexer aqui. */}

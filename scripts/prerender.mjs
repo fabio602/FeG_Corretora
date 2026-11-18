@@ -1,7 +1,7 @@
 /**
  * prerender.mjs
  *
- * Gera o HTML estatico das rotas da SPA (home, modalidades, FAQ, Cyber) em
+ * Gera o HTML estatico das rotas da SPA (home, modalidades e FAQ) em
  * legacy/prerender/<slug>.html, a partir de src/ via Vite SSR + renderToString.
  *
  * Roda na maquina de quem publica, junto com a regeneracao do bundle:
